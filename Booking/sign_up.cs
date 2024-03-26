@@ -14,6 +14,7 @@ using System.Net;
 using System.Threading;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Util.Store;
+using System.Text.RegularExpressions;
 
 namespace Booking
 {
@@ -28,7 +29,11 @@ namespace Booking
             InitializeComponent();
         }
 
-  
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            string regexPattern = @"^09\d{9}$"; // Regex pattern for Philippine mobile phone numbers
+            return Regex.IsMatch(phoneNumber, regexPattern);
+        }
 
         private void Pass_TextChanged(object sender, EventArgs e)
         {
@@ -89,7 +94,7 @@ namespace Booking
                         message.To.Add(email.Text);
                         message.Subject = "OTP";
                         message.Body = "Your One Time Password (OTP) for verification is: " +
-                randomCode + ". Please enter this OTP to proceed with the verification process.";
+                randomCode + ". Please enter this OTP to proceed with the sign up process.";
 
                         // Send mail
                         smtp.Send(message);
@@ -115,7 +120,13 @@ namespace Booking
                 MessageBox.Show("Please fill all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if(password.Text != con_pass.Text)
+            string phoneNumber = number.Text.Trim();
+
+            if (!IsValidPhoneNumber(phoneNumber))
+            {
+                MessageBox.Show("Phone Number Invalid");
+            }
+            if (password.Text != con_pass.Text)
             {
                 MessageBox.Show("Passwords did not match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -128,11 +139,11 @@ namespace Booking
             try
             {
                 // Check if username already exists
-                MySqlDataAdapter sd = new MySqlDataAdapter("select username from user where username= '" + userN.Text + "'", con);
+                MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Email_Address from user where Username= '" + userN.Text + "' OR Email_Address='"+email.Text+"'", con);
                 DataTable dt = new DataTable();
                 sd.Fill(dt);
                 if (dt.Rows.Count > 0)
-                    MessageBox.Show("Username already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Username or Email Address already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
                     // Insert user data into the database

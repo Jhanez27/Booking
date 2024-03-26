@@ -28,14 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -44,10 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.Back = new System.Windows.Forms.PictureBox();
-            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.verify = new System.Windows.Forms.Button();
-            this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.otp = new Booking.usercontrol.CustomTextBox();
             this.signUp = new Booking.usercontrol.CustomButton2();
             this.lname = new Booking.usercontrol.CustomTextBox();
@@ -58,12 +49,6 @@
             this.password = new Booking.usercontrol.CustomTextBox();
             this.userN = new Booking.usercontrol.CustomTextBox();
             this.logo = new Booking.usercontrol.roundPictureeBox();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -72,8 +57,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Back)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,30 +70,6 @@
             this.label1.Size = new System.Drawing.Size(108, 26);
             this.label1.TabIndex = 13;
             this.label1.Text = "Sign Up";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            // 
-            // errorProvider3
-            // 
-            this.errorProvider3.ContainerControl = this;
-            // 
-            // errorProvider4
-            // 
-            this.errorProvider4.ContainerControl = this;
-            // 
-            // errorProvider5
-            // 
-            this.errorProvider5.ContainerControl = this;
-            // 
-            // errorProvider6
-            // 
-            this.errorProvider6.ContainerControl = this;
             // 
             // pictureBox6
             // 
@@ -192,7 +151,7 @@
             // Back
             // 
             this.Back.Image = global::Booking.Properties.Resources.back_arrow_3545314;
-            this.Back.Location = new System.Drawing.Point(208, 602);
+            this.Back.Location = new System.Drawing.Point(2, -1);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(88, 46);
             this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,12 +159,9 @@
             this.Back.TabStop = false;
             this.Back.Click += new System.EventHandler(this.Back_OnClick);
             // 
-            // errorProvider7
-            // 
-            this.errorProvider7.ContainerControl = this;
-            // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(277, 426);
             this.label2.Name = "label2";
@@ -215,6 +171,7 @@
             // 
             // verify
             // 
+            this.verify.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.verify.Location = new System.Drawing.Point(572, 366);
             this.verify.Name = "verify";
             this.verify.Size = new System.Drawing.Size(75, 39);
@@ -223,12 +180,9 @@
             this.verify.UseVisualStyleBackColor = true;
             this.verify.Click += new System.EventHandler(this.verify_Click);
             // 
-            // errorProvider8
-            // 
-            this.errorProvider8.ContainerControl = this;
-            // 
             // otp
             // 
+            this.otp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.otp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.otp.BottomBorderColor = System.Drawing.Color.Black;
             this.otp.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
@@ -240,14 +194,14 @@
             // signUp
             // 
             this.signUp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.signUp.Angle = 129F;
+            this.signUp.Angle = 193F;
             this.signUp.BorderRadius = 20;
             this.signUp.Color0 = System.Drawing.Color.Blue;
             this.signUp.Color1 = System.Drawing.Color.MediumSpringGreen;
             this.signUp.Cursor = System.Windows.Forms.Cursors.Default;
             this.signUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUp.ForeColor = System.Drawing.Color.White;
-            this.signUp.Location = new System.Drawing.Point(302, 602);
+            this.signUp.Location = new System.Drawing.Point(270, 602);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(221, 46);
             this.signUp.TabIndex = 38;
@@ -335,6 +289,7 @@
             // 
             // password
             // 
+            this.password.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.password.BottomBorderColor = System.Drawing.Color.Black;
             this.password.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
@@ -350,6 +305,7 @@
             // 
             // userN
             // 
+            this.userN.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userN.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userN.BottomBorderColor = System.Drawing.Color.Black;
             this.userN.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
@@ -404,12 +360,6 @@
             this.Name = "sign_up";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "sign_up";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -418,8 +368,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Back)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -437,12 +385,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
-        private System.Windows.Forms.ErrorProvider errorProvider3;
-        private System.Windows.Forms.ErrorProvider errorProvider4;
-        private System.Windows.Forms.ErrorProvider errorProvider5;
-        private System.Windows.Forms.ErrorProvider errorProvider6;
         private usercontrol.CustomTextBox password;
         private usercontrol.CustomTextBox userN;
         private usercontrol.CustomTextBox con_pass;
@@ -452,10 +394,8 @@
         private usercontrol.CustomTextBox lname;
         private usercontrol.CustomButton2 signUp;
         private System.Windows.Forms.PictureBox Back;
-        private System.Windows.Forms.ErrorProvider errorProvider7;
         private usercontrol.CustomTextBox otp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button verify;
-        private System.Windows.Forms.ErrorProvider errorProvider8;
     }
 }

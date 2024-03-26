@@ -102,6 +102,7 @@
             this.forgot.TabIndex = 8;
             this.forgot.TabStop = true;
             this.forgot.Text = "Forgot Password?";
+            this.forgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgot_LinkClicked);
             // 
             // errorProvider1
             // 
@@ -144,7 +145,7 @@
             // Login_Button
             // 
             this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Button.Angle = 10F;
+            this.Login_Button.Angle = 125F;
             this.Login_Button.BorderRadius = 20;
             this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
             this.Login_Button.Color1 = System.Drawing.Color.Magenta;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace Booking
 {
     public partial class Home : Form
     {
+        MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Home()
         {
             InitializeComponent();
@@ -63,27 +65,37 @@ namespace Booking
 
         private void Login_Button_Click(object sender, EventArgs e)
         {
-            if (username.Text == "Type your username")
+            if (string.IsNullOrWhiteSpace(username.Text) || username.Text == "Type your username" ||
+            string.IsNullOrWhiteSpace(pass.Text) || pass.Text == "Type your password")
             {
-                errorProvider1.SetError(username, "Username is required");
+                MessageBox.Show("Please fill all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                errorProvider1.SetError(username, string.Empty);
+            else {
+                MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Password from user where Username= '" + username.Text + "' and Password= '"+pass.Text+"'", con);
+                DataTable dt = new DataTable();
+                sd.Fill(dt);
+                if (dt.Rows.Count == 0)
+                    MessageBox.Show("Invalid Login Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    new DashBoard().Show();
+                    this.Hide();
+                }
             }
-            if (pass.Text == "Type your password")
-            {
-                errorProvider2.SetError(pass, "Password is required");
-            }
-            else
-            {
-                errorProvider2.SetError(pass, string.Empty);
-            }
+
+            con.Close();
         }
 
         private void Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new sign_up().Show();
+            this.Hide();
+        }
+
+        private void forgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new ResetPassword().Show(); 
             this.Hide();
         }
     }
