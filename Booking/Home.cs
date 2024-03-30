@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Booking.Classes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace Booking
 {
     public partial class Home : Form
     {
+        private User curentUser;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Home()
         {
             InitializeComponent();
+            curentUser = new User();
         }
 
         private void username_Enter(object sender, EventArgs e)
@@ -72,6 +75,7 @@ namespace Booking
                 return;
             }
             else {
+                con.Open();
                 MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Password from user where Username= '" + username.Text + "' and Password= '"+pass.Text+"'", con);
                 DataTable dt = new DataTable();
                 sd.Fill(dt);
@@ -79,7 +83,10 @@ namespace Booking
                     MessageBox.Show("Invalid Login Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    new DashBoard().Show();
+                    curentUser.Username = username.Text;
+                    curentUser.Password = pass.Text;
+                    DashBoard dash = new DashBoard(curentUser);
+                    new DashBoard(curentUser).Show();
                     this.Hide();
                 }
             }

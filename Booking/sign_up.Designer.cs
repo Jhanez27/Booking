@@ -39,6 +39,12 @@
             this.Back = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.verify = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.otp = new Booking.usercontrol.CustomTextBox();
             this.signUp = new Booking.usercontrol.CustomButton2();
             this.lname = new Booking.usercontrol.CustomTextBox();
@@ -75,7 +81,7 @@
             // 
             this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox6.Image = global::Booking.Properties.Resources.download;
-            this.pictureBox6.Location = new System.Drawing.Point(178, 533);
+            this.pictureBox6.Location = new System.Drawing.Point(74, 546);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(53, 39);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -86,7 +92,7 @@
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = global::Booking.Properties.Resources.PngItem_202269;
-            this.pictureBox5.Location = new System.Drawing.Point(176, 485);
+            this.pictureBox5.Location = new System.Drawing.Point(74, 485);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(53, 39);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -97,7 +103,7 @@
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = global::Booking.Properties.Resources.password_lock_12;
-            this.pictureBox4.Location = new System.Drawing.Point(176, 317);
+            this.pictureBox4.Location = new System.Drawing.Point(74, 317);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(53, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +114,7 @@
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = global::Booking.Properties.Resources.vecteezy_email_icon_for_your_website_mobile_presentation_and_logo_22647958;
-            this.pictureBox3.Location = new System.Drawing.Point(176, 375);
+            this.pictureBox3.Location = new System.Drawing.Point(74, 385);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(53, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +125,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::Booking.Properties.Resources.password_lock_12;
-            this.pictureBox2.Location = new System.Drawing.Point(178, 255);
+            this.pictureBox2.Location = new System.Drawing.Point(74, 255);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(53, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,7 +136,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::Booking.Properties.Resources.download;
-            this.pictureBox1.Location = new System.Drawing.Point(178, 193);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 201);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(53, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +169,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(277, 426);
+            this.label2.Location = new System.Drawing.Point(358, 426);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 20);
             this.label2.TabIndex = 40;
@@ -172,7 +178,7 @@
             // verify
             // 
             this.verify.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.verify.Location = new System.Drawing.Point(572, 366);
+            this.verify.Location = new System.Drawing.Point(648, 385);
             this.verify.Name = "verify";
             this.verify.Size = new System.Drawing.Size(75, 39);
             this.verify.TabIndex = 42;
@@ -180,13 +186,67 @@
             this.verify.UseVisualStyleBackColor = true;
             this.verify.Click += new System.EventHandler(this.verify_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(153, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 20);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Username :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(153, 274);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Password";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(143, 336);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 20);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Confirm Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(151, 394);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 20);
+            this.label6.TabIndex = 46;
+            this.label6.Text = "Email Address";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(143, 504);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 20);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "Contact Number";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(147, 551);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 20);
+            this.label8.TabIndex = 48;
+            this.label8.Text = "Full name";
+            // 
             // otp
             // 
             this.otp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.otp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.otp.BottomBorderColor = System.Drawing.Color.Black;
             this.otp.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.otp.Location = new System.Drawing.Point(331, 420);
+            this.otp.Location = new System.Drawing.Point(434, 426);
             this.otp.Name = "otp";
             this.otp.Size = new System.Drawing.Size(100, 26);
             this.otp.TabIndex = 41;
@@ -194,7 +254,7 @@
             // signUp
             // 
             this.signUp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.signUp.Angle = 193F;
+            this.signUp.Angle = 329F;
             this.signUp.BorderRadius = 20;
             this.signUp.Color0 = System.Drawing.Color.Blue;
             this.signUp.Color1 = System.Drawing.Color.MediumSpringGreen;
@@ -214,7 +274,7 @@
             this.lname.BottomBorderColor = System.Drawing.Color.Black;
             this.lname.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.lname.ForeColor = System.Drawing.Color.Gray;
-            this.lname.Location = new System.Drawing.Point(402, 546);
+            this.lname.Location = new System.Drawing.Point(454, 546);
             this.lname.Name = "lname";
             this.lname.Size = new System.Drawing.Size(156, 26);
             this.lname.TabIndex = 37;
@@ -230,7 +290,7 @@
             this.fname.BottomBorderColor = System.Drawing.Color.Black;
             this.fname.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.fname.ForeColor = System.Drawing.Color.Gray;
-            this.fname.Location = new System.Drawing.Point(238, 546);
+            this.fname.Location = new System.Drawing.Point(288, 546);
             this.fname.Name = "fname";
             this.fname.Size = new System.Drawing.Size(158, 26);
             this.fname.TabIndex = 36;
@@ -246,7 +306,7 @@
             this.number.BottomBorderColor = System.Drawing.Color.Black;
             this.number.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.number.ForeColor = System.Drawing.Color.Gray;
-            this.number.Location = new System.Drawing.Point(235, 485);
+            this.number.Location = new System.Drawing.Point(297, 485);
             this.number.Name = "number";
             this.number.Size = new System.Drawing.Size(320, 39);
             this.number.TabIndex = 35;
@@ -262,11 +322,11 @@
             this.email.BottomBorderColor = System.Drawing.Color.Black;
             this.email.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.email.ForeColor = System.Drawing.Color.Gray;
-            this.email.Location = new System.Drawing.Point(237, 375);
+            this.email.Location = new System.Drawing.Point(297, 375);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(320, 39);
             this.email.TabIndex = 34;
-            this.email.Text = "Email Address ";
+            this.email.Text = "xxxxxxx@gmail.com";
             this.email.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.email.Enter += new System.EventHandler(this.Email_Enter);
             this.email.Leave += new System.EventHandler(this.Email_Leave);
@@ -278,11 +338,11 @@
             this.con_pass.BottomBorderColor = System.Drawing.Color.Black;
             this.con_pass.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.con_pass.ForeColor = System.Drawing.Color.Gray;
-            this.con_pass.Location = new System.Drawing.Point(238, 317);
+            this.con_pass.Location = new System.Drawing.Point(300, 317);
             this.con_pass.Name = "con_pass";
             this.con_pass.Size = new System.Drawing.Size(317, 39);
             this.con_pass.TabIndex = 33;
-            this.con_pass.Text = "Confirm Password";
+            this.con_pass.Text = "Retype Password";
             this.con_pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.con_pass.TextChanged += new System.EventHandler(this.con_Pass_TextChanged);
             this.con_pass.Enter += new System.EventHandler(this.Con_Pass_Enter);
@@ -294,7 +354,7 @@
             this.password.BottomBorderColor = System.Drawing.Color.Black;
             this.password.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.password.ForeColor = System.Drawing.Color.Gray;
-            this.password.Location = new System.Drawing.Point(237, 255);
+            this.password.Location = new System.Drawing.Point(300, 255);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(310, 39);
             this.password.TabIndex = 32;
@@ -310,7 +370,7 @@
             this.userN.BottomBorderColor = System.Drawing.Color.Black;
             this.userN.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.userN.ForeColor = System.Drawing.Color.Gray;
-            this.userN.Location = new System.Drawing.Point(237, 193);
+            this.userN.Location = new System.Drawing.Point(300, 210);
             this.userN.Name = "userN";
             this.userN.Size = new System.Drawing.Size(310, 39);
             this.userN.TabIndex = 31;
@@ -336,6 +396,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 808);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.verify);
             this.Controls.Add(this.otp);
             this.Controls.Add(this.label2);
@@ -397,5 +463,11 @@
         private usercontrol.CustomTextBox otp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button verify;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

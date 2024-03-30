@@ -111,8 +111,8 @@ namespace Booking
         {
             if (string.IsNullOrWhiteSpace(userN.Text) || userN.Text == "Username" ||
             string.IsNullOrWhiteSpace(password.Text) || password.Text == "Password" ||
-            string.IsNullOrWhiteSpace(con_pass.Text) || con_pass.Text == "Confirm Password" ||
-            string.IsNullOrWhiteSpace(email.Text) || email.Text == "Email Address" ||
+            string.IsNullOrWhiteSpace(con_pass.Text) || con_pass.Text == "Retype Password" ||
+            string.IsNullOrWhiteSpace(email.Text) || email.Text == "xxxxxxx@gmail.com" ||
             string.IsNullOrWhiteSpace(number.Text) || number.Text == "09XXXXXXXXX" ||
             string.IsNullOrWhiteSpace(fname.Text) || fname.Text == "First Name" ||
             string.IsNullOrWhiteSpace(lname.Text) || lname.Text == "Last Name" || buttonClicked == false )
@@ -138,6 +138,7 @@ namespace Booking
             }
             try
             {
+                con.Open();
                 // Check if username already exists
                 MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Email_Address from user where Username= '" + userN.Text + "' OR Email_Address='"+email.Text+"'", con);
                 DataTable dt = new DataTable();
@@ -195,7 +196,7 @@ namespace Booking
 
         private void Con_Pass_Enter(object sender, EventArgs e)
         {
-            if (con_pass.Text == "Confirm Password")
+            if (con_pass.Text == "Retype Password")
             {
                 con_pass.Text = "";
                 con_pass.ForeColor = Color.Black;
@@ -204,7 +205,7 @@ namespace Booking
 
         private void Email_Enter(object sender, EventArgs e)
         {
-            if (email.Text == "Email Address ")
+            if (email.Text == "xxxxxxx@gmail.com")
             {
                 email.Text = "";
                 email.ForeColor = Color.Black;
@@ -215,7 +216,7 @@ namespace Booking
         {
             if (email.Text == "")
             {
-                email.Text = "Email Address ";
+                email.Text = "xxxxxxx@gmail.com";
 
                 email.ForeColor = Color.Silver;
             }

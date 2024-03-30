@@ -45,6 +45,7 @@ namespace Booking
             }
             else
             {
+                con.Open();
                 MySqlDataAdapter sd = new MySqlDataAdapter("select Email_Address from user where Email_Address= '" + res_email.Text + "'", con);
                 DataTable dt = new DataTable();
                 sd.Fill(dt);

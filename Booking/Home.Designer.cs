@@ -35,21 +35,21 @@
             this.forgot = new System.Windows.Forms.LinkLabel();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.username = new Booking.usercontrol.CustomTextBox();
-            this.pass = new Booking.usercontrol.CustomTextBox();
-            this.Login_Button = new Booking.usercontrol.CustomButton();
             this.label4 = new System.Windows.Forms.Label();
             this.Register = new System.Windows.Forms.LinkLabel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.logo = new Booking.usercontrol.roundPictureeBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Login_Button = new Booking.usercontrol.CustomButton();
+            this.logo = new Booking.usercontrol.roundPictureeBox();
+            this.pass = new Booking.usercontrol.CustomTextBox();
+            this.username = new Booking.usercontrol.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -112,51 +112,6 @@
             // 
             this.errorProvider2.ContainerControl = this;
             // 
-            // username
-            // 
-            this.username.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.username.BottomBorderColor = System.Drawing.Color.Black;
-            this.username.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.username.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.username.Location = new System.Drawing.Point(314, 294);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(271, 30);
-            this.username.TabIndex = 9;
-            this.username.Text = "Type your username";
-            this.username.Enter += new System.EventHandler(this.username_Enter);
-            this.username.Leave += new System.EventHandler(this.username_Leave);
-            // 
-            // pass
-            // 
-            this.pass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pass.BottomBorderColor = System.Drawing.Color.Black;
-            this.pass.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.pass.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.pass.Location = new System.Drawing.Point(314, 391);
-            this.pass.Name = "pass";
-            this.pass.Size = new System.Drawing.Size(271, 30);
-            this.pass.TabIndex = 10;
-            this.pass.Text = "Type your password";
-            this.pass.TextChanged += new System.EventHandler(this.pass_TextChange);
-            this.pass.Enter += new System.EventHandler(this.pass_Enter);
-            // 
-            // Login_Button
-            // 
-            this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Button.Angle = 125F;
-            this.Login_Button.BorderRadius = 20;
-            this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
-            this.Login_Button.Color1 = System.Drawing.Color.Magenta;
-            this.Login_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login_Button.ForeColor = System.Drawing.Color.White;
-            this.Login_Button.Location = new System.Drawing.Point(275, 487);
-            this.Login_Button.Name = "Login_Button";
-            this.Login_Button.Size = new System.Drawing.Size(310, 58);
-            this.Login_Button.TabIndex = 12;
-            this.Login_Button.Click += new System.EventHandler(this.Login_Button_Click);
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -192,17 +147,6 @@
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
-            // logo
-            // 
-            this.logo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.logo.Image = global::Booking.Properties.Resources.TicketEase;
-            this.logo.Location = new System.Drawing.Point(289, 12);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(261, 155);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 11;
-            this.logo.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -224,6 +168,62 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
+            // 
+            // Login_Button
+            // 
+            this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Login_Button.Angle = 277F;
+            this.Login_Button.BorderRadius = 20;
+            this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
+            this.Login_Button.Color1 = System.Drawing.Color.Magenta;
+            this.Login_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_Button.ForeColor = System.Drawing.Color.White;
+            this.Login_Button.Location = new System.Drawing.Point(275, 487);
+            this.Login_Button.Name = "Login_Button";
+            this.Login_Button.Size = new System.Drawing.Size(310, 58);
+            this.Login_Button.TabIndex = 12;
+            this.Login_Button.Click += new System.EventHandler(this.Login_Button_Click);
+            // 
+            // logo
+            // 
+            this.logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.logo.Image = global::Booking.Properties.Resources.TicketEase;
+            this.logo.Location = new System.Drawing.Point(289, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(261, 155);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 11;
+            this.logo.TabStop = false;
+            // 
+            // pass
+            // 
+            this.pass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pass.BottomBorderColor = System.Drawing.Color.Black;
+            this.pass.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
+            this.pass.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.pass.Location = new System.Drawing.Point(314, 391);
+            this.pass.Name = "pass";
+            this.pass.Size = new System.Drawing.Size(271, 30);
+            this.pass.TabIndex = 10;
+            this.pass.Text = "Type your password";
+            this.pass.TextChanged += new System.EventHandler(this.pass_TextChange);
+            this.pass.Enter += new System.EventHandler(this.pass_Enter);
+            // 
+            // username
+            // 
+            this.username.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.username.BottomBorderColor = System.Drawing.Color.Black;
+            this.username.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
+            this.username.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.username.Location = new System.Drawing.Point(314, 294);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(271, 30);
+            this.username.TabIndex = 9;
+            this.username.Text = "Type your username";
+            this.username.Enter += new System.EventHandler(this.username_Enter);
+            this.username.Leave += new System.EventHandler(this.username_Leave);
             // 
             // Home
             // 
@@ -250,9 +250,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

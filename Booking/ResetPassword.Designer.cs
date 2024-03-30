@@ -32,21 +32,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.Continue = new Booking.usercontrol.CustomButton3();
+            this.res_email = new Booking.usercontrol.CustomTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.customButton41 = new Booking.usercontrol.CustomButton4();
+            this.res_otp = new Booking.usercontrol.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel_change = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Back = new System.Windows.Forms.PictureBox();
             this.but_change = new Booking.usercontrol.CustomButton5();
             this.rescon_pass = new Booking.usercontrol.CustomTextBox();
             this.res_pas = new Booking.usercontrol.CustomTextBox();
-            this.customButton41 = new Booking.usercontrol.CustomButton4();
-            this.res_otp = new Booking.usercontrol.CustomTextBox();
-            this.Continue = new Booking.usercontrol.CustomButton3();
-            this.res_email = new Booking.usercontrol.CustomTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Back = new System.Windows.Forms.PictureBox();
             this.logo = new Booking.usercontrol.roundPictureeBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -100,6 +100,34 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Enter Email Address";
             // 
+            // Continue
+            // 
+            this.Continue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Continue.Angle = 237F;
+            this.Continue.BorderRadius = 20;
+            this.Continue.Color0 = System.Drawing.Color.Blue;
+            this.Continue.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Continue.ForeColor = System.Drawing.Color.White;
+            this.Continue.Location = new System.Drawing.Point(60, 132);
+            this.Continue.Name = "Continue";
+            this.Continue.Size = new System.Drawing.Size(336, 49);
+            this.Continue.TabIndex = 1;
+            this.Continue.Click += new System.EventHandler(this.customButton31_Click);
+            // 
+            // res_email
+            // 
+            this.res_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.res_email.BottomBorderColor = System.Drawing.Color.Black;
+            this.res_email.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
+            this.res_email.Location = new System.Drawing.Point(60, 57);
+            this.res_email.Name = "res_email";
+            this.res_email.Size = new System.Drawing.Size(356, 26);
+            this.res_email.TabIndex = 0;
+            this.res_email.Text = "Enter Email Address";
+            this.res_email.Enter += new System.EventHandler(this.res_email_Enter);
+            this.res_email.Leave += new System.EventHandler(this.res_email_Leave);
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -110,6 +138,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 222);
             this.panel2.TabIndex = 3;
+            // 
+            // customButton41
+            // 
+            this.customButton41.Angle = 242F;
+            this.customButton41.BorderRadius = 20;
+            this.customButton41.Color0 = System.Drawing.Color.Blue;
+            this.customButton41.Color1 = System.Drawing.Color.Orange;
+            this.customButton41.ForeColor = System.Drawing.Color.White;
+            this.customButton41.Location = new System.Drawing.Point(50, 148);
+            this.customButton41.Name = "customButton41";
+            this.customButton41.Size = new System.Drawing.Size(369, 46);
+            this.customButton41.TabIndex = 2;
+            this.customButton41.Click += new System.EventHandler(this.customButton41_Click);
+            // 
+            // res_otp
+            // 
+            this.res_otp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.res_otp.BottomBorderColor = System.Drawing.Color.Black;
+            this.res_otp.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
+            this.res_otp.Location = new System.Drawing.Point(208, 57);
+            this.res_otp.Name = "res_otp";
+            this.res_otp.Size = new System.Drawing.Size(100, 26);
+            this.res_otp.TabIndex = 1;
             // 
             // label3
             // 
@@ -156,38 +207,9 @@
             this.panel_change.Size = new System.Drawing.Size(474, 222);
             this.panel_change.TabIndex = 4;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Enter New Password: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 86);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(180, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Confirm New Password: ";
-            // 
-            // Back
-            // 
-            this.Back.Image = global::Booking.Properties.Resources.back_arrow_3545314;
-            this.Back.Location = new System.Drawing.Point(-3, 2);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(88, 46);
-            this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Back.TabIndex = 40;
-            this.Back.TabStop = false;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
-            // 
             // but_change
             // 
-            this.but_change.Angle = 199F;
+            this.but_change.Angle = 66F;
             this.but_change.BorderRadius = 20;
             this.but_change.Color0 = System.Drawing.Color.Blue;
             this.but_change.Color1 = System.Drawing.Color.Navy;
@@ -221,56 +243,34 @@
             this.res_pas.Size = new System.Drawing.Size(271, 26);
             this.res_pas.TabIndex = 2;
             // 
-            // customButton41
+            // label7
             // 
-            this.customButton41.Angle = 14F;
-            this.customButton41.BorderRadius = 20;
-            this.customButton41.Color0 = System.Drawing.Color.Blue;
-            this.customButton41.Color1 = System.Drawing.Color.Orange;
-            this.customButton41.ForeColor = System.Drawing.Color.White;
-            this.customButton41.Location = new System.Drawing.Point(50, 148);
-            this.customButton41.Name = "customButton41";
-            this.customButton41.Size = new System.Drawing.Size(369, 46);
-            this.customButton41.TabIndex = 2;
-            this.customButton41.Click += new System.EventHandler(this.customButton41_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 86);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(180, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Confirm New Password: ";
             // 
-            // res_otp
+            // label6
             // 
-            this.res_otp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.res_otp.BottomBorderColor = System.Drawing.Color.Black;
-            this.res_otp.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.res_otp.Location = new System.Drawing.Point(208, 57);
-            this.res_otp.Name = "res_otp";
-            this.res_otp.Size = new System.Drawing.Size(100, 26);
-            this.res_otp.TabIndex = 1;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(164, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Enter New Password: ";
             // 
-            // Continue
+            // Back
             // 
-            this.Continue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Continue.Angle = 9F;
-            this.Continue.BorderRadius = 20;
-            this.Continue.Color0 = System.Drawing.Color.Blue;
-            this.Continue.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Continue.ForeColor = System.Drawing.Color.White;
-            this.Continue.Location = new System.Drawing.Point(60, 132);
-            this.Continue.Name = "Continue";
-            this.Continue.Size = new System.Drawing.Size(336, 49);
-            this.Continue.TabIndex = 1;
-            this.Continue.Click += new System.EventHandler(this.customButton31_Click);
-            // 
-            // res_email
-            // 
-            this.res_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.res_email.BottomBorderColor = System.Drawing.Color.Black;
-            this.res_email.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.res_email.Location = new System.Drawing.Point(60, 57);
-            this.res_email.Name = "res_email";
-            this.res_email.Size = new System.Drawing.Size(356, 26);
-            this.res_email.TabIndex = 0;
-            this.res_email.Text = "Enter Email Address";
-            this.res_email.Enter += new System.EventHandler(this.res_email_Enter);
-            this.res_email.Leave += new System.EventHandler(this.res_email_Leave);
+            this.Back.Image = global::Booking.Properties.Resources.back_arrow_3545314;
+            this.Back.Location = new System.Drawing.Point(-3, 2);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(88, 46);
+            this.Back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Back.TabIndex = 40;
+            this.Back.TabStop = false;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
             // logo
             // 
