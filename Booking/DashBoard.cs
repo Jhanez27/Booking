@@ -10,7 +10,15 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net.Mail;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Util.Store;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Net;
+using System.Threading;
 
 namespace Booking
 {
@@ -28,26 +36,23 @@ namespace Booking
             currentUser = user;
             tripTableLayoutPanel = new TableLayoutPanel();
             tripTableLayoutPanel.ForeColor = Color.Black;
-            tripTableLayoutPanel.Font = new Font("Myanmar Text", 9, FontStyle.Regular);
-            tripTableLayoutPanel.Location = new Point(200, 82);
-            tripTableLayoutPanel.Size = new Size(640, 350);
+            tripTableLayoutPanel.Font = new Font("Myanmar Text", 14, FontStyle.Regular);
+            tripTableLayoutPanel.Location = new Point(250, 120);
+            tripTableLayoutPanel.Size = new Size(800, 500);
             tripTableLayoutPanel.AutoScroll = true;
+            tripTableLayoutPanel.Anchor = AnchorStyles.None;
             tripTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize)); 
             this.Controls.Add(tripTableLayoutPanel);
 
         }
 
-        private void logout_Click(object sender, EventArgs e)
-        {
-            currentUser = null;
-            new Home().Show();
-            this.Hide();
-        }
-
         private void DashBoard_Load(object sender, EventArgs e)
         {
             curentuser.Text = currentUser != null ? currentUser.Username : "";
+            panel7.Visible = true;
             dash_text.Visible = true;
+            contact_us.Visible = false;
+            contact_panel.Visible = false;
             PopulateDetials();
         }
         private void InitializeLogoMap()
@@ -176,7 +181,133 @@ namespace Booking
             }
             reader.Close();
             con.Close();
+        }
 
+        private void contact_Click(object sender, EventArgs e)
+        {
+            panel7.Visible = true;
+            dash_text.Visible = false;
+            tripTableLayoutPanel.Visible = false;
+            contact_us.Visible = true;
+            contact_panel.Visible = true;
+        }
+
+        private void curentuser_Click(object sender, EventArgs e)
+        {
+            PopulateDetials();
+            dash_text.Visible = true;
+            tripTableLayoutPanel.Visible = true;
+            panel7.Visible = true;
+            contact_us.Visible = false;
+            contact_panel.Visible = false;   
+        }
+
+        private void history_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contactSubject_OnLeave(object sender, EventArgs e)
+        {
+            
+                if (contact_subject.Text != "")
+                {
+                    contact_subject.Text = "";
+
+                }
+
+            
+        }
+
+        private void contactMessage_OnLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contact_sendBTn_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            string useremail = "" ,userfname ="", userlname = "", usercontact = "";
+            string currentUsername = currentUser.Username;
+            string currentPass = currentUser.Password;
+            string query = "SELECT Email_Address,Fname, Lname,Contact_Number from user WHERE Username = @Username and Password = @Password";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Username", currentUsername);
+            command.Parameters.AddWithValue("@Password" ,currentPass);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                useremail = reader["Email_Address"].ToString();
+                userfname = reader["Fname"].ToString();
+                userlname = reader["Lname"].ToString();
+                usercontact = reader["Contact_Number"].ToString();
+
+            }
+            reader.Close();
+            con.Close();    
+                try
+                {
+                    // OAuth 2.0 authentication
+                    var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                        new ClientSecrets
+                        {
+                            ClientId = "710913857464-3rvaos761uctb0hbaue1cd2d1qof48vj.apps.googleusercontent.com",
+                            ClientSecret = "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"
+                        },
+                        new[] { "https://mail.google.com/" },
+                        "user",
+                        CancellationToken.None,
+                        new FileDataStore("credential_file_path")).Result;
+
+                    // Create SMTP client
+                    using (var smtp = new SmtpClient())
+                    {
+                        // Configure SMTP client
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = new NetworkCredential("ticketeasebookingnotification@gmail.com", "fxjm rmbl gozc kqrk");
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                        // Create mail message
+                        using (var message = new MailMessage())
+                        {
+                            message.From = new MailAddress("ticketeasebookingnotification@gmail.com");
+                            message.To.Add("ticketeasebookingnotification@gmail.com");
+                            message.Subject = contact_subject.Text;
+                            message.Body = $"Sender's Details:\n\n" +
+                           $"Name: {userfname} {userlname}\n" +
+                           $"Email: {useremail}\n" +
+                           $"Contact Number: {usercontact}\n\n" +
+                           $"Message:\n{contact_message.Text}";
+
+
+                            // Send mail
+                            smtp.Send(message);
+                            MessageBox.Show("Message Sent Successfully");
+                        contact_subject.Text = "";
+                        contact_message.Text = "";
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            
+        }
+        private void logout_Click(object sender, EventArgs e)
+        {
+            currentUser = null;
+            new Home().Show();
+            this.Hide();
         }
 
     }
