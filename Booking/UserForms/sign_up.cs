@@ -15,15 +15,14 @@ using System.Threading;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Util.Store;
 using System.Text.RegularExpressions;
+using Booking.Classes;
 
 namespace Booking
 {
     public partial class sign_up : Form
     {
         String randomCode;
-        public static String to;
         private bool buttonClicked = false;
-        MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public sign_up()
         {
             InitializeComponent();
@@ -62,50 +61,10 @@ namespace Booking
             buttonClicked = true;
             Random rand = new Random();
             randomCode = (rand.Next(999999)).ToString();
-            try
-            {
-                // OAuth 2.0 authentication
-                var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
-                    new ClientSecrets
-                    {
-                        ClientId = "710913857464-3rvaos761uctb0hbaue1cd2d1qof48vj.apps.googleusercontent.com",
-                        ClientSecret = "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"
-                    },
-                    new[] { "https://mail.google.com/" },
-                    "user",
-                    CancellationToken.None,
-                    new FileDataStore("credential_file_path")).Result;
+            ApplicationSystem s = new ApplicationSystem();
+            s.sendEmailToUser(email.Text , randomCode);
+            otp.Text = "";
 
-                // Create SMTP client
-                using (var smtp = new SmtpClient())
-                {
-                    // Configure SMTP client
-                    smtp.Host = "smtp.gmail.com";
-                    smtp.Port = 587;
-                    smtp.EnableSsl = true;
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential("ticketeasebookingnotification@gmail.com", "fxjm rmbl gozc kqrk");
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-
-                    // Create mail message
-                    using (var message = new MailMessage())
-                    {
-                        message.From = new MailAddress("ticketeasebookingnotification@gmail.com");
-                        message.To.Add(email.Text);
-                        message.Subject = "OTP";
-                        message.Body = "Your One Time Password (OTP) for verification is: " +
-                randomCode + ". Please enter this OTP to proceed with the sign up process.";
-
-                        // Send mail
-                        smtp.Send(message);
-                        MessageBox.Show("Code Sent Successfully");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void signUp_Click(object sender, EventArgs e)
         {
@@ -136,33 +95,12 @@ namespace Booking
                 MessageBox.Show("Invalid OTP", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            try
+            Account account = new Account(userN.Text, password.Text, email.Text,number.Text ,fname.Text,lname.Text);
+                    bool created = account.createAccount();
+            if (created == true)
             {
-                con.Open();
-                // Check if username already exists
-                MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Email_Address from user where Username= '" + userN.Text + "' OR Email_Address='"+email.Text+"'", con);
-                DataTable dt = new DataTable();
-                sd.Fill(dt);
-                if (dt.Rows.Count > 0)
-                    MessageBox.Show("Username or Email Address already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                {
-                    // Insert user data into the database
-                    MySqlDataAdapter da = new MySqlDataAdapter("insert into user(Username,Password,Email_Address,Contact_Number,Fname,Lname) values ('" + userN.Text + "', '" + password.Text + "', '" + email.Text + "','" + number.Text + "','" + fname.Text + "','" + lname.Text + "')", con);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);
-                    MessageBox.Show("Sign Up Successful, Continue to Login");
-                    new Home().Show();
-                    this.Hide();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                con.Close();
+                new Home().Show();
+                this.Close();
             }
         }
 
@@ -282,7 +220,7 @@ namespace Booking
         private void Back_OnClick(object sender, EventArgs e)
         {
             new Home().Show();
-            this.Hide();
+            this.Close();
         }
 
         private void password_TextChanged(object sender, EventArgs e)

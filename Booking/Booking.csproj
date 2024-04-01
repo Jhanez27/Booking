@@ -117,31 +117,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Query.cs" />
+    <Compile Include="Classes\ApplicationSystem.cs" />
     <Compile Include="Classes\User.cs" />
-    <Compile Include="DashBoard.cs">
+    <Compile Include="UserForms\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DashBoard.Designer.cs">
+    <Compile Include="UserForms\DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="UserForms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="UserForms\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResetPassword.cs">
+    <Compile Include="UserForms\ResetPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResetPassword.Designer.cs">
+    <Compile Include="UserForms\ResetPassword.Designer.cs">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="sign_up.cs">
+    <Compile Include="UserForms\sign_up.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sign_up.Designer.cs">
+    <Compile Include="UserForms\sign_up.Designer.cs">
       <DependentUpon>sign_up.cs</DependentUpon>
     </Compile>
     <Compile Include="usercontrol\CustomButton.cs">
@@ -183,10 +186,16 @@
     <Compile Include="usercontrol\roundPictureeBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="DashBoard.resx">
+    <Compile Include="UserForms\UserHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\UserHome.Designer.cs">
+      <DependentUpon>UserHome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserForms\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="UserForms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -199,10 +208,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ResetPassword.resx">
+    <EmbeddedResource Include="UserForms\ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sign_up.resx">
+    <EmbeddedResource Include="UserForms\sign_up.resx">
       <DependentUpon>sign_up.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\CustomButton.resx">

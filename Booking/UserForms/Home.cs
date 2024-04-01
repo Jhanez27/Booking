@@ -1,4 +1,5 @@
 ﻿using Booking.Classes;
+using Booking.UserForms;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,6 @@ namespace Booking
     public partial class Home : Form
     {
         private User curentUser;
-        MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Home()
         {
             InitializeComponent();
@@ -74,14 +74,9 @@ namespace Booking
                 MessageBox.Show("Please fill all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else {
-                con.Open();
-                MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Password from user where Username= '" + username.Text + "' and Password= '"+pass.Text+"'", con);
-                DataTable dt = new DataTable();
-                sd.Fill(dt);
-                if (dt.Rows.Count == 0)
-                    MessageBox.Show("Invalid Login Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
+            else { 
+                bool exist = curentUser.Login(username.Text , pass.Text);
+                if (exist)
                 {
                     curentUser.Username = username.Text;
                     curentUser.Password = pass.Text;
@@ -89,9 +84,9 @@ namespace Booking
                     new DashBoard(curentUser).Show();
                     this.Hide();
                 }
-            }
 
-            con.Close();
+                 
+            }
         }
 
         private void Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

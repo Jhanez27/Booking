@@ -37,6 +37,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.roundPictureeBox1 = new Booking.usercontrol.roundPictureeBox();
             this.curentuser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.profile = new System.Windows.Forms.Button();
@@ -54,10 +55,9 @@
             this.contact_sendBTn = new System.Windows.Forms.Button();
             this.contact_message = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.contact_subject = new Booking.usercontrol.CustomTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.contact_subject = new Booking.usercontrol.CustomTextBox();
-            this.roundPictureeBox1 = new Booking.usercontrol.roundPictureeBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -65,11 +65,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureeBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.contact_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureeBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -190,6 +190,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(163, 144);
             this.panel3.TabIndex = 2;
+            // 
+            // roundPictureeBox1
+            // 
+            this.roundPictureeBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureeBox1.Image")));
+            this.roundPictureeBox1.Location = new System.Drawing.Point(36, 16);
+            this.roundPictureeBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.roundPictureeBox1.Name = "roundPictureeBox1";
+            this.roundPictureeBox1.Size = new System.Drawing.Size(67, 48);
+            this.roundPictureeBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.roundPictureeBox1.TabIndex = 3;
+            this.roundPictureeBox1.TabStop = false;
             // 
             // curentuser
             // 
@@ -382,11 +393,10 @@
             // 
             // contact_sendBTn
             // 
-            this.contact_sendBTn.BackColor = System.Drawing.Color.White;
+            this.contact_sendBTn.BackColor = System.Drawing.Color.Pink;
             this.contact_sendBTn.FlatAppearance.BorderSize = 0;
-            this.contact_sendBTn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.contact_sendBTn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contact_sendBTn.ForeColor = System.Drawing.Color.Black;
+            this.contact_sendBTn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.contact_sendBTn.Location = new System.Drawing.Point(267, 325);
             this.contact_sendBTn.Name = "contact_sendBTn";
             this.contact_sendBTn.Size = new System.Drawing.Size(195, 45);
@@ -415,6 +425,18 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Message : ";
             // 
+            // contact_subject
+            // 
+            this.contact_subject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(122)))));
+            this.contact_subject.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.contact_subject.BottomBorderColor = System.Drawing.Color.Black;
+            this.contact_subject.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
+            this.contact_subject.ForeColor = System.Drawing.Color.White;
+            this.contact_subject.Location = new System.Drawing.Point(241, 45);
+            this.contact_subject.Name = "contact_subject";
+            this.contact_subject.Size = new System.Drawing.Size(258, 20);
+            this.contact_subject.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -438,29 +460,6 @@
             this.pictureBox7.TabIndex = 29;
             this.pictureBox7.TabStop = false;
             // 
-            // contact_subject
-            // 
-            this.contact_subject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(122)))));
-            this.contact_subject.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.contact_subject.BottomBorderColor = System.Drawing.Color.Black;
-            this.contact_subject.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
-            this.contact_subject.ForeColor = System.Drawing.Color.White;
-            this.contact_subject.Location = new System.Drawing.Point(241, 45);
-            this.contact_subject.Name = "contact_subject";
-            this.contact_subject.Size = new System.Drawing.Size(258, 20);
-            this.contact_subject.TabIndex = 1;
-            // 
-            // roundPictureeBox1
-            // 
-            this.roundPictureeBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureeBox1.Image")));
-            this.roundPictureeBox1.Location = new System.Drawing.Point(36, 16);
-            this.roundPictureeBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.roundPictureeBox1.Name = "roundPictureeBox1";
-            this.roundPictureeBox1.Size = new System.Drawing.Size(67, 48);
-            this.roundPictureeBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureeBox1.TabIndex = 3;
-            this.roundPictureeBox1.TabStop = false;
-            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,6 +473,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DashBoard";
@@ -488,13 +488,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roundPictureeBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.contact_panel.ResumeLayout(false);
             this.contact_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureeBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
