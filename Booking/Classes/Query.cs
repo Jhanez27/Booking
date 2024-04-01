@@ -58,7 +58,7 @@ namespace Booking.Classes
             sd.Fill(dt);
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("Invalid Login Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Wrong Login Credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 search = false;
             }
             con.Close();

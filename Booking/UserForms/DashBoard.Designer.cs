@@ -451,7 +451,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = global::Booking.Properties.Resources._1523;
+           
             this.pictureBox7.Location = new System.Drawing.Point(161, 526);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";

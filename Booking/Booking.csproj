@@ -51,6 +51,9 @@
     <Reference Include="Google.Protobuf, Version=3.25.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.25.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\..\Desktop\Guna.UI.dll</HintPath>
+    </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
@@ -63,6 +66,7 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.3.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
@@ -121,6 +125,11 @@
     <Compile Include="Classes\Query.cs" />
     <Compile Include="Classes\ApplicationSystem.cs" />
     <Compile Include="Classes\User.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserForms\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,14 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UserForms\ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\UserHome.resx">
+      <DependentUpon>UserHome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
@@ -278,15 +285,6 @@
     <None Include="Resources\kisspng-computer-icons-user-profile-person-5abd85306ff7f7.0592226715223698404586.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-logout-32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-logout-24.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-test-account-64.png" />
   </ItemGroup>
   <ItemGroup>
@@ -296,15 +294,16 @@
     <None Include="Resources\icons8-logout-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-book-and-pencil-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8-contact-us-50.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\x-letter.256x256.png" />
+    <None Include="Resources\circle-x.256x256.png" />
     <Content Include="Resources\oceanjet.png" />
     <Content Include="Resources\seacat.png" />
     <Content Include="Resources\supercat.png" />
+    <None Include="Resources\window-minimize.256x201.png" />
+    <None Include="Resources\window-minimize.256x20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

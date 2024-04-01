@@ -63,16 +63,6 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1 {
-            get {
-                object obj = ResourceManager.GetObject("1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1523 {
             get {
                 object obj = ResourceManager.GetObject("1523", resourceCulture);
@@ -103,9 +93,9 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap download {
+        internal static System.Drawing.Bitmap circle_x_256x256 {
             get {
-                object obj = ResourceManager.GetObject("download", resourceCulture);
+                object obj = ResourceManager.GetObject("circle-x.256x256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +103,9 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_book_and_pencil_50 {
+        internal static System.Drawing.Bitmap download {
             get {
-                object obj = ResourceManager.GetObject("icons8-book-and-pencil-50", resourceCulture);
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,26 +126,6 @@ namespace Booking.Properties {
         internal static System.Drawing.Bitmap icons8_history_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-history-50", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_logout_24 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-logout-24", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_logout_32 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-logout-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,6 +226,36 @@ namespace Booking.Properties {
         internal static System.Drawing.Bitmap vecteezy_technology_security_shield_logo_3d_vector_icon_of_lock_vpn_22347555_1 {
             get {
                 object obj = ResourceManager.GetObject("vecteezy_technology-security-shield-logo-3d-vector-icon-of-lock-vpn_22347555-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_minimize_256x20 {
+            get {
+                object obj = ResourceManager.GetObject("window-minimize.256x20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap window_minimize1 {
+            get {
+                object obj = ResourceManager.GetObject("window-minimize1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x_letter_256x256 {
+            get {
+                object obj = ResourceManager.GetObject("x-letter.256x256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
