@@ -192,9 +192,6 @@
     <Compile Include="usercontrol\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\roundPictureeBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="UserForms\UserHome.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -100,5 +100,15 @@ namespace Booking
             new ResetPassword().Show(); 
             this.Hide();
         }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }

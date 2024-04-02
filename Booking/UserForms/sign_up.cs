@@ -241,6 +241,20 @@ namespace Booking
             }
         }
 
-       
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            new Home().Show();
+            this.Close();
+        }
     }
 }

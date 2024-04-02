@@ -37,7 +37,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.roundPictureeBox1 = new Booking.usercontrol.roundPictureeBox();
             this.curentuser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.profile = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureeBox1)).BeginInit();
+            
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.contact_panel.SuspendLayout();
@@ -182,7 +181,7 @@
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(69)))), ((int)(((byte)(122)))));
-            this.panel3.Controls.Add(this.roundPictureeBox1);
+           
             this.panel3.Controls.Add(this.curentuser);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(2, 3);
@@ -190,17 +189,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(163, 144);
             this.panel3.TabIndex = 2;
-            // 
-            // roundPictureeBox1
-            // 
-            this.roundPictureeBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundPictureeBox1.Image")));
-            this.roundPictureeBox1.Location = new System.Drawing.Point(36, 16);
-            this.roundPictureeBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.roundPictureeBox1.Name = "roundPictureeBox1";
-            this.roundPictureeBox1.Size = new System.Drawing.Size(67, 48);
-            this.roundPictureeBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.roundPictureeBox1.TabIndex = 3;
-            this.roundPictureeBox1.TabStop = false;
             // 
             // curentuser
             // 
@@ -488,7 +476,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundPictureeBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -518,7 +505,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label dash_text;
         private System.Windows.Forms.Panel panel3;
-        private usercontrol.roundPictureeBox roundPictureeBox1;
         private System.Windows.Forms.Label curentuser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;

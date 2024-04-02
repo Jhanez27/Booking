@@ -96,29 +96,38 @@ namespace Booking
 
         private void but_change_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(res_pas.Text) || string.IsNullOrWhiteSpace(rescon_pass.Text))
+            if (string.IsNullOrWhiteSpace(res_pas.Text) || string.IsNullOrWhiteSpace(rescon_pass.Text))
             {
                 MessageBox.Show("Enter New Password");
                 return;
             }
-            if(res_pas.Text != rescon_pass.Text)
+            if (res_pas.Text != rescon_pass.Text)
             {
                 MessageBox.Show("Password did not match");
                 return;
             }
             else
             {
-               Query query = new Query();
+                Query query = new Query();
                 query.updateEmail(res_email.Text, res_pas.Text);
                 new Home().Show();
                 this.Close();
             }
         }
-
-        private void Back_Click(object sender, EventArgs e)
+        private void back_btn_Click(object sender, EventArgs e)
         {
             new Home().Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }
