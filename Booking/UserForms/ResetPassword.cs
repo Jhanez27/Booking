@@ -36,7 +36,7 @@ namespace Booking
             label5.Visible = false;
             panel_change.Visible = false;
         }
-        private void customButton31_Click(object sender, EventArgs e)
+        private void Continue_btn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(res_email.Text) || res_email.Text == "Enter Email Address")
             {
@@ -79,7 +79,7 @@ namespace Booking
             }
         }
 
-        private void customButton41_Click(object sender, EventArgs e)
+        private void otp_btn_Click(object sender, EventArgs e)
         {
             if(res_otp.Text != randomCode1 || string.IsNullOrWhiteSpace(res_otp.Text))
             {

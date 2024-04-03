@@ -2,10 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Booking.Classes
 {
@@ -96,6 +100,74 @@ namespace Booking.Classes
             con.Close();
 
 
+        }
+        public int getDailySales(string username)
+        {
+            int dailySales = 0;
+            string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            con.Open();
+            string query = "SELECT booking_amount FROM booking where username= '"+username+"' AND booking_date = @Today";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Today", todayDate);
+            MySqlDataReader reader = command.ExecuteReader();
+            Console.WriteLine(username);
+            Console.WriteLine(todayDate);
+            while(reader.Read()) { 
+                dailySales+= reader.GetInt32(reader.GetOrdinal("booking_amount"));
+            }
+            reader.Close();
+            con.Close();
+            return dailySales;
+        }
+        public int getNumberOfBookings(string username)
+        {
+            int numberBookings = 0;
+            string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            con.Open();
+            string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Today", todayDate);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                numberBookings++;
+            }
+            reader.Close();
+            con.Close();
+            return numberBookings;
+        }
+        public int getNumberOfTrips(string shippingLine)
+        {
+            int numberTrips = 0;
+            string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            Console.WriteLine(shippingLine);
+            try
+            {
+                con.Open();
+                string query = "SELECT COUNT(*) " +
+                      "FROM trip " +
+                      "INNER JOIN boat ON trip.boat_id = boat.boat_id " +
+                      "WHERE DATE(trip.date_departure) = DATE(@Today) " +
+                      "AND boat.boat_availableSeat > 0 " +
+                      "AND boat.shipping_line = @ShippingLine";
+
+                using (MySqlCommand command = new MySqlCommand(query, con))
+                {
+                    command.Parameters.AddWithValue("@ShippingLine", shippingLine);
+                    command.Parameters.AddWithValue("@Today", todayDate);
+                    numberTrips = Convert.ToInt32(command.ExecuteScalar());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return numberTrips;
         }
     }
 }

@@ -130,6 +130,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report.Designer.cs">
+      <DependentUpon>report.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForms\DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <Compile Include="UserForms\UserHome.Designer.cs">
       <DependentUpon>UserHome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="report.resx">
+      <DependentUpon>report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForms\DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,10 +303,15 @@
     <None Include="Resources\icons8-contact-us-50.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\supercat1.png" />
     <None Include="Resources\x-letter.256x256.png" />
     <None Include="Resources\circle-x.256x256.png" />
+    <None Include="Resources\currency-peso.226x256.png" />
     <Content Include="Resources\oceanjet.png" />
+    <None Include="Resources\peso.210x256.png" />
+    <None Include="Resources\oceanjet1.png" />
     <Content Include="Resources\seacat.png" />
+    <None Include="Resources\seacat1.png" />
     <Content Include="Resources\supercat.png" />
     <None Include="Resources\window-minimize.256x201.png" />
     <None Include="Resources\window-minimize.256x20.png" />

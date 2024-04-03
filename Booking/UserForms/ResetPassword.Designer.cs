@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.Continue = new Booking.usercontrol.CustomButton3();
+            this.Continue_btn = new Booking.usercontrol.CustomButton3();
             this.res_email = new Booking.usercontrol.CustomTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.customButton41 = new Booking.usercontrol.CustomButton4();
+            this.otp_btn = new Booking.usercontrol.CustomButton4();
             this.res_otp = new Booking.usercontrol.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::Booking.Properties.Resources._1523;
             this.pictureBox3.Location = new System.Drawing.Point(-2, 350);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(589, 132);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,10 +87,10 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.Continue);
+            this.panel1.Controls.Add(this.Continue_btn);
             this.panel1.Controls.Add(this.res_email);
             this.panel1.Location = new System.Drawing.Point(132, 237);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(316, 146);
             this.panel1.TabIndex = 18;
@@ -107,21 +107,21 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Enter Email Address";
             // 
-            // Continue
+            // Continue_btn
             // 
-            this.Continue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Continue.Angle = 360F;
-            this.Continue.BorderRadius = 20;
-            this.Continue.Color0 = System.Drawing.Color.Blue;
-            this.Continue.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Continue.ForeColor = System.Drawing.Color.White;
-            this.Continue.Location = new System.Drawing.Point(40, 86);
-            this.Continue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Continue.Name = "Continue";
-            this.Continue.Size = new System.Drawing.Size(224, 32);
-            this.Continue.TabIndex = 1;
-            this.Continue.Click += new System.EventHandler(this.customButton31_Click);
+            this.Continue_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Continue_btn.Angle = 248F;
+            this.Continue_btn.BorderRadius = 20;
+            this.Continue_btn.Color0 = System.Drawing.Color.Blue;
+            this.Continue_btn.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.Continue_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Continue_btn.ForeColor = System.Drawing.Color.White;
+            this.Continue_btn.Location = new System.Drawing.Point(40, 86);
+            this.Continue_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.Continue_btn.Name = "Continue_btn";
+            this.Continue_btn.Size = new System.Drawing.Size(224, 32);
+            this.Continue_btn.TabIndex = 1;
+            this.Continue_btn.Click += new System.EventHandler(this.Continue_btn_Click);
             // 
             // res_email
             // 
@@ -129,7 +129,7 @@
             this.res_email.BottomBorderColor = System.Drawing.Color.Black;
             this.res_email.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.res_email.Location = new System.Drawing.Point(40, 37);
-            this.res_email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.res_email.Margin = new System.Windows.Forms.Padding(2);
             this.res_email.Name = "res_email";
             this.res_email.Size = new System.Drawing.Size(237, 17);
             this.res_email.TabIndex = 0;
@@ -140,28 +140,28 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.customButton41);
+            this.panel2.Controls.Add(this.otp_btn);
             this.panel2.Controls.Add(this.res_otp);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(135, 237);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(316, 144);
             this.panel2.TabIndex = 3;
             // 
-            // customButton41
+            // otp_btn
             // 
-            this.customButton41.Angle = 5F;
-            this.customButton41.BorderRadius = 20;
-            this.customButton41.Color0 = System.Drawing.Color.Blue;
-            this.customButton41.Color1 = System.Drawing.Color.Orange;
-            this.customButton41.ForeColor = System.Drawing.Color.White;
-            this.customButton41.Location = new System.Drawing.Point(33, 96);
-            this.customButton41.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.customButton41.Name = "customButton41";
-            this.customButton41.Size = new System.Drawing.Size(246, 30);
-            this.customButton41.TabIndex = 2;
-            this.customButton41.Click += new System.EventHandler(this.customButton41_Click);
+            this.otp_btn.Angle = 105F;
+            this.otp_btn.BorderRadius = 20;
+            this.otp_btn.Color0 = System.Drawing.Color.Blue;
+            this.otp_btn.Color1 = System.Drawing.Color.Orange;
+            this.otp_btn.ForeColor = System.Drawing.Color.White;
+            this.otp_btn.Location = new System.Drawing.Point(33, 96);
+            this.otp_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.otp_btn.Name = "otp_btn";
+            this.otp_btn.Size = new System.Drawing.Size(246, 30);
+            this.otp_btn.TabIndex = 2;
+            this.otp_btn.Click += new System.EventHandler(this.otp_btn_Click);
             // 
             // res_otp
             // 
@@ -169,7 +169,7 @@
             this.res_otp.BottomBorderColor = System.Drawing.Color.Black;
             this.res_otp.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.res_otp.Location = new System.Drawing.Point(139, 37);
-            this.res_otp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.res_otp.Margin = new System.Windows.Forms.Padding(2);
             this.res_otp.Name = "res_otp";
             this.res_otp.Size = new System.Drawing.Size(67, 17);
             this.res_otp.TabIndex = 1;
@@ -218,21 +218,21 @@
             this.panel_change.Controls.Add(this.label7);
             this.panel_change.Controls.Add(this.label6);
             this.panel_change.Location = new System.Drawing.Point(130, 235);
-            this.panel_change.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_change.Margin = new System.Windows.Forms.Padding(2);
             this.panel_change.Name = "panel_change";
             this.panel_change.Size = new System.Drawing.Size(316, 144);
             this.panel_change.TabIndex = 4;
             // 
             // but_change
             // 
-            this.but_change.Angle = 190F;
+            this.but_change.Angle = 78F;
             this.but_change.BorderRadius = 20;
             this.but_change.Color0 = System.Drawing.Color.Blue;
             this.but_change.Color1 = System.Drawing.Color.Navy;
             this.but_change.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.but_change.ForeColor = System.Drawing.Color.White;
             this.but_change.Location = new System.Drawing.Point(54, 94);
-            this.but_change.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.but_change.Margin = new System.Windows.Forms.Padding(2);
             this.but_change.Name = "but_change";
             this.but_change.Size = new System.Drawing.Size(210, 32);
             this.but_change.TabIndex = 4;
@@ -244,7 +244,7 @@
             this.rescon_pass.BottomBorderColor = System.Drawing.Color.Black;
             this.rescon_pass.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.rescon_pass.Location = new System.Drawing.Point(129, 57);
-            this.rescon_pass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rescon_pass.Margin = new System.Windows.Forms.Padding(2);
             this.rescon_pass.Name = "rescon_pass";
             this.rescon_pass.PasswordChar = '●';
             this.rescon_pass.Size = new System.Drawing.Size(175, 17);
@@ -256,7 +256,7 @@
             this.res_pas.BottomBorderColor = System.Drawing.Color.Black;
             this.res_pas.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
             this.res_pas.Location = new System.Drawing.Point(123, 14);
-            this.res_pas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.res_pas.Margin = new System.Windows.Forms.Padding(2);
             this.res_pas.Name = "res_pas";
             this.res_pas.PasswordChar = '●';
             this.res_pas.Size = new System.Drawing.Size(181, 17);
@@ -361,7 +361,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ResetPassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPassword";
@@ -387,13 +387,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private usercontrol.CustomTextBox res_email;
-        private usercontrol.CustomButton3 Continue;
+        private usercontrol.CustomButton3 Continue_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private usercontrol.CustomTextBox res_otp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private usercontrol.CustomButton4 customButton41;
+        private usercontrol.CustomButton4 otp_btn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel_change;
         private usercontrol.CustomTextBox rescon_pass;
