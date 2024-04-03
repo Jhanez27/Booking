@@ -31,6 +31,7 @@ namespace Booking.UserForms
         }
         private void display_mainDashBoard  ()
         {
+            admin.Text = currentUser.Username +"'s Dashboard";
             string oceanjet = "Oceanjet";
             string seacat = "Seacat";
             string supercat = "Supercat";
@@ -69,5 +70,7 @@ namespace Booking.UserForms
             time.Text = DateTime.Now.ToLongTimeString();
             date.Text = DateTime.Now.ToLongDateString();
         }
+
+      
     }
 }
