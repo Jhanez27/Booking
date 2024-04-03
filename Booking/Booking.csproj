@@ -307,9 +307,13 @@
     <None Include="Resources\x-letter.256x256.png" />
     <None Include="Resources\circle-x.256x256.png" />
     <None Include="Resources\currency-peso.226x256.png" />
+    <None Include="Resources\customer-plus-major.256x242.png" />
+    <None Include="Resources\calendar-clock.233x256.png" />
     <Content Include="Resources\oceanjet.png" />
     <None Include="Resources\peso.210x256.png" />
     <None Include="Resources\oceanjet1.png" />
+    <None Include="Resources\sales-performance.256x2301.png" />
+    <None Include="Resources\passenger-ship.256x256.png" />
     <Content Include="Resources\seacat.png" />
     <None Include="Resources\seacat1.png" />
     <Content Include="Resources\supercat.png" />

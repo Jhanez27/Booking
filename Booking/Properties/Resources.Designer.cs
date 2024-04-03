@@ -93,6 +93,16 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_clock_233x256 {
+            get {
+                object obj = ResourceManager.GetObject("calendar-clock.233x256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circle_x_256x256 {
             get {
                 object obj = ResourceManager.GetObject("circle-x.256x256", resourceCulture);
@@ -106,6 +116,16 @@ namespace Booking.Properties {
         internal static System.Drawing.Bitmap currency_peso_226x256 {
             get {
                 object obj = ResourceManager.GetObject("currency-peso.226x256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customer_plus_major_256x242 {
+            get {
+                object obj = ResourceManager.GetObject("customer-plus-major.256x242", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,6 +203,16 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap passenger_ship_256x256 {
+            get {
+                object obj = ResourceManager.GetObject("passenger-ship.256x256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap password_lock_12 {
             get {
                 object obj = ResourceManager.GetObject("password-lock-12", resourceCulture);
@@ -226,6 +256,16 @@ namespace Booking.Properties {
         internal static System.Drawing.Bitmap sales_performance_256x230 {
             get {
                 object obj = ResourceManager.GetObject("sales-performance.256x230", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sales_performance1 {
+            get {
+                object obj = ResourceManager.GetObject("sales-performance1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

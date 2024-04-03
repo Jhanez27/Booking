@@ -18,16 +18,16 @@ namespace Booking.UserForms
         public UserHome(User user)
         {
             InitializeComponent();
-            query = new Query();
             currentUser = user;
         }
 
         private void UserHome_Load(object sender, EventArgs e)
         {
-
+            query = new Query();
             current_user.Text = currentUser.Username;
             dashboardMain_panel.Visible = true;
             display_mainDashBoard();
+            timer1.Start();
         }
         private void display_mainDashBoard  ()
         {
@@ -62,6 +62,12 @@ namespace Booking.UserForms
             dashboardMain_panel.Visible = true;
             display_mainDashBoard();
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time.Text = DateTime.Now.ToLongTimeString();
+            date.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
