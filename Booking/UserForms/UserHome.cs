@@ -25,22 +25,10 @@ namespace Booking.UserForms
         {
             query = new Query();
             current_user.Text = currentUser.Username;
-            dashboardMain_panel.Visible = true;
-            display_mainDashBoard();
-            timer1.Start();
+            dashBoardControl dbs = new dashBoardControl(currentUser);
+            dashboardMain_panel.Controls.Add(dbs);
         }
-        private void display_mainDashBoard  ()
-        {
-            admin.Text = currentUser.Username +"'s Dashboard";
-            string oceanjet = "Oceanjet";
-            string seacat = "Seacat";
-            string supercat = "Supercat";
-            daily_sale.Text = query.getDailySales(currentUser.Username).ToString();
-            booking_number.Text = query.getNumberOfBookings(currentUser.Username).ToString();
-            oceanjet_avail.Text = query.getNumberOfTrips(oceanjet).ToString();
-           seacat_avail.Text = query.getNumberOfTrips(seacat).ToString();
-            supercat_avail.Text = query.getNumberOfTrips(supercat).ToString();
-        }
+        
         private void minimize_btn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -60,16 +48,12 @@ namespace Booking.UserForms
 
         private void home_btn_Click(object sender, EventArgs e)
         {
-            dashboardMain_panel.Visible = true;
-            display_mainDashBoard();
+            dashBoardControl dbs = new dashBoardControl(currentUser);
+            dashboardMain_panel.Controls.Add(dbs);
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            time.Text = DateTime.Now.ToLongTimeString();
-            date.Text = DateTime.Now.ToLongDateString();
-        }
+       
 
       
     }
