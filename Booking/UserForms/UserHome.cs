@@ -1,4 +1,5 @@
 ﻿using Booking.Classes;
+using Booking.usercontrol;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,10 @@ namespace Booking.UserForms
             InitializeComponent();
             currentUser = user;
         }
-
+        public Panel DashboardPanel
+        {
+            get { return dashboardMain_panel; }
+        }
         private void UserHome_Load(object sender, EventArgs e)
         {
             query = new Query();
@@ -39,6 +43,22 @@ namespace Booking.UserForms
             System.Windows.Forms.Application.Exit();
         }
 
+
+        private void home_btn_Click(object sender, EventArgs e)
+        {
+            dashboardMain_panel.Controls.Clear();
+            dashBoardControl dbs = new dashBoardControl(currentUser);
+            dashboardMain_panel.Controls.Add(dbs);
+
+        }
+        private void book_btn_Click(object sender, EventArgs e)
+        {
+            dashboardMain_panel.Controls.Clear();
+            bookingControl bookingControl = new bookingControl(currentUser);
+            dashboardMain_panel.Controls.Add(bookingControl);
+
+
+        }
         private void logout_btn_Click(object sender, EventArgs e)
         {
             currentUser = null;
@@ -46,15 +66,6 @@ namespace Booking.UserForms
             this.Close();
         }
 
-        private void home_btn_Click(object sender, EventArgs e)
-        {
-            dashBoardControl dbs = new dashBoardControl(currentUser);
-            dashboardMain_panel.Controls.Add(dbs);
-
-        }
-
-       
-
-      
+        
     }
 }

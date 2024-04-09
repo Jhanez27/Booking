@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
@@ -16,8 +17,13 @@ namespace Booking.Classes
 
      public class Query
     {
+        List<Accommodation> accommodations = new List<Accommodation>();
+        List<Destination> destinations = new List<Destination>();
+        List<Trip> trips = new List<Trip>();
+        List<Origin> origins = new List<Origin>();
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean insertUser(string username, string password, string email, string pNumber,string fname, string lname)
+
         {
             bool res = false;
             try
@@ -148,7 +154,7 @@ namespace Booking.Classes
                       "FROM trip " +
                       "INNER JOIN boat ON trip.boat_id = boat.boat_id " +
                       "WHERE DATE(trip.date_departure) = DATE(@Today) " +
-                      "AND boat.boat_availableSeat > 0 " +
+                      "AND trip.availableSeat > 0 " +
                       "AND boat.shipping_line = @ShippingLine";
 
                 using (MySqlCommand command = new MySqlCommand(query, con))
@@ -169,5 +175,118 @@ namespace Booking.Classes
 
             return numberTrips;
         }
+        public List<Destination> addDestination()
+        {
+            HashSet<string> destinationNames = new HashSet<string>();
+
+            con.Open();
+            string query = "SELECT destination FROM trip";
+            MySqlCommand command = new MySqlCommand(query, con);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string destinationName = reader["destination"].ToString();
+
+                if (!destinationNames.Contains(destinationName))
+                {
+                    Destination destination = new Destination();
+                    destination.destinationName = destinationName;
+                    destinations.Add(destination);
+                    destinationNames.Add(destinationName);
+                }
+            }
+
+            reader.Close();
+            con.Close();
+
+            return destinations;
+        }
+        public List<Origin> addOrigin()
+        {
+            HashSet<string> originNames = new HashSet<string>();
+            con.Open();
+            string query = "SELECT origin FROM trip";
+            MySqlCommand command = new MySqlCommand(query, con);
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string originName = reader["origin"].ToString();
+
+                if (!originNames.Contains(originName))
+                {
+                    Origin origin = new Origin();
+                    origin.originName = originName;
+                    origins.Add(origin);
+
+                    // Add the origin name to the HashSet to mark it as encountered
+                    originNames.Add(originName);
+                }
+            }
+
+            reader.Close();
+            con.Close();
+
+            return origins;
+        }
+        public List<Trip> getTrips(string origin , string destination , DateTime departTime)
+        {
+            con.Open();
+            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE trip.date_departure = Date(@Schedule) and availableSeat > 0 and origin = @Origin and destination = @Destination";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Schedule",departTime);
+            command.Parameters.AddWithValue("@Origin", origin);
+            command.Parameters.AddWithValue("@Destination", destination);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int trip_id_int = reader.GetInt32(reader.GetOrdinal("trip_id"));
+                string tripId = trip_id_int.ToString();
+                string shippingLine = reader.GetString(reader.GetOrdinal("shipping_line"));
+                string boatname = reader.GetString(reader.GetOrdinal("boat_name"));
+                string boat_destination = reader.GetString(reader.GetOrdinal("destination"));
+                string boat_origin = reader.GetString(reader.GetOrdinal("origin"));
+                DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
+                string departtime = dateTime.ToString("hh:mm tt");
+
+                Trip trip = new Trip
+                {
+                    trip_id = tripId,
+                    shippingLine = shippingLine,
+                    boat_name = boatname,
+                    destination = boat_destination,
+                    origin = boat_origin,
+                    departureDate = departtime
+                };
+
+                // Add the Trip object to the trips list
+                trips.Add(trip);
+
+            }
+
+            reader.Close();
+            con.Close();
+
+            return trips;
+        }
+        public List<Accommodation> getAccomodation(string tripId)
+        {
+            con.Open();
+            string query = "SELECT accomodation_name FROM accomodation WHERE trip_id = @Trip";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Trip", tripId);
+            MySqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                Accommodation accommo = new Accommodation();
+                accommo.accomName = reader.GetString(reader.GetOrdinal("accomodation"));
+                accommodations.Add(accommo);
+            }
+            reader.Close();
+            con.Close() ;
+            return accommodations;
+        }
+
     }
 }

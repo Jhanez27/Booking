@@ -68,7 +68,7 @@
             // 
             this.exit_btn.FlatAppearance.BorderSize = 0;
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_btn.Location = new System.Drawing.Point(1773, 0);
+            this.exit_btn.Location = new System.Drawing.Point(1810, 0);
             this.exit_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(106, 68);
@@ -81,7 +81,7 @@
             // 
             this.minimize_btn.FlatAppearance.BorderSize = 0;
             this.minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimize_btn.Location = new System.Drawing.Point(1674, 0);
+            this.minimize_btn.Location = new System.Drawing.Point(1701, 0);
             this.minimize_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.minimize_btn.Name = "minimize_btn";
             this.minimize_btn.Size = new System.Drawing.Size(106, 68);
@@ -128,7 +128,7 @@
             this.logout_btn.ForeColor = System.Drawing.Color.Black;
             this.logout_btn.Image = ((System.Drawing.Image)(resources.GetObject("logout_btn.Image")));
             this.logout_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.logout_btn.Location = new System.Drawing.Point(18, 848);
+            this.logout_btn.Location = new System.Drawing.Point(18, 877);
             this.logout_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logout_btn.Name = "logout_btn";
             this.logout_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
@@ -190,6 +190,7 @@
             this.book_btn.TabIndex = 7;
             this.book_btn.Text = "Book";
             this.book_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_btn.Click += new System.EventHandler(this.book_btn_Click);
             // 
             // home_btn
             // 

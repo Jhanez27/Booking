@@ -80,7 +80,6 @@ namespace Booking
                 {
                     curentUser.Username = username.Text;
                     curentUser.Password = pass.Text;
-                    DashBoard dash = new DashBoard(curentUser);
                     new UserHome(curentUser).Show();
                     this.Hide();
                 }

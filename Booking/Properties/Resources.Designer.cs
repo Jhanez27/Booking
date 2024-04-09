@@ -253,6 +253,16 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rsi_logo_short {
+            get {
+                object obj = ResourceManager.GetObject("rsi-logo-short", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sales_performance_256x230 {
             get {
                 object obj = ResourceManager.GetObject("sales-performance.256x230", resourceCulture);

@@ -80,6 +80,11 @@
     <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
     </Reference>
+    <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -88,6 +93,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -121,9 +127,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Destination.cs" />
+    <Compile Include="Classes\Origin.cs" />
     <Compile Include="Classes\Query.cs" />
     <Compile Include="Classes\ApplicationSystem.cs" />
+    <Compile Include="Classes\Trip.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -136,17 +146,29 @@
     <Compile Include="report.Designer.cs">
       <DependentUpon>report.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\DashBoard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForms\DashBoard.Designer.cs">
-      <DependentUpon>DashBoard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForms\dashBoardControl.cs">
+    <Compile Include="usercontrol\bookingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserForms\dashBoardControl.Designer.cs">
+    <Compile Include="usercontrol\bookingControl.Designer.cs">
+      <DependentUpon>bookingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\dashBoardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\dashBoardControl.Designer.cs">
       <DependentUpon>dashBoardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\passengerDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\passengerDetails.Designer.cs">
+      <DependentUpon>passengerDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\tripDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\tripDetails.Designer.cs">
+      <DependentUpon>tripDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForms\Home.cs">
       <SubType>Form</SubType>
@@ -168,40 +190,40 @@
     <Compile Include="UserForms\sign_up.Designer.cs">
       <DependentUpon>sign_up.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\CustomButton.cs">
+    <Compile Include="customize\CustomButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="usercontrol\CustomButton.Designer.cs">
+    <Compile Include="customize\CustomButton.Designer.cs">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\CustomButton2.cs">
+    <Compile Include="customize\CustomButton2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="usercontrol\CustomButton2.Designer.cs">
+    <Compile Include="customize\CustomButton2.Designer.cs">
       <DependentUpon>CustomButton2.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\CustomButton3.cs">
+    <Compile Include="customize\CustomButton3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="usercontrol\CustomButton3.Designer.cs">
+    <Compile Include="customize\CustomButton3.Designer.cs">
       <DependentUpon>CustomButton3.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\CustomButton4.cs">
+    <Compile Include="customize\CustomButton4.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="usercontrol\CustomButton4.Designer.cs">
+    <Compile Include="customize\CustomButton4.Designer.cs">
       <DependentUpon>CustomButton4.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\CustomButton5.cs">
+    <Compile Include="customize\CustomButton5.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="usercontrol\CustomButton5.Designer.cs">
+    <Compile Include="customize\CustomButton5.Designer.cs">
       <DependentUpon>CustomButton5.cs</DependentUpon>
     </Compile>
-    <Compile Include="usercontrol\CustomTextBox.cs">
+    <Compile Include="customize\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="usercontrol\CustomTextBox.Designer.cs">
+    <Compile Include="customize\CustomTextBox.Designer.cs">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserForms\UserHome.cs">
@@ -213,11 +235,17 @@
     <EmbeddedResource Include="report.resx">
       <DependentUpon>report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\DashBoard.resx">
-      <DependentUpon>DashBoard.cs</DependentUpon>
+    <EmbeddedResource Include="usercontrol\bookingControl.resx">
+      <DependentUpon>bookingControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\dashBoardControl.resx">
+    <EmbeddedResource Include="usercontrol\dashBoardControl.resx">
       <DependentUpon>dashBoardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\passengerDetails.resx">
+      <DependentUpon>passengerDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\tripDetails.resx">
+      <DependentUpon>tripDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -233,16 +261,16 @@
     <EmbeddedResource Include="UserForms\sign_up.resx">
       <DependentUpon>sign_up.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usercontrol\CustomButton.resx">
+    <EmbeddedResource Include="customize\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usercontrol\CustomButton2.resx">
+    <EmbeddedResource Include="customize\CustomButton2.resx">
       <DependentUpon>CustomButton2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usercontrol\CustomButton3.resx">
+    <EmbeddedResource Include="customize\CustomButton3.resx">
       <DependentUpon>CustomButton3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usercontrol\CustomTextBox.resx">
+    <EmbeddedResource Include="customize\CustomTextBox.resx">
       <DependentUpon>CustomTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserHome.resx">
@@ -323,6 +351,7 @@
     <None Include="Resources\oceanjet1.png" />
     <None Include="Resources\sales-performance.256x2301.png" />
     <None Include="Resources\passenger-ship.256x256.png" />
+    <None Include="Resources\rsi-logo-short.png" />
     <Content Include="Resources\seacat.png" />
     <None Include="Resources\seacat1.png" />
     <Content Include="Resources\supercat.png" />
