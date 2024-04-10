@@ -21,6 +21,7 @@ namespace Booking.Classes
         List<Destination> destinations = new List<Destination>();
         List<Trip> trips = new List<Trip>();
         List<Origin> origins = new List<Origin>();
+        Trip tripDetails;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean insertUser(string username, string password, string email, string pNumber,string fname, string lname)
 
@@ -283,6 +284,41 @@ namespace Booking.Classes
             reader.Close();
             con.Close() ;
             return accommodations;
+        }
+        public Trip getTripDetials(string tripId)
+        {
+            con.Open();
+            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE trip.trip_id = @TripId";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@TripId",tripId);
+            MySqlDataReader reader = command.ExecuteReader();
+            while(reader.Read())
+            {
+                int trip_id_int = reader.GetInt32(reader.GetOrdinal("trip_id"));
+                string trip_Id = trip_id_int.ToString();
+                string shippingLine = reader.GetString(reader.GetOrdinal("shipping_line"));
+                string boatname = reader.GetString(reader.GetOrdinal("boat_name"));
+                string boat_destination = reader.GetString(reader.GetOrdinal("destination"));
+                string boat_origin = reader.GetString(reader.GetOrdinal("origin"));
+                DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
+                string formattedDate = dateTime.ToString("MMMM/dd/yyyy");
+                string departtime = dateTime.ToString("hh:mm tt");
+
+                tripDetails = new Trip()
+                {
+                    trip_id = trip_Id,
+                    shippingLine = shippingLine,
+                    boat_name = boatname,
+                    destination = boat_destination,
+                    origin = boat_origin,
+                    departureDate = formattedDate +  "   (" + departtime + ")"
+
+                 };
+
+             }
+                 reader.Close();
+                con.Close();
+                return tripDetails;                    
         }
 
     }
