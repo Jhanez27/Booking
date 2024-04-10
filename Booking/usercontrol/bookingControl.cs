@@ -53,13 +53,17 @@ namespace Booking.usercontrol
             string originName = origin_combo.SelectedItem.ToString();
             string destinationName = destination_combo.SelectedItem.ToString();
             DateTime departDate = departure_datePicker.Value.Date;
-            List<Trip> tripList = query.getTrips(originName, destinationName, departDate);
+            tripPanel.Controls.Clear();
+            List<Trip> tripList = new List <Trip>();
+            tripList.Clear();
+            tripList = query.getTrips(originName, destinationName, departDate);
+            Console.WriteLine(tripList.Count);
             if(tripList.Count == 0)
             {
                 MessageBox.Show("No trips available for the selected Origin and Destination.");
                 return;
             }
-            tripPanel.Controls.Clear();
+         
             int y = 0;
             foreach (Trip trip in tripList)
             {

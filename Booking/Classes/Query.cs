@@ -116,8 +116,6 @@ namespace Booking.Classes
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Today", todayDate);
             MySqlDataReader reader = command.ExecuteReader();
-            Console.WriteLine(username);
-            Console.WriteLine(todayDate);
             while(reader.Read()) { 
                 dailySales+= reader.GetInt32(reader.GetOrdinal("booking_amount"));
             }
@@ -146,7 +144,6 @@ namespace Booking.Classes
         {
             int numberTrips = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
-            Console.WriteLine(shippingLine);
             try
             {
                 con.Open();
@@ -219,8 +216,6 @@ namespace Booking.Classes
                     Origin origin = new Origin();
                     origin.originName = originName;
                     origins.Add(origin);
-
-                    // Add the origin name to the HashSet to mark it as encountered
                     originNames.Add(originName);
                 }
             }
@@ -232,6 +227,7 @@ namespace Booking.Classes
         }
         public List<Trip> getTrips(string origin , string destination , DateTime departTime)
         {
+            trips.Clear();
             con.Open();
             string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE trip.date_departure = Date(@Schedule) and availableSeat > 0 and origin = @Origin and destination = @Destination";
             MySqlCommand command = new MySqlCommand(query, con);
@@ -261,6 +257,7 @@ namespace Booking.Classes
                 };
 
                 // Add the Trip object to the trips list
+               
                 trips.Add(trip);
 
             }

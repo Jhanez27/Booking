@@ -70,8 +70,8 @@
             this.search_btn.ImageSize = new System.Drawing.Size(10, 10);
             this.search_btn.Location = new System.Drawing.Point(1257, 29);
             this.search_btn.Name = "search_btn";
-            this.search_btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.search_btn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.search_btn.OnHoverBaseColor = System.Drawing.Color.LightSkyBlue;
+            this.search_btn.OnHoverBorderColor = System.Drawing.Color.LightSkyBlue;
             this.search_btn.OnHoverForeColor = System.Drawing.Color.Black;
             this.search_btn.OnHoverImage = null;
             this.search_btn.OnPressedColor = System.Drawing.Color.Black;

@@ -42,9 +42,9 @@
             // 
             // icon
             // 
-            this.icon.Location = new System.Drawing.Point(184, 21);
+            this.icon.Location = new System.Drawing.Point(184, 34);
             this.icon.Name = "icon";
-            this.icon.Size = new System.Drawing.Size(122, 81);
+            this.icon.Size = new System.Drawing.Size(122, 55);
             this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.icon.TabIndex = 0;
             this.icon.TabStop = false;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.boat_name);
             this.Controls.Add(this.icon);
             this.Name = "tripDetails";
-            this.Size = new System.Drawing.Size(1411, 120);
+            this.Size = new System.Drawing.Size(1396, 120);
             this.Click += new System.EventHandler(this.tripDetails_Click);
             ((System.ComponentModel.ISupportInitialize)(this.icon)).EndInit();
             this.ResumeLayout(false);
