@@ -57,7 +57,6 @@ namespace Booking.usercontrol
             List<Trip> tripList = new List <Trip>();
             tripList.Clear();
             tripList = query.getTrips(originName, destinationName, departDate);
-            Console.WriteLine(tripList.Count);
             if(tripList.Count == 0)
             {
                 MessageBox.Show("No trips available for the selected Origin and Destination.");

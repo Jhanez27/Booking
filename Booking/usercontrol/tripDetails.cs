@@ -82,7 +82,7 @@ namespace Booking.usercontrol
         }
         private void TripDetails_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.LightSkyBlue; 
+            this.BackColor = Color.Silver; 
         }
         private void TripDetails_MouseLeave(object sender, EventArgs e)
         {

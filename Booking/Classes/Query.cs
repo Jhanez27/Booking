@@ -230,7 +230,7 @@ namespace Booking.Classes
         {
             trips.Clear();
             con.Open();
-            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE trip.date_departure = Date(@Schedule) and availableSeat > 0 and origin = @Origin and destination = @Destination";
+            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE DATE(trip.date_departure) = Date(@Schedule) and availableSeat > 0 and origin = @Origin and destination = @Destination";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Schedule",departTime);
             command.Parameters.AddWithValue("@Origin", origin);

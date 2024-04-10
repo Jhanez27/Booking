@@ -60,10 +60,9 @@
             // 
             this.search_btn.AnimationHoverSpeed = 0.07F;
             this.search_btn.AnimationSpeed = 0.03F;
-            this.search_btn.BackColor = System.Drawing.Color.White;
-            this.search_btn.BaseColor = System.Drawing.Color.White;
-            this.search_btn.BorderColor = System.Drawing.Color.Black;
-            this.search_btn.BorderSize = 1;
+            this.search_btn.BackColor = System.Drawing.Color.Silver;
+            this.search_btn.BaseColor = System.Drawing.Color.Gainsboro;
+            this.search_btn.BorderColor = System.Drawing.Color.Gainsboro;
             this.search_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_btn.ForeColor = System.Drawing.Color.Black;
             this.search_btn.Image = ((System.Drawing.Image)(resources.GetObject("search_btn.Image")));
@@ -75,7 +74,6 @@
             this.search_btn.OnHoverForeColor = System.Drawing.Color.Black;
             this.search_btn.OnHoverImage = null;
             this.search_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.search_btn.Radius = 5;
             this.search_btn.Size = new System.Drawing.Size(137, 56);
             this.search_btn.TabIndex = 6;
             this.search_btn.Text = "  Search";
