@@ -42,7 +42,7 @@
             // 
             // icon
             // 
-            this.icon.Location = new System.Drawing.Point(184, 34);
+            this.icon.Location = new System.Drawing.Point(187, 34);
             this.icon.Name = "icon";
             this.icon.Size = new System.Drawing.Size(122, 55);
             this.icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -53,6 +53,7 @@
             // 
             this.boat_name.AutoSize = true;
             this.boat_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boat_name.ForeColor = System.Drawing.Color.White;
             this.boat_name.Location = new System.Drawing.Point(397, 36);
             this.boat_name.Name = "boat_name";
             this.boat_name.Size = new System.Drawing.Size(64, 22);
@@ -63,6 +64,7 @@
             // 
             this.origin_label.AutoSize = true;
             this.origin_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.origin_label.ForeColor = System.Drawing.Color.White;
             this.origin_label.Location = new System.Drawing.Point(835, 34);
             this.origin_label.Name = "origin_label";
             this.origin_label.Size = new System.Drawing.Size(64, 22);
@@ -73,6 +75,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(975, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 22);
@@ -83,6 +86,7 @@
             // 
             this.destination_label.AutoSize = true;
             this.destination_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destination_label.ForeColor = System.Drawing.Color.White;
             this.destination_label.Location = new System.Drawing.Point(1062, 36);
             this.destination_label.Name = "destination_label";
             this.destination_label.Size = new System.Drawing.Size(64, 22);
@@ -93,6 +97,7 @@
             // 
             this.depart_time.AutoSize = true;
             this.depart_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.depart_time.ForeColor = System.Drawing.Color.White;
             this.depart_time.Location = new System.Drawing.Point(635, 34);
             this.depart_time.Name = "depart_time";
             this.depart_time.Size = new System.Drawing.Size(64, 22);
@@ -102,6 +107,7 @@
             // tripId_label
             // 
             this.tripId_label.AutoSize = true;
+            this.tripId_label.ForeColor = System.Drawing.Color.White;
             this.tripId_label.Location = new System.Drawing.Point(835, 82);
             this.tripId_label.Name = "tripId_label";
             this.tripId_label.Size = new System.Drawing.Size(57, 20);
@@ -113,6 +119,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(397, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 22);
@@ -122,6 +129,7 @@
             // shippingLine
             // 
             this.shippingLine.AutoSize = true;
+            this.shippingLine.ForeColor = System.Drawing.Color.White;
             this.shippingLine.Location = new System.Drawing.Point(1069, 82);
             this.shippingLine.Name = "shippingLine";
             this.shippingLine.Size = new System.Drawing.Size(57, 20);
@@ -133,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.Controls.Add(this.shippingLine);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tripId_label);

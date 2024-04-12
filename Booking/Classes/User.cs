@@ -37,6 +37,19 @@ namespace Booking.Classes
             return done;
 
         }
+        public int addPassenger(Passenger passenger)
+        {
+            int passenger_id = -1;
+            Query query = new Query();
+            passenger_id = query.insertPassenger(passenger);
+            return passenger_id;
+        }
+        public Boolean bookPassenger(PassengerBooking pb)
+        {
+            Query query = new Query();
+            bool done = query.insertBooking(pb);
+            return done;
+        }
 
     }
 }

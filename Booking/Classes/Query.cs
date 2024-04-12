@@ -1,8 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Booking.usercontrol;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -10,6 +12,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Booking.Classes
@@ -17,11 +20,12 @@ namespace Booking.Classes
 
      public class Query
     {
-        List<Accommodation> accommodations = new List<Accommodation>();
-        List<Destination> destinations = new List<Destination>();
-        List<Trip> trips = new List<Trip>();
-        List<Origin> origins = new List<Origin>();
-        Trip tripDetails;
+        private reportControl rp;
+        private List<Accommodation> accommodations = new List<Accommodation>();
+        private List<Destination> destinations = new List<Destination>();
+        private List<Trip> trips = new List<Trip>();
+        private List<Origin> origins = new List<Origin>();
+        private Trip tripDetails;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean insertUser(string username, string password, string email, string pNumber,string fname, string lname)
 
@@ -108,17 +112,17 @@ namespace Booking.Classes
 
 
         }
-        public int getDailySales(string username)
+        public float getDailySales(string username)
         {
-            int dailySales = 0;
+            float dailySales = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
             con.Open();
-            string query = "SELECT booking_amount FROM booking where username= '"+username+"' AND booking_date = @Today";
+            string query = "SELECT booking_amount FROM booking where username= '"+username+"' AND booking_date = @Today and booking_status = 'Paid'";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Today", todayDate);
             MySqlDataReader reader = command.ExecuteReader();
-            while(reader.Read()) { 
-                dailySales+= reader.GetInt32(reader.GetOrdinal("booking_amount"));
+            while(reader.Read()) {
+                dailySales += reader.GetFloat(reader.GetOrdinal("booking_amount"));
             }
             reader.Close();
             con.Close();
@@ -151,7 +155,7 @@ namespace Booking.Classes
                 string query = "SELECT COUNT(*) " +
                       "FROM trip " +
                       "INNER JOIN boat ON trip.boat_id = boat.boat_id " +
-                      "WHERE DATE(trip.date_departure) = DATE(@Today) " +
+                      "WHERE DATE(trip.date_departure) = DATE(@Today) AND TIME(trip.date_departure) > CURTIME()" +
                       "AND trip.availableSeat > 0 " +
                       "AND boat.shipping_line = @ShippingLine";
 
@@ -230,7 +234,7 @@ namespace Booking.Classes
         {
             trips.Clear();
             con.Open();
-            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE DATE(trip.date_departure) = Date(@Schedule) and availableSeat > 0 and origin = @Origin and destination = @Destination";
+            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE DATE(trip.date_departure) = Date(@Schedule) AND TIME(trip.date_departure) > CURTIME() and availableSeat > 0 and origin = @Origin and destination = @Destination";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Schedule",departTime);
             command.Parameters.AddWithValue("@Origin", origin);
@@ -271,14 +275,14 @@ namespace Booking.Classes
         public List<Accommodation> getAccomodation(string tripId)
         {
             con.Open();
-            string query = "SELECT accomodation_name FROM accomodation WHERE trip_id = @Trip";
+            string query = "SELECT accomodation_name FROM accomodation WHERE trip_id = @Trip AND seatAvailable > 0";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Trip", tripId);
             MySqlDataReader reader = command.ExecuteReader();
             while(reader.Read())
             {
                 Accommodation accommo = new Accommodation();
-                accommo.accomName = reader.GetString(reader.GetOrdinal("accomodation"));
+                accommo.accomName = reader.GetString(reader.GetOrdinal("accomodation_name"));
                 accommodations.Add(accommo);
             }
             reader.Close();
@@ -320,6 +324,98 @@ namespace Booking.Classes
                 con.Close();
                 return tripDetails;                    
         }
+        public int getAccomPrice(string tripId , string accomName)
+        {
+            int price = 0;
+            con.Open();
+            string query = "SELECT accomodation_price FROM accomodation WHERE trip_id = @Trip AND accomodation_name = @AccomodationName";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Trip", tripId);
+            command.Parameters.AddWithValue("@AccomodationName", accomName);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                price = reader.GetInt32(reader.GetOrdinal("accomodation_price"));
+                
+            }
+            reader.Close();
+            con.Close();
+            return price;
+        }
+        public int insertPassenger(Passenger p)
+        {
+            int passengerId = -1;
+            try
+            {
+                    con.Open();
+                    string insertQuery = "INSERT INTO passenger (passenger_fname, passenger_lname , passenger_age, passenger_gender, passenger_contactNum,passenger_email,passenger_ticket_number,passenger_accomodation) " +
+                    "VALUES (@Fname, @Lname, @Age,  @Gender, @Number, @Email, @TicketNum, @Accom); SELECT LAST_INSERT_ID();";
+                    MySqlCommand command = new MySqlCommand(insertQuery, con);
 
+                    // Add parameters to the command
+                    command.Parameters.AddWithValue("@Fname", p.passenger_fname);
+                    command.Parameters.AddWithValue("@Lname", p.passenger_lname);
+                    command.Parameters.AddWithValue("@Age", p.passenger_age);
+                    command.Parameters.AddWithValue("@Gender", p.passenger_gender);
+                    command.Parameters.AddWithValue("@Number", p.passenger_number);
+                    command.Parameters.AddWithValue("@Email", p.passenger_email);
+                   command.Parameters.AddWithValue("@TicketNum", p.ticketNumber);
+                    command.Parameters.AddWithValue("@Accom", p.accomodation);
+                        passengerId = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error adding passenger: " + ex.Message);
+            }
+            con.Close();
+            return passengerId;
+        }
+        public Boolean insertBooking(PassengerBooking pb)
+        {
+            bool inserted = false;
+           
+            try
+            {
+                con.Open();
+                string insertQuery = "INSERT INTO booking (username, passenger_id ,trip_id,booking_amount,booking_date,booking_status) " +
+                "VALUES (@Username, @PassengerId, @TripId,  @BookingAmount, @BookingDate, @BookingStatus)";
+                MySqlCommand command = new MySqlCommand(insertQuery, con);
+
+                // Add parameters to the command
+                command.Parameters.AddWithValue("@Username", pb.bookedAdmin);
+                command.Parameters.AddWithValue("@PassengerId", pb.passenger_id);
+                command.Parameters.AddWithValue("@TripId", pb.trip_id);
+                command.Parameters.AddWithValue("@BookingAmount", pb.booking_amount);
+                command.Parameters.AddWithValue("@BookingDate", pb.booked_Date);
+                command.Parameters.AddWithValue("@BookingStatus", pb.booked_status);
+
+                command.ExecuteNonQuery();
+                inserted = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error adding booking: " + ex.Message);
+            }
+            con.Close();
+            return inserted;
+        }
+        public void updateAccomodationSeat(string tripId , string accomodationName)
+        {
+            con.Open();
+            try
+            {
+                string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable - 1 WHERE trip_id = @TripId and accomodation_name = @AccomodationName";
+                MySqlCommand command = new MySqlCommand(@updateQuery, con);
+                command.Parameters.AddWithValue("@TripId", tripId);
+                command.Parameters.AddWithValue("@AccomodationName", accomodationName);
+                command.ExecuteNonQuery();
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            con.Close();
+
+        }
+       
     }
 }

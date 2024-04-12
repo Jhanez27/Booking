@@ -66,6 +66,12 @@ namespace Booking.UserForms
             this.Close();
         }
 
-        
+        private void gunaGradiantButton1_Click(object sender, EventArgs e)
+        {
+            dashboardMain_panel.Controls.Clear();
+            reportControl rc = new reportControl(currentUser);
+            dashboardMain_panel.Controls.Add(rc);
+           
+        }
     }
 }

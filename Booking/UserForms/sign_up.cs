@@ -84,6 +84,7 @@ namespace Booking
             if (!IsValidPhoneNumber(phoneNumber))
             {
                 MessageBox.Show("Phone Number Invalid");
+                return;
             }
             if (password.Text != con_pass.Text)
             {

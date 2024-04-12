@@ -35,21 +35,22 @@
             this.minimize_btn = new System.Windows.Forms.Button();
             this.dashboardMain_panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
+            this.current_user = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.gunaGradiantButton1 = new Guna.UI.WinForms.GunaGradiantButton();
             this.logout_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.bookhistory_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.book_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.home_btn = new Guna.UI.WinForms.GunaGradiantButton();
-            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.current_user = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
@@ -101,8 +102,9 @@
             // 
             // gunaPanel2
             // 
-            this.gunaPanel2.BackColor = System.Drawing.Color.DarkBlue;
+            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.gunaPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.gunaPanel2.Controls.Add(this.gunaGradiantButton1);
             this.gunaPanel2.Controls.Add(this.logout_btn);
             this.gunaPanel2.Controls.Add(this.bookhistory_btn);
             this.gunaPanel2.Controls.Add(this.book_btn);
@@ -117,105 +119,6 @@
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(431, 940);
             this.gunaPanel2.TabIndex = 1;
-            // 
-            // logout_btn
-            // 
-            this.logout_btn.AnimationHoverSpeed = 0.07F;
-            this.logout_btn.AnimationSpeed = 0.03F;
-            this.logout_btn.BaseColor1 = System.Drawing.Color.White;
-            this.logout_btn.BaseColor2 = System.Drawing.Color.White;
-            this.logout_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.logout_btn.ForeColor = System.Drawing.Color.Black;
-            this.logout_btn.Image = ((System.Drawing.Image)(resources.GetObject("logout_btn.Image")));
-            this.logout_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.logout_btn.Location = new System.Drawing.Point(18, 877);
-            this.logout_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.logout_btn.Name = "logout_btn";
-            this.logout_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.logout_btn.OnHoverBaseColor2 = System.Drawing.Color.SteelBlue;
-            this.logout_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.logout_btn.OnHoverImage = null;
-            this.logout_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.logout_btn.Radius = 10;
-            this.logout_btn.Size = new System.Drawing.Size(386, 77);
-            this.logout_btn.TabIndex = 9;
-            this.logout_btn.Text = "Logout";
-            this.logout_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
-            // 
-            // bookhistory_btn
-            // 
-            this.bookhistory_btn.AnimationHoverSpeed = 0.07F;
-            this.bookhistory_btn.AnimationSpeed = 0.03F;
-            this.bookhistory_btn.BaseColor1 = System.Drawing.Color.White;
-            this.bookhistory_btn.BaseColor2 = System.Drawing.Color.White;
-            this.bookhistory_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bookhistory_btn.ForeColor = System.Drawing.Color.Black;
-            this.bookhistory_btn.Image = ((System.Drawing.Image)(resources.GetObject("bookhistory_btn.Image")));
-            this.bookhistory_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.bookhistory_btn.Location = new System.Drawing.Point(18, 406);
-            this.bookhistory_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bookhistory_btn.Name = "bookhistory_btn";
-            this.bookhistory_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.bookhistory_btn.OnHoverBaseColor2 = System.Drawing.Color.SteelBlue;
-            this.bookhistory_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.bookhistory_btn.OnHoverImage = null;
-            this.bookhistory_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.bookhistory_btn.Radius = 10;
-            this.bookhistory_btn.Size = new System.Drawing.Size(386, 65);
-            this.bookhistory_btn.TabIndex = 8;
-            this.bookhistory_btn.Text = "Bookings";
-            this.bookhistory_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // book_btn
-            // 
-            this.book_btn.AnimationHoverSpeed = 0.07F;
-            this.book_btn.AnimationSpeed = 0.03F;
-            this.book_btn.BaseColor1 = System.Drawing.Color.White;
-            this.book_btn.BaseColor2 = System.Drawing.Color.White;
-            this.book_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.book_btn.ForeColor = System.Drawing.Color.Black;
-            this.book_btn.Image = ((System.Drawing.Image)(resources.GetObject("book_btn.Image")));
-            this.book_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.book_btn.Location = new System.Drawing.Point(18, 311);
-            this.book_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.book_btn.Name = "book_btn";
-            this.book_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.book_btn.OnHoverBaseColor2 = System.Drawing.Color.SteelBlue;
-            this.book_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.book_btn.OnHoverImage = null;
-            this.book_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.book_btn.Radius = 10;
-            this.book_btn.Size = new System.Drawing.Size(386, 65);
-            this.book_btn.TabIndex = 7;
-            this.book_btn.Text = "Book";
-            this.book_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.book_btn.Click += new System.EventHandler(this.book_btn_Click);
-            // 
-            // home_btn
-            // 
-            this.home_btn.AnimationHoverSpeed = 0.07F;
-            this.home_btn.AnimationSpeed = 0.03F;
-            this.home_btn.BaseColor1 = System.Drawing.Color.White;
-            this.home_btn.BaseColor2 = System.Drawing.Color.White;
-            this.home_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.home_btn.ForeColor = System.Drawing.Color.Black;
-            this.home_btn.Image = ((System.Drawing.Image)(resources.GetObject("home_btn.Image")));
-            this.home_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.home_btn.Location = new System.Drawing.Point(18, 203);
-            this.home_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.home_btn.Name = "home_btn";
-            this.home_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.home_btn.OnHoverBaseColor2 = System.Drawing.Color.SteelBlue;
-            this.home_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.home_btn.OnHoverImage = null;
-            this.home_btn.OnPressedColor = System.Drawing.Color.White;
-            this.home_btn.Radius = 10;
-            this.home_btn.Size = new System.Drawing.Size(386, 77);
-            this.home_btn.TabIndex = 6;
-            this.home_btn.Text = "Dashboard";
-            this.home_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
             // gunaSeparator1
             // 
@@ -250,18 +153,6 @@
             this.gunaLabel1.TabIndex = 1;
             this.gunaLabel1.Text = "Admin";
             // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::Booking.Properties.Resources.kisspng_computer_icons_user_profile_person_5abd85306ff7f7_0592226715223698404586;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(34, 45);
-            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(99, 95);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 0;
-            this.gunaPictureBox1.TabStop = false;
-            // 
             // gunaCirclePictureBox1
             // 
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
@@ -274,6 +165,143 @@
             this.gunaCirclePictureBox1.TabIndex = 18;
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
+            // gunaGradiantButton1
+            // 
+            this.gunaGradiantButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaGradiantButton1.AnimationSpeed = 0.03F;
+            this.gunaGradiantButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.gunaGradiantButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.gunaGradiantButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradiantButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaGradiantButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradiantButton1.Image")));
+            this.gunaGradiantButton1.ImageOffsetX = 40;
+            this.gunaGradiantButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaGradiantButton1.Location = new System.Drawing.Point(-2, 488);
+            this.gunaGradiantButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaGradiantButton1.Name = "gunaGradiantButton1";
+            this.gunaGradiantButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.gunaGradiantButton1.OnHoverBaseColor2 = System.Drawing.Color.White;
+            this.gunaGradiantButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradiantButton1.OnHoverImage = null;
+            this.gunaGradiantButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradiantButton1.Size = new System.Drawing.Size(431, 85);
+            this.gunaGradiantButton1.TabIndex = 9;
+            this.gunaGradiantButton1.Text = "Report";
+            this.gunaGradiantButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaGradiantButton1.Click += new System.EventHandler(this.gunaGradiantButton1_Click);
+            // 
+            // logout_btn
+            // 
+            this.logout_btn.AnimationHoverSpeed = 0.07F;
+            this.logout_btn.AnimationSpeed = 0.03F;
+            this.logout_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.logout_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.logout_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.logout_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.logout_btn.ForeColor = System.Drawing.Color.White;
+            this.logout_btn.Image = ((System.Drawing.Image)(resources.GetObject("logout_btn.Image")));
+            this.logout_btn.ImageOffsetX = 40;
+            this.logout_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.logout_btn.Location = new System.Drawing.Point(0, 853);
+            this.logout_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.logout_btn.OnHoverBaseColor2 = System.Drawing.Color.White;
+            this.logout_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.logout_btn.OnHoverImage = null;
+            this.logout_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.logout_btn.Size = new System.Drawing.Size(429, 85);
+            this.logout_btn.TabIndex = 9;
+            this.logout_btn.Text = "Logout";
+            this.logout_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
+            // 
+            // bookhistory_btn
+            // 
+            this.bookhistory_btn.AnimationHoverSpeed = 0.07F;
+            this.bookhistory_btn.AnimationSpeed = 0.03F;
+            this.bookhistory_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.bookhistory_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.bookhistory_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookhistory_btn.ForeColor = System.Drawing.Color.White;
+            this.bookhistory_btn.Image = ((System.Drawing.Image)(resources.GetObject("bookhistory_btn.Image")));
+            this.bookhistory_btn.ImageOffsetX = 40;
+            this.bookhistory_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.bookhistory_btn.Location = new System.Drawing.Point(0, 393);
+            this.bookhistory_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bookhistory_btn.Name = "bookhistory_btn";
+            this.bookhistory_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.bookhistory_btn.OnHoverBaseColor2 = System.Drawing.Color.White;
+            this.bookhistory_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.bookhistory_btn.OnHoverImage = null;
+            this.bookhistory_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.bookhistory_btn.Size = new System.Drawing.Size(431, 85);
+            this.bookhistory_btn.TabIndex = 8;
+            this.bookhistory_btn.Text = "Bookings";
+            this.bookhistory_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // book_btn
+            // 
+            this.book_btn.AnimationHoverSpeed = 0.07F;
+            this.book_btn.AnimationSpeed = 0.03F;
+            this.book_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.book_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.book_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.book_btn.ForeColor = System.Drawing.Color.White;
+            this.book_btn.Image = ((System.Drawing.Image)(resources.GetObject("book_btn.Image")));
+            this.book_btn.ImageOffsetX = 40;
+            this.book_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.book_btn.Location = new System.Drawing.Point(-1, 298);
+            this.book_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.book_btn.Name = "book_btn";
+            this.book_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.book_btn.OnHoverBaseColor2 = System.Drawing.Color.White;
+            this.book_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.book_btn.OnHoverImage = null;
+            this.book_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.book_btn.Size = new System.Drawing.Size(431, 85);
+            this.book_btn.TabIndex = 7;
+            this.book_btn.Text = "Book";
+            this.book_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_btn.Click += new System.EventHandler(this.book_btn_Click);
+            // 
+            // home_btn
+            // 
+            this.home_btn.AnimationHoverSpeed = 0.07F;
+            this.home_btn.AnimationSpeed = 0.03F;
+            this.home_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.home_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.home_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.home_btn.ForeColor = System.Drawing.Color.White;
+            this.home_btn.Image = ((System.Drawing.Image)(resources.GetObject("home_btn.Image")));
+            this.home_btn.ImageOffsetX = 40;
+            this.home_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.home_btn.Location = new System.Drawing.Point(-1, 203);
+            this.home_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.home_btn.Name = "home_btn";
+            this.home_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.home_btn.OnHoverBaseColor2 = System.Drawing.Color.White;
+            this.home_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.home_btn.OnHoverImage = null;
+            this.home_btn.OnPressedColor = System.Drawing.Color.White;
+            this.home_btn.Size = new System.Drawing.Size(431, 85);
+            this.home_btn.TabIndex = 6;
+            this.home_btn.Text = "Dashboard";
+            this.home_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
+            // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::Booking.Properties.Resources.kisspng_computer_icons_user_profile_person_5abd85306ff7f7_0592226715223698404586;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(34, 45);
+            this.gunaPictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(99, 95);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 0;
+            this.gunaPictureBox1.TabStop = false;
             // 
             // gunaButton1
             // 
@@ -317,8 +345,8 @@
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,5 +368,6 @@
         private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaGradiantButton home_btn;
+        private Guna.UI.WinForms.GunaGradiantButton gunaGradiantButton1;
     }
 }
