@@ -136,6 +136,7 @@
     <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Destination.cs" />
+    <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Classes\Origin.cs" />
     <Compile Include="Classes\Passenger.cs" />
     <Compile Include="Classes\PassengerBooking.cs" />

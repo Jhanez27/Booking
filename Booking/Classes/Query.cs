@@ -416,6 +416,20 @@ namespace Booking.Classes
             con.Close();
 
         }
-       
+        public float getReportSales(string username , string date)
+        {
+            float dailySales = 0;
+            con.Open();
+            string query = "SELECT booking_amount FROM booking where username= '" + username + "' AND booking_date = '"+date+"' and booking_status = 'Paid'";
+            MySqlCommand command = new MySqlCommand(query, con);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                dailySales += reader.GetFloat(reader.GetOrdinal("booking_amount"));
+            }
+            reader.Close();
+            con.Close();
+            return dailySales;
+        }
     }
 }
