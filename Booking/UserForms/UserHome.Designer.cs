@@ -35,22 +35,22 @@
             this.minimize_btn = new System.Windows.Forms.Button();
             this.dashboardMain_panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.current_user = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaGradiantButton1 = new Guna.UI.WinForms.GunaGradiantButton();
             this.logout_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.bookhistory_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.book_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.home_btn = new Guna.UI.WinForms.GunaGradiantButton();
+            this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
+            this.current_user = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
@@ -88,7 +88,7 @@
             this.minimize_btn.Size = new System.Drawing.Size(106, 68);
             this.minimize_btn.TabIndex = 4;
             this.minimize_btn.Text = "--------";
-            this.minimize_btn.UseVisualStyleBackColor = true;
+            this.minimize_btn.UseVisualStyleBackColor = false;
             this.minimize_btn.Click += new System.EventHandler(this.minimize_btn_Click);
             // 
             // dashboardMain_panel
@@ -119,52 +119,6 @@
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Size = new System.Drawing.Size(431, 940);
             this.gunaPanel2.TabIndex = 1;
-            // 
-            // gunaSeparator1
-            // 
-            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaSeparator1.Location = new System.Drawing.Point(0, 158);
-            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gunaSeparator1.Name = "gunaSeparator1";
-            this.gunaSeparator1.Size = new System.Drawing.Size(375, 15);
-            this.gunaSeparator1.TabIndex = 3;
-            // 
-            // current_user
-            // 
-            this.current_user.AutoSize = true;
-            this.current_user.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.current_user.ForeColor = System.Drawing.Color.White;
-            this.current_user.Location = new System.Drawing.Point(177, 86);
-            this.current_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.current_user.Name = "current_user";
-            this.current_user.Size = new System.Drawing.Size(168, 38);
-            this.current_user.TabIndex = 2;
-            this.current_user.Text = "gunaLabel2";
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.AutoSize = true;
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe Script", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Location = new System.Drawing.Point(206, 35);
-            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(91, 33);
-            this.gunaLabel1.TabIndex = 1;
-            this.gunaLabel1.Text = "Admin";
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Image = global::Booking.Properties.Resources.TicketEase;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(1701, 855);
-            this.gunaCirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(180, 162);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 18;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // gunaGradiantButton1
             // 
@@ -291,6 +245,39 @@
             this.home_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.home_btn.Click += new System.EventHandler(this.home_btn_Click);
             // 
+            // gunaSeparator1
+            // 
+            this.gunaSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.gunaSeparator1.Location = new System.Drawing.Point(0, 158);
+            this.gunaSeparator1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaSeparator1.Name = "gunaSeparator1";
+            this.gunaSeparator1.Size = new System.Drawing.Size(375, 15);
+            this.gunaSeparator1.TabIndex = 3;
+            // 
+            // current_user
+            // 
+            this.current_user.AutoSize = true;
+            this.current_user.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.current_user.ForeColor = System.Drawing.Color.White;
+            this.current_user.Location = new System.Drawing.Point(177, 86);
+            this.current_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.current_user.Name = "current_user";
+            this.current_user.Size = new System.Drawing.Size(168, 38);
+            this.current_user.TabIndex = 2;
+            this.current_user.Text = "gunaLabel2";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe Script", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Location = new System.Drawing.Point(206, 35);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(91, 33);
+            this.gunaLabel1.TabIndex = 1;
+            this.gunaLabel1.Text = "Admin";
+            // 
             // gunaPictureBox1
             // 
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
@@ -302,6 +289,19 @@
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 0;
             this.gunaPictureBox1.TabStop = false;
+            // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.Image = global::Booking.Properties.Resources.TicketEase;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(1701, 855);
+            this.gunaCirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(180, 162);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 18;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // gunaButton1
             // 
@@ -345,8 +345,8 @@
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

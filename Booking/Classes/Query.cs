@@ -234,7 +234,7 @@ namespace Booking.Classes
         {
             trips.Clear();
             con.Open();
-            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE DATE(trip.date_departure) = Date(@Schedule) AND TIME(trip.date_departure) > CURTIME() and availableSeat > 0 and origin = @Origin and destination = @Destination";
+            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE DATE(trip.date_departure) = Date(@Schedule) AND availableSeat > 0 and origin = @Origin and destination = @Destination";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Schedule",departTime);
             command.Parameters.AddWithValue("@Origin", origin);
@@ -250,6 +250,8 @@ namespace Booking.Classes
                 string boat_origin = reader.GetString(reader.GetOrdinal("origin"));
                 DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
                 string departtime = dateTime.ToString("hh:mm tt");
+                int tripETA = reader.GetInt32(reader.GetOrdinal("trip_ETA"));
+                string trip_ETA = tripETA.ToString();
 
                 Trip trip = new Trip
                 {
@@ -258,7 +260,8 @@ namespace Booking.Classes
                     boat_name = boatname,
                     destination = boat_destination,
                     origin = boat_origin,
-                    departureDate = departtime
+                    departureDate = departtime,
+                    trip_ETA = trip_ETA,
                 };
 
                 // Add the Trip object to the trips list
@@ -305,7 +308,7 @@ namespace Booking.Classes
                 string boat_destination = reader.GetString(reader.GetOrdinal("destination"));
                 string boat_origin = reader.GetString(reader.GetOrdinal("origin"));
                 DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
-                string formattedDate = dateTime.ToString("MMMM/dd/yyyy");
+                string formattedDate = dateTime.ToString("MMMM dd yyyy");
                 string departtime = dateTime.ToString("hh:mm tt");
 
                 tripDetails = new Trip()

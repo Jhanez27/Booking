@@ -73,6 +73,7 @@ namespace Booking.usercontrol
                 tripButton.destination = trip.destination;
                 tripButton.departTime = trip.departureDate.ToString();
                 tripButton.shipping_Line = trip.shippingLine;
+                tripButton.trip_ETA = trip.trip_ETA;
                 tripButton.ButtonClick += TripButton_ButtonClick;
                 tripButton.Location = new Point(0, y);
                 y += tripButton.Height;

@@ -120,10 +120,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="gunaButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABqSURBVEhL7Y/BCYBADARToQXZwtUjtmUHysqKeR0XuQUf
-        OzCffWRImBGWdTuznPUg1vbj1mEpDnPW4zBnPVPDOFAxhysy94LxOabyf+GK+VhF5r6BA90vVDjMWY/D
-        nPU4zFkPYlnOpkPEBTptHit4RHWYAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DwAACw8BkvkDpQAAAGpJREFUSEvtj8EJgEAMBFOhBdnC1SO2ZQfKyop5HRe5BR87MJ99ZEiYEZZ1O7Oc
+        9SDW9uPWYSkOc9bjMGc9U8M4UDGHKzL3gvE5pvJ/4Yr5WEXmvoED3S9UOMxZj8Oc9TjMWQ9iWc6mQ8QF
+        Om0eK3hEdZgAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

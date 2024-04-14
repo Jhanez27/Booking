@@ -36,7 +36,6 @@
             this.origin_txt = new System.Windows.Forms.Label();
             this.departure_date = new System.Windows.Forms.Label();
             this.boat_name = new System.Windows.Forms.Label();
-            this.shipLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pass_genderComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -60,16 +59,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.shipLogo = new System.Windows.Forms.PictureBox();
             this.tripDetail_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 22);
+            this.label1.Location = new System.Drawing.Point(478, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 26);
             this.label1.TabIndex = 0;
@@ -77,15 +77,16 @@
             // 
             // tripDetail_panel
             // 
-            this.tripDetail_panel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tripDetail_panel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.tripDetail_panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.tripDetail_panel.BaseColor = System.Drawing.Color.Gainsboro;
             this.tripDetail_panel.Controls.Add(this.destination_txt);
             this.tripDetail_panel.Controls.Add(this.label3);
             this.tripDetail_panel.Controls.Add(this.origin_txt);
             this.tripDetail_panel.Controls.Add(this.departure_date);
             this.tripDetail_panel.Controls.Add(this.boat_name);
             this.tripDetail_panel.Controls.Add(this.shipLogo);
-            this.tripDetail_panel.Location = new System.Drawing.Point(226, 3);
+            this.tripDetail_panel.ForeColor = System.Drawing.Color.Black;
+            this.tripDetail_panel.Location = new System.Drawing.Point(184, 3);
             this.tripDetail_panel.Name = "tripDetail_panel";
             this.tripDetail_panel.ShadowColor = System.Drawing.Color.Gainsboro;
             this.tripDetail_panel.ShadowDepth = 80;
@@ -97,71 +98,62 @@
             // destination_txt
             // 
             this.destination_txt.AutoSize = true;
-            this.destination_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.destination_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.destination_txt.ForeColor = System.Drawing.Color.White;
+            this.destination_txt.BackColor = System.Drawing.Color.Gainsboro;
+            this.destination_txt.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.destination_txt.ForeColor = System.Drawing.Color.Black;
             this.destination_txt.Location = new System.Drawing.Point(931, 58);
             this.destination_txt.Name = "destination_txt";
-            this.destination_txt.Size = new System.Drawing.Size(70, 25);
+            this.destination_txt.Size = new System.Drawing.Size(80, 25);
             this.destination_txt.TabIndex = 4;
             this.destination_txt.Text = "label3";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.Gainsboro;
+            this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(889, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 25);
+            this.label3.Size = new System.Drawing.Size(22, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "-";
             // 
             // origin_txt
             // 
             this.origin_txt.AutoSize = true;
-            this.origin_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.origin_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.origin_txt.ForeColor = System.Drawing.Color.White;
+            this.origin_txt.BackColor = System.Drawing.Color.Gainsboro;
+            this.origin_txt.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.origin_txt.ForeColor = System.Drawing.Color.Black;
             this.origin_txt.Location = new System.Drawing.Point(793, 58);
             this.origin_txt.Name = "origin_txt";
-            this.origin_txt.Size = new System.Drawing.Size(70, 25);
+            this.origin_txt.Size = new System.Drawing.Size(80, 25);
             this.origin_txt.TabIndex = 3;
             this.origin_txt.Text = "label3";
             // 
             // departure_date
             // 
             this.departure_date.AutoSize = true;
-            this.departure_date.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.departure_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departure_date.ForeColor = System.Drawing.Color.White;
+            this.departure_date.BackColor = System.Drawing.Color.Gainsboro;
+            this.departure_date.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departure_date.ForeColor = System.Drawing.Color.Black;
             this.departure_date.Location = new System.Drawing.Point(423, 58);
             this.departure_date.Name = "departure_date";
-            this.departure_date.Size = new System.Drawing.Size(70, 25);
+            this.departure_date.Size = new System.Drawing.Size(80, 25);
             this.departure_date.TabIndex = 2;
             this.departure_date.Text = "label3";
             // 
             // boat_name
             // 
             this.boat_name.AutoSize = true;
-            this.boat_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.boat_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boat_name.ForeColor = System.Drawing.Color.White;
+            this.boat_name.BackColor = System.Drawing.Color.Gainsboro;
+            this.boat_name.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.boat_name.ForeColor = System.Drawing.Color.Black;
             this.boat_name.Location = new System.Drawing.Point(224, 58);
             this.boat_name.Name = "boat_name";
-            this.boat_name.Size = new System.Drawing.Size(70, 25);
+            this.boat_name.Size = new System.Drawing.Size(80, 25);
             this.boat_name.TabIndex = 1;
             this.boat_name.Text = "label2";
-            // 
-            // shipLogo
-            // 
-            this.shipLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.shipLogo.Location = new System.Drawing.Point(71, 39);
-            this.shipLogo.Name = "shipLogo";
-            this.shipLogo.Size = new System.Drawing.Size(100, 52);
-            this.shipLogo.TabIndex = 0;
-            this.shipLogo.TabStop = false;
             // 
             // panel1
             // 
@@ -188,15 +180,15 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(372, 181);
+            this.panel1.Location = new System.Drawing.Point(184, 181);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(810, 670);
+            this.panel1.Size = new System.Drawing.Size(1122, 670);
             this.panel1.TabIndex = 2;
             // 
             // pass_genderComboBox
             // 
             this.pass_genderComboBox.FormattingEnabled = true;
-            this.pass_genderComboBox.Location = new System.Drawing.Point(263, 234);
+            this.pass_genderComboBox.Location = new System.Drawing.Point(435, 234);
             this.pass_genderComboBox.Name = "pass_genderComboBox";
             this.pass_genderComboBox.Size = new System.Drawing.Size(121, 28);
             this.pass_genderComboBox.TabIndex = 25;
@@ -204,7 +196,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(100, 234);
+            this.label13.Location = new System.Drawing.Point(272, 234);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(75, 20);
             this.label13.TabIndex = 24;
@@ -218,7 +210,7 @@
             this.pass_email.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pass_email.LineColor = System.Drawing.Color.Black;
             this.pass_email.LineSize = 1;
-            this.pass_email.Location = new System.Drawing.Point(262, 332);
+            this.pass_email.Location = new System.Drawing.Point(434, 332);
             this.pass_email.Name = "pass_email";
             this.pass_email.PasswordChar = '\0';
             this.pass_email.Size = new System.Drawing.Size(291, 34);
@@ -232,7 +224,7 @@
             this.pass_contactNum.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pass_contactNum.LineColor = System.Drawing.Color.Black;
             this.pass_contactNum.LineSize = 1;
-            this.pass_contactNum.Location = new System.Drawing.Point(262, 266);
+            this.pass_contactNum.Location = new System.Drawing.Point(434, 266);
             this.pass_contactNum.Name = "pass_contactNum";
             this.pass_contactNum.PasswordChar = '\0';
             this.pass_contactNum.Size = new System.Drawing.Size(291, 34);
@@ -246,7 +238,7 @@
             this.pass_Age.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pass_Age.LineColor = System.Drawing.Color.Black;
             this.pass_Age.LineSize = 1;
-            this.pass_Age.Location = new System.Drawing.Point(262, 173);
+            this.pass_Age.Location = new System.Drawing.Point(434, 173);
             this.pass_Age.Name = "pass_Age";
             this.pass_Age.PasswordChar = '\0';
             this.pass_Age.Size = new System.Drawing.Size(291, 34);
@@ -260,7 +252,7 @@
             this.pass_lname.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pass_lname.LineColor = System.Drawing.Color.Black;
             this.pass_lname.LineSize = 1;
-            this.pass_lname.Location = new System.Drawing.Point(262, 126);
+            this.pass_lname.Location = new System.Drawing.Point(434, 126);
             this.pass_lname.Name = "pass_lname";
             this.pass_lname.PasswordChar = '\0';
             this.pass_lname.Size = new System.Drawing.Size(291, 34);
@@ -274,7 +266,7 @@
             this.pass_fname.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.pass_fname.LineColor = System.Drawing.Color.Black;
             this.pass_fname.LineSize = 1;
-            this.pass_fname.Location = new System.Drawing.Point(262, 82);
+            this.pass_fname.Location = new System.Drawing.Point(434, 82);
             this.pass_fname.Name = "pass_fname";
             this.pass_fname.PasswordChar = '\0';
             this.pass_fname.Size = new System.Drawing.Size(291, 34);
@@ -284,7 +276,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(159, 615);
+            this.label12.Location = new System.Drawing.Point(331, 615);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(495, 20);
             this.label12.TabIndex = 18;
@@ -294,7 +286,7 @@
             // 
             this.ticket_amount.AutoSize = true;
             this.ticket_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_amount.Location = new System.Drawing.Point(421, 553);
+            this.ticket_amount.Location = new System.Drawing.Point(595, 553);
             this.ticket_amount.Name = "ticket_amount";
             this.ticket_amount.Size = new System.Drawing.Size(24, 25);
             this.ticket_amount.TabIndex = 17;
@@ -304,7 +296,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(258, 553);
+            this.label11.Location = new System.Drawing.Point(430, 553);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(170, 25);
             this.label11.TabIndex = 16;
@@ -313,7 +305,7 @@
             // passType_comboBox
             // 
             this.passType_comboBox.FormattingEnabled = true;
-            this.passType_comboBox.Location = new System.Drawing.Point(263, 475);
+            this.passType_comboBox.Location = new System.Drawing.Point(435, 475);
             this.passType_comboBox.Name = "passType_comboBox";
             this.passType_comboBox.Size = new System.Drawing.Size(295, 28);
             this.passType_comboBox.TabIndex = 15;
@@ -322,7 +314,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(100, 475);
+            this.label10.Location = new System.Drawing.Point(272, 475);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 20);
             this.label10.TabIndex = 14;
@@ -331,7 +323,7 @@
             // accom_price
             // 
             this.accom_price.AutoSize = true;
-            this.accom_price.Location = new System.Drawing.Point(660, 410);
+            this.accom_price.Location = new System.Drawing.Point(832, 410);
             this.accom_price.Name = "accom_price";
             this.accom_price.Size = new System.Drawing.Size(18, 20);
             this.accom_price.TabIndex = 13;
@@ -340,7 +332,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(594, 410);
+            this.label9.Location = new System.Drawing.Point(766, 410);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 20);
             this.label9.TabIndex = 12;
@@ -349,7 +341,7 @@
             // accom_comboBox
             // 
             this.accom_comboBox.FormattingEnabled = true;
-            this.accom_comboBox.Location = new System.Drawing.Point(262, 407);
+            this.accom_comboBox.Location = new System.Drawing.Point(434, 407);
             this.accom_comboBox.Name = "accom_comboBox";
             this.accom_comboBox.Size = new System.Drawing.Size(292, 28);
             this.accom_comboBox.TabIndex = 11;
@@ -358,7 +350,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(100, 415);
+            this.label8.Location = new System.Drawing.Point(272, 415);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(136, 20);
             this.label8.TabIndex = 10;
@@ -367,7 +359,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(100, 346);
+            this.label7.Location = new System.Drawing.Point(272, 346);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 20);
             this.label7.TabIndex = 6;
@@ -376,7 +368,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(100, 280);
+            this.label6.Location = new System.Drawing.Point(272, 280);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 20);
             this.label6.TabIndex = 5;
@@ -385,7 +377,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(100, 187);
+            this.label5.Location = new System.Drawing.Point(272, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 20);
             this.label5.TabIndex = 4;
@@ -394,7 +386,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 140);
+            this.label4.Location = new System.Drawing.Point(272, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 20);
             this.label4.TabIndex = 1;
@@ -403,7 +395,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(100, 96);
+            this.label2.Location = new System.Drawing.Point(272, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 0;
@@ -420,7 +412,7 @@
             this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(663, 873);
+            this.gunaButton1.Location = new System.Drawing.Point(619, 871);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(73)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -433,6 +425,15 @@
             this.gunaButton1.Text = "    Book";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
+            // shipLogo
+            // 
+            this.shipLogo.BackColor = System.Drawing.Color.Gainsboro;
+            this.shipLogo.Location = new System.Drawing.Point(71, 31);
+            this.shipLogo.Name = "shipLogo";
+            this.shipLogo.Size = new System.Drawing.Size(100, 98);
+            this.shipLogo.TabIndex = 0;
+            this.shipLogo.TabStop = false;
             // 
             // passengerDetails
             // 
@@ -447,9 +448,9 @@
             this.Load += new System.EventHandler(this.passengerDetails_Load);
             this.tripDetail_panel.ResumeLayout(false);
             this.tripDetail_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

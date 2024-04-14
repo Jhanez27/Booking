@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>220, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="gunaGradiantButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABptJREFUeF7tm11sFFUUx2+iRmqISpv47AOgiTHR+GCsGDHoM4IfgUTgwa/4ii/E
+        EAAACxABrSO9dQAABptJREFUeF7tm11sFFUUx2+iRmqISpv47AOgiTHR+GCsGDHoM4IfgUTgwa/4ii/E
         hIQgxI9HUpuSmBgJSEJsfBARZrcULaX2QyhF2qaWbnd22+32A7bbklJLezxneqed3Tm7e2fmbnc34SS/
         7Gbuueee8987M3c+VjywIhuERA1cEDvw8xAY4jTyN343kdv4fcmCvtM2aiMf8l3uUyPDVJbBefEsJn8U
         uYYsIuCTRRTkKn4egSbxjAxfngZd4hFMdB8m3O4oQDd/IXuhWTwshy29ycI/QyIyybVgCMLi05ILgUm8
@@ -158,7 +155,7 @@
   <data name="logout_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABLhJREFUaEPtmdtvFFUcx2uBbm/by+xuW0C5K5RXE6O+EENiICTii6/6T0hL6WUv
+        DwAACw8BkvkDpQAABLhJREFUaEPtmdtvFFUcx2uBbm/by+xuW0C5K5RXE6O+EENiICTii6/6T0hL6WUv
         vW1pC1IVxSvQJvwNPhijD6JQIOVSlt7bbZfSUhBbfP15fufM6ZyZOTM7u3N421/yeZ7P75vvb2aTLSpM
         YQqTfQ4Nb5w4PLK+eHhkAxqH1+HQVcbBK/9S3rqMvIA3f2Yc+Okfyv4fkeew74fnsPd75Bns+Q5Zg92X
         GLu+fUp54xtkFV6/iKykd15cOa4/3v80jqynG4e9yNvFmfwzR3km/lQXX4WdXyMrsP3LJwv64/0Pihvy
@@ -184,7 +181,7 @@
   <data name="bookhistory_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAttJREFUaEPtlk1rE1EUhgO6lO6lUtzqpv4Dacyim7qoiPi11T9QKiKKIGgUIdF/
+        EAAACxABrSO9dQAAAttJREFUaEPtlk1rE1EUhgO6lO6lUtzqpv4Dacyim7qoiPi11T9QKiKKIGgUIdF/
         ICZBAilWscVUCW6Kxp0EIo0TreAH4s5kksxErve05zY3yZlJPHBvocwLD5npmTnnucn0JrEoUaLssaTL
         nSQeDiX1rnPTdB0P+ZEDBDUEh0PNaB1P+aGGDAw3Wsc/8aMNENA4YLixOmrwozfbDVCDH6qpTVCDH6qp
         TVCDH6qpTVCDH6qpTVCDH6opcHDxw38x6l69roMa/FBNAUoijFH36nUd1OCHamoT1OCHamoT1OCHagpQ
@@ -202,7 +199,7 @@
   <data name="book_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAE+NJREFUeF7tnQlQVWeWxzPJTI816UmmajqTmcx09Ww1k+nqqeqankwmcYm4K65N
+        EAAACxABrSO9dQAAE+NJREFUeF7tnQlQVWeWxzPJTI816UmmajqTmcx09Ww1k+nqqeqankwmcYm4K65N
         NBJ34x7lsYPiEkNABFzAx+aGigYXcIuKuIGCuHYU9zVBEUSFBwo6dnf0m/O/vAv3fvewvMcD3zWcql+B
         Pt53z/+cd7/9u++Vdmu3FllVVdW/Pnz4cPyjR49iiR30+xn6eZN+3ice2H8/Sz+/IRYRE+jf/25/e7u5
         wiig71Ng4+lnMf0UzkDvLSUS6feOQog/sRfdbs01Ctqf0t0wgoJ4Tg5uS6EyLxPj6Bo/sV+u3RozClY/
@@ -293,7 +290,7 @@
   <data name="home_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAWdJREFUaEPtmFFqwkAYBnMo7RlavE/1djVXKPEC1QOYE9gGfgz8DsSRbdfCDszb
+        EAAACxABrSO9dQAAAWdJREFUaEPtmFFqwkAYBnMo7RlavE/1djVXKPEC1QOYE9gGfgz8DsSRbdfCDszb
         8jF5MCbpGo1G40nZfm667XDqdsNFeuzeD2+xcuWlHzer/nxa9+PFuOrH42o/3uwtM4Vw4LLb4StWrkwh
         FHiX+/FmbxkKMyYwTBgzAooyJijKGDMCijImKMoYMwKKMiYoyhgzAooyJijKGDMCijImKMoYMwKKMib+
         /W10+jN66CJ+4tcf59eYEVCUsToUZawORRmrQ1HG6lCUMVP46XYZHrvfTOGn22VoyJihM0YNjRgzdMao
@@ -302,6 +299,9 @@
         l7TST7eNRqPxBHTdN8/33zSIs5ZqAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>220, 17</value>
+  </metadata>
   <data name="gunaButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAcJJREFUOE+V

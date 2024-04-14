@@ -1,10 +1,13 @@
 ﻿using Booking.Classes;
+using Booking.Properties;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +35,9 @@ namespace Booking.usercontrol
             logoMap.Add("Oceanjet", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\oceanjet.png");
             logoMap.Add("Seacat", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\seacat.png");
             logoMap.Add("Supercat", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\supercat.png");
-            logoMap.Add("Roble", "C:\\Users\\juliansuringa\\Source\\Repos\\Booking\\Booking\\Resources\\rsi-logo-short.png");
+            logoMap.Add("Roble", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\rsi-logo-short.png");
+            logoMap.Add("Lite", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\lite1.png");
+            logoMap.Add("Lapu-Lapu", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\list_lapulapu.png");
         }
         public Image logo
         {
@@ -80,14 +85,20 @@ namespace Booking.usercontrol
             get { return tripId_label.Text; }
             set { tripId_label.Text = value; }
         }
+        public string trip_ETA
+        {
+            get { return tripETA.Text; }
+            set { tripETA.Text = value; }
+        }
         private void TripDetails_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.SlateGray;
-            this.ForeColor = Color.Black;
+            this.BackColor = Color.Gainsboro;
+          
+
         }
         private void TripDetails_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(22, 121, 171);
+            this.BackColor = Color.White;
         }
 
         private void tripDetails_Click(object sender, EventArgs e)

@@ -15,11 +15,12 @@ namespace Booking.Classes
         public string origin { get; set;}
         public string departureDate { get; set; }
 
+        public string trip_ETA { get; set; }
         public Trip()
         {
 
         }
-        public Trip (string trip_id, string shippingLine, string boat_name, string destination, string origin, string departureDate)
+        public Trip (string trip_id, string shippingLine, string boat_name, string destination, string origin, string departureDate, string trip_ETA)
         {
             this.trip_id = trip_id;
             this.shippingLine = shippingLine;
@@ -27,6 +28,8 @@ namespace Booking.Classes
             this.destination = destination;
             this.origin = origin;
             this.departureDate = departureDate;
+            this.trip_ETA = trip_ETA;
+
         }
     }
 }
