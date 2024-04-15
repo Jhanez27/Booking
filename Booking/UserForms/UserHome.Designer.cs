@@ -194,6 +194,7 @@
             this.bookhistory_btn.TabIndex = 8;
             this.bookhistory_btn.Text = "Bookings";
             this.bookhistory_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.bookhistory_btn.Click += new System.EventHandler(this.bookhistory_btn_Click);
             // 
             // book_btn
             // 

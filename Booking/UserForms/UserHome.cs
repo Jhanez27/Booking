@@ -73,5 +73,12 @@ namespace Booking.UserForms
             dashboardMain_panel.Controls.Add(rc);
            
         }
+
+        private void bookhistory_btn_Click(object sender, EventArgs e)
+        {
+            dashboardMain_panel.Controls.Clear();
+            bookingHistory bh = new bookingHistory(currentUser);
+            dashboardMain_panel.Controls.Add(bh);
+        }
     }
 }

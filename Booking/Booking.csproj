@@ -135,6 +135,7 @@
   <ItemGroup>
     <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\BoatName.cs" />
     <Compile Include="Classes\Destination.cs" />
     <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Classes\Origin.cs" />
@@ -160,6 +161,12 @@
     </Compile>
     <Compile Include="usercontrol\bookingControl.Designer.cs">
       <DependentUpon>bookingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\bookingHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\bookingHistory.Designer.cs">
+      <DependentUpon>bookingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="usercontrol\dashBoardControl.cs">
       <SubType>UserControl</SubType>
@@ -252,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\bookingControl.resx">
       <DependentUpon>bookingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\bookingHistory.resx">
+      <DependentUpon>bookingHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\dashBoardControl.resx">
       <DependentUpon>dashBoardControl.cs</DependentUpon>

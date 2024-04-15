@@ -36,6 +36,7 @@
             this.origin_txt = new System.Windows.Forms.Label();
             this.departure_date = new System.Windows.Forms.Label();
             this.boat_name = new System.Windows.Forms.Label();
+            this.shipLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pass_genderComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,10 +60,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.shipLogo = new System.Windows.Forms.PictureBox();
             this.tripDetail_panel.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -154,6 +154,15 @@
             this.boat_name.Size = new System.Drawing.Size(80, 25);
             this.boat_name.TabIndex = 1;
             this.boat_name.Text = "label2";
+            // 
+            // shipLogo
+            // 
+            this.shipLogo.BackColor = System.Drawing.Color.Gainsboro;
+            this.shipLogo.Location = new System.Drawing.Point(71, 31);
+            this.shipLogo.Name = "shipLogo";
+            this.shipLogo.Size = new System.Drawing.Size(100, 98);
+            this.shipLogo.TabIndex = 0;
+            this.shipLogo.TabStop = false;
             // 
             // panel1
             // 
@@ -407,14 +416,15 @@
             this.gunaButton1.AnimationSpeed = 0.03F;
             this.gunaButton1.BaseColor = System.Drawing.Color.SlateGray;
             this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaButton1.ForeColor = System.Drawing.Color.White;
             this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton1.ImageOffsetX = 1;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton1.Location = new System.Drawing.Point(619, 871);
             this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(73)))));
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaButton1.OnHoverImage = null;
@@ -422,18 +432,9 @@
             this.gunaButton1.Radius = 10;
             this.gunaButton1.Size = new System.Drawing.Size(239, 52);
             this.gunaButton1.TabIndex = 4;
-            this.gunaButton1.Text = "    Book";
+            this.gunaButton1.Text = " Book";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
-            // 
-            // shipLogo
-            // 
-            this.shipLogo.BackColor = System.Drawing.Color.Gainsboro;
-            this.shipLogo.Location = new System.Drawing.Point(71, 31);
-            this.shipLogo.Name = "shipLogo";
-            this.shipLogo.Size = new System.Drawing.Size(100, 98);
-            this.shipLogo.TabIndex = 0;
-            this.shipLogo.TabStop = false;
             // 
             // passengerDetails
             // 
@@ -448,9 +449,9 @@
             this.Load += new System.EventHandler(this.passengerDetails_Load);
             this.tripDetail_panel.ResumeLayout(false);
             this.tripDetail_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

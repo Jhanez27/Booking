@@ -138,7 +138,7 @@
             this.tripPanel.AutoScroll = true;
             this.tripPanel.Location = new System.Drawing.Point(33, 188);
             this.tripPanel.Name = "tripPanel";
-            this.tripPanel.Size = new System.Drawing.Size(1411, 734);
+            this.tripPanel.Size = new System.Drawing.Size(1411, 787);
             this.tripPanel.TabIndex = 1;
             // 
             // bookingControl

@@ -349,7 +349,7 @@
             this.seacat_avail.BackColor = System.Drawing.Color.White;
             this.seacat_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.seacat_avail.ForeColor = System.Drawing.Color.DimGray;
-            this.seacat_avail.Location = new System.Drawing.Point(203, 139);
+            this.seacat_avail.Location = new System.Drawing.Point(225, 141);
             this.seacat_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.seacat_avail.Name = "seacat_avail";
             this.seacat_avail.Size = new System.Drawing.Size(98, 32);
@@ -362,7 +362,7 @@
             this.supercat_avail.BackColor = System.Drawing.Color.White;
             this.supercat_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supercat_avail.ForeColor = System.Drawing.Color.DimGray;
-            this.supercat_avail.Location = new System.Drawing.Point(203, 26);
+            this.supercat_avail.Location = new System.Drawing.Point(225, 26);
             this.supercat_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.supercat_avail.Name = "supercat_avail";
             this.supercat_avail.Size = new System.Drawing.Size(98, 32);
@@ -388,7 +388,7 @@
             this.oceanjet_avail.BackColor = System.Drawing.Color.White;
             this.oceanjet_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oceanjet_avail.ForeColor = System.Drawing.Color.DimGray;
-            this.oceanjet_avail.Location = new System.Drawing.Point(203, 77);
+            this.oceanjet_avail.Location = new System.Drawing.Point(225, 77);
             this.oceanjet_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.oceanjet_avail.Name = "oceanjet_avail";
             this.oceanjet_avail.Size = new System.Drawing.Size(98, 32);

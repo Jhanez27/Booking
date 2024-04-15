@@ -25,6 +25,7 @@ namespace Booking.Classes
         private List<Destination> destinations = new List<Destination>();
         private List<Trip> trips = new List<Trip>();
         private List<Origin> origins = new List<Origin>();
+        private List<BoatName> boats = new List<BoatName>();
         private Trip tripDetails;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean insertUser(string username, string password, string email, string pNumber,string fname, string lname)
@@ -229,6 +230,21 @@ namespace Booking.Classes
             con.Close();
 
             return origins;
+        }
+        public List<BoatName> getBoatName()
+        {
+            con.Open();
+            string query = "SELECT boat_name from boat";
+            MySqlCommand command = new MySqlCommand( query, con);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                string boat_name = reader["boat_name"].ToString();
+                BoatName boat = new BoatName();
+                boat.boatName = boat_name;
+                boats.Add(boat);
+            }
+            return boats;
         }
         public List<Trip> getTrips(string origin , string destination , DateTime departTime)
         {
