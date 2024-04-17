@@ -109,14 +109,14 @@
             this.gunaShadowPanel2.Controls.Add(this.label1);
             this.gunaShadowPanel2.Controls.Add(this.gunaTransfarantPictureBox4);
             this.gunaShadowPanel2.Controls.Add(this.daily_sale);
-            this.gunaShadowPanel2.Location = new System.Drawing.Point(103, 206);
+            this.gunaShadowPanel2.Location = new System.Drawing.Point(46, 206);
             this.gunaShadowPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaShadowPanel2.Name = "gunaShadowPanel2";
             this.gunaShadowPanel2.ShadowColor = System.Drawing.Color.DarkOrange;
             this.gunaShadowPanel2.ShadowDepth = 120;
             this.gunaShadowPanel2.ShadowShift = 15;
             this.gunaShadowPanel2.ShadowStyle = Guna.UI.WinForms.ShadowMode.ForwardDiagonal;
-            this.gunaShadowPanel2.Size = new System.Drawing.Size(285, 292);
+            this.gunaShadowPanel2.Size = new System.Drawing.Size(398, 292);
             this.gunaShadowPanel2.TabIndex = 25;
             // 
             // label1
@@ -164,7 +164,7 @@
             this.gunaShadowPanel3.Controls.Add(this.label2);
             this.gunaShadowPanel3.Controls.Add(this.gunaTransfarantPictureBox5);
             this.gunaShadowPanel3.Controls.Add(this.booking_number);
-            this.gunaShadowPanel3.Location = new System.Drawing.Point(435, 206);
+            this.gunaShadowPanel3.Location = new System.Drawing.Point(499, 206);
             this.gunaShadowPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaShadowPanel3.Name = "gunaShadowPanel3";
             this.gunaShadowPanel3.ShadowColor = System.Drawing.Color.Olive;
@@ -229,7 +229,7 @@
             this.gunaShadowPanel4.Controls.Add(this.gunaTransfarantPictureBox2);
             this.gunaShadowPanel4.Controls.Add(this.oceanjet_avail);
             this.gunaShadowPanel4.Controls.Add(this.gunaTransfarantPictureBox1);
-            this.gunaShadowPanel4.Location = new System.Drawing.Point(753, 206);
+            this.gunaShadowPanel4.Location = new System.Drawing.Point(828, 206);
             this.gunaShadowPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaShadowPanel4.Name = "gunaShadowPanel4";
             this.gunaShadowPanel4.ShadowColor = System.Drawing.Color.Purple;

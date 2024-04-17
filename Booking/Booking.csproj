@@ -136,6 +136,8 @@
     <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\BoatName.cs" />
+    <Compile Include="Classes\bookingHistoryDetail.cs" />
+    <Compile Include="Classes\departureTime.cs" />
     <Compile Include="Classes\Destination.cs" />
     <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Classes\Origin.cs" />

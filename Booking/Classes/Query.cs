@@ -20,12 +20,13 @@ namespace Booking.Classes
 
      public class Query
     {
-        private reportControl rp;
+        private List<bookingHistoryDetail> bookinghistories = new List<bookingHistoryDetail>();
         private List<Accommodation> accommodations = new List<Accommodation>();
         private List<Destination> destinations = new List<Destination>();
         private List<Trip> trips = new List<Trip>();
         private List<Origin> origins = new List<Origin>();
         private List<BoatName> boats = new List<BoatName>();
+        private List<departureTime> departTimes = new List<departureTime>();
         private Trip tripDetails;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean insertUser(string username, string password, string email, string pNumber,string fname, string lname)
@@ -449,6 +450,90 @@ namespace Booking.Classes
             reader.Close();
             con.Close();
             return dailySales;
+        }
+        public List<bookingHistoryDetail> getBookings(string adminName , string date , string vessel , string selectedTime) 
+        {
+            bookinghistories.Clear();
+            con.Open();
+            string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number" +
+                " FROM booking" +
+                " INNER JOIN trip ON booking.trip_id = trip.trip_id" +
+                " INNER JOIN boat ON trip.boat_id = boat.boat_id" +
+                " INNER JOIN passenger ON booking.passenger_id = passenger.passenger_id" +
+                " WHERE booking.username = @adminName" +
+                " AND DATE(trip.date_departure) = @departureDate" +
+                " AND boat.boat_name = @Vessel and TIME(trip.date_departure) = @Time";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@adminName", adminName);
+            command.Parameters.AddWithValue("@departureDate" , date);
+            command.Parameters.AddWithValue("@Vessel" ,  vessel);  
+            command.Parameters.AddWithValue("@Time" , selectedTime);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int booking_id_int = reader.GetInt32(reader.GetOrdinal("booking_id"));
+                string boatname = reader.GetString(reader.GetOrdinal("boat_name"));
+                DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
+                string formattedDate = dateTime.ToString("MMMM dd, yyyy");
+                string departtime = dateTime.ToString("hh:mm tt");
+                string boat_destination = reader.GetString(reader.GetOrdinal("destination"));
+                string boat_origin = reader.GetString(reader.GetOrdinal("origin"));
+                string passengerfname = reader.GetString(reader.GetOrdinal("passenger_fname"));
+                string passengerlname = reader.GetString(reader.GetOrdinal("passenger_lname"));
+                string ticketNumber = reader.GetString(reader.GetOrdinal("passenger_ticket_number"));
+                string stat = reader.GetString(reader.GetOrdinal("booking_status"));
+
+
+
+                bookingHistoryDetail h = new bookingHistoryDetail
+                {
+                    bookingId = booking_id_int,
+                    vesselName = boatname,
+                    tripSchedule = formattedDate + " / " + departtime,
+                    origin = boat_origin,
+                    destination = boat_destination,
+                    passengerName = passengerfname + " " + passengerlname,
+                    ticketNumber = ticketNumber,
+                    bookingStatus = stat,
+
+                };
+
+                bookinghistories.Add(h);
+
+            }
+            reader.Close();
+            con.Close();
+            return bookinghistories;
+        }
+        public List<departureTime> getDepartureTimes(string vesselName)
+        {
+            departTimes.Clear();
+            string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
+
+            MySqlConnection con = new MySqlConnection(connectionString);
+            con.Open();
+
+            string query = "SELECT TIME_FORMAT(trip.date_departure, '%h:%i %p') AS departure_time " +
+                           "FROM trip " +
+                           "INNER JOIN boat ON trip.boat_id = boat.boat_id " +
+                           "WHERE boat.boat_name = @Vessel";
+
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Vessel", vesselName);
+
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                departureTime depart_time = new departureTime();
+                string depart = reader["departure_time"].ToString();
+                depart_time.departime = depart;
+                departTimes.Add(depart_time);
+            }
+
+            reader.Close();
+            con.Close();
+
+            return departTimes;
         }
     }
 }

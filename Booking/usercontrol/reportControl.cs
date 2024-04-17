@@ -55,7 +55,6 @@ namespace Booking.usercontrol
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-            // Rename DataTable columns to match DataGridView column names
             dt.Columns["VesselName"].ColumnName = "Vessel Name";
             dt.Columns["TripSchedule"].ColumnName = "Trip Schedule";
             dt.Columns["PassengerName"].ColumnName = "Passenger Name";

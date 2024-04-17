@@ -8,6 +8,7 @@ namespace Booking.Classes
 {
     public class User
     {
+        private List<bookingHistoryDetail> bookingHistoryDetails;
         public string Username {  get; set; }
         public string Password { get; set; }
 
@@ -50,6 +51,11 @@ namespace Booking.Classes
             bool done = query.insertBooking(pb);
             return done;
         }
-
+        public List<bookingHistoryDetail> searchBookings (string adMinName , string date , string boatName , string selectedTime)
+        {
+            Query query = new Query();
+            bookingHistoryDetails = query.getBookings(adMinName,date, boatName, selectedTime);
+            return bookingHistoryDetails;
+        }
     }
 }
