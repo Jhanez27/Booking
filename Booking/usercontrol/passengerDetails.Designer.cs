@@ -422,7 +422,7 @@
             this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaButton1.ImageOffsetX = 1;
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(619, 871);
+            this.gunaButton1.Location = new System.Drawing.Point(644, 874);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -430,7 +430,7 @@
             this.gunaButton1.OnHoverImage = null;
             this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaButton1.Radius = 10;
-            this.gunaButton1.Size = new System.Drawing.Size(239, 52);
+            this.gunaButton1.Size = new System.Drawing.Size(270, 52);
             this.gunaButton1.TabIndex = 4;
             this.gunaButton1.Text = " Book";
             this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

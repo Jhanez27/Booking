@@ -62,7 +62,6 @@ namespace Booking
             if (pass.Text != null)
             {
                 pass.PasswordChar = '●';
-                this.pass.UseSystemPasswordChar = true;
             }
         }
 
@@ -88,12 +87,6 @@ namespace Booking
             }
         }
 
-        private void Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            new sign_up().Show();
-            this.Hide();
-        }
-
         private void forgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             new ResetPassword().Show(); 
@@ -108,6 +101,20 @@ namespace Booking
         private void exit_btn_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void pass_Visibility_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            if (pass_Visibility.Checked == true)
+            {
+                pass.PasswordChar = '\0';
+
+            }
+            else
+            {
+                pass.PasswordChar = '●';
+            }
         }
     }
 }

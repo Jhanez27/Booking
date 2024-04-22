@@ -275,9 +275,9 @@
             this.gunaLabel1.Location = new System.Drawing.Point(206, 35);
             this.gunaLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(91, 33);
+            this.gunaLabel1.Size = new System.Drawing.Size(71, 33);
             this.gunaLabel1.TabIndex = 1;
-            this.gunaLabel1.Text = "Admin";
+            this.gunaLabel1.Text = "Clerk";
             // 
             // gunaPictureBox1
             // 

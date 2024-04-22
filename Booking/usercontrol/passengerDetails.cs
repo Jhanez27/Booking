@@ -87,7 +87,7 @@ namespace Booking.usercontrol
             {
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
-                    decimal discountedPrice = price - (price * 0.5m); 
+                    decimal discountedPrice = price - (price * 0.5m) + 100; 
                     ticket_amount.Text = discountedPrice.ToString();
                 }
             }
@@ -95,7 +95,7 @@ namespace Booking.usercontrol
             {
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
-                    decimal discountedPrice = price - (price * 0.15m);
+                    decimal discountedPrice = price - (price * 0.15m) + 100;
                     ticket_amount.Text = discountedPrice.ToString();
                 }
             }
@@ -103,7 +103,7 @@ namespace Booking.usercontrol
             {
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
-                    decimal discountedPrice = price - (price * 0.15m);
+                    decimal discountedPrice = price - (price * 0.15m) + 100;
                     ticket_amount.Text = discountedPrice.ToString();
                 }
             }

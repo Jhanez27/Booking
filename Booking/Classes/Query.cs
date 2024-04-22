@@ -29,43 +29,6 @@ namespace Booking.Classes
         private List<departureTime> departTimes = new List<departureTime>();
         private Trip tripDetails;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
-        public Boolean insertUser(string username, string password, string email, string pNumber,string fname, string lname)
-
-        {
-            bool res = false;
-            try
-            {
-                con.Open();
-                // Check if username already exists
-                MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Email_Address from user where Username= '" + username + "' OR Email_Address='" + email + "'", con);
-                DataTable dt = new DataTable();
-                sd.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("Username or Email Address already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
-                }
-                else
-                {
-                    // Insert user data into the database
-                    MySqlDataAdapter da = new MySqlDataAdapter("insert into user(Username,Password,Email_Address,Contact_Number,Fname,Lname) values ('" + username + "', '" + password + "', '" + email + "','" + pNumber + "','" + fname + "','" + lname + "')", con);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);
-                    MessageBox.Show("Sign Up Successful, Continue to Login");
-                    res = true;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                con.Close();
-
-            }
-            return res;
-        }
         public Boolean searchAccount(string username, string password)
         {
             con.Open();

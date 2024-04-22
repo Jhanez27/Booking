@@ -134,7 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Accommodation.cs" />
-    <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\BoatName.cs" />
     <Compile Include="Classes\bookingHistoryDetail.cs" />
     <Compile Include="Classes\departureTime.cs" />
@@ -207,12 +206,6 @@
     </Compile>
     <Compile Include="UserForms\ResetPassword.Designer.cs">
       <DependentUpon>ResetPassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserForms\sign_up.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForms\sign_up.Designer.cs">
-      <DependentUpon>sign_up.cs</DependentUpon>
     </Compile>
     <Compile Include="customize\CustomButton.cs">
       <SubType>UserControl</SubType>
@@ -287,9 +280,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\ResetPassword.resx">
       <DependentUpon>ResetPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\sign_up.resx">
-      <DependentUpon>sign_up.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customize\CustomButton.resx">
       <DependentUpon>CustomButton.cs</DependentUpon>
