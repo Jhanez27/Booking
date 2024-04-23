@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.report_topPanel = new Guna.UI.WinForms.GunaElipsePanel();
             this.generate_reportbtn = new Guna.UI.WinForms.GunaButton();
             this.report_datePicker = new System.Windows.Forms.DateTimePicker();
@@ -40,9 +40,9 @@
             this.print_btn = new Guna.UI.WinForms.GunaButton();
             this.report_content = new Guna.UI.WinForms.GunaDataGridView();
             this.report_contentHolder = new System.Windows.Forms.Panel();
-            this.topReport_txt = new System.Windows.Forms.Label();
-            this.adminLabel = new System.Windows.Forms.Label();
             this.reportSales_txt = new System.Windows.Forms.Label();
+            this.adminLabel = new System.Windows.Forms.Label();
+            this.topReport_txt = new System.Windows.Forms.Label();
             this.report_topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.report_content)).BeginInit();
             this.report_contentHolder.SuspendLayout();
@@ -76,6 +76,7 @@
             this.generate_reportbtn.OnHoverForeColor = System.Drawing.Color.White;
             this.generate_reportbtn.OnHoverImage = null;
             this.generate_reportbtn.OnPressedColor = System.Drawing.Color.Black;
+            this.generate_reportbtn.Radius = 5;
             this.generate_reportbtn.Size = new System.Drawing.Size(238, 61);
             this.generate_reportbtn.TabIndex = 2;
             this.generate_reportbtn.Text = "Generate Report";
@@ -116,6 +117,7 @@
             this.print_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.print_btn.OnHoverImage = null;
             this.print_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.print_btn.Radius = 5;
             this.print_btn.Size = new System.Drawing.Size(176, 61);
             this.print_btn.TabIndex = 4;
             this.print_btn.Text = "Print Report";
@@ -125,43 +127,43 @@
             // 
             this.report_content.AllowUserToAddRows = false;
             this.report_content.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.report_content.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.report_content.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.report_content.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.report_content.BackgroundColor = System.Drawing.Color.White;
             this.report_content.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.report_content.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.report_content.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.report_content.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.report_content.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.report_content.ColumnHeadersHeight = 32;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.report_content.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.report_content.DefaultCellStyle = dataGridViewCellStyle3;
             this.report_content.EnableHeadersVisualStyles = false;
             this.report_content.GridColor = System.Drawing.Color.Silver;
             this.report_content.Location = new System.Drawing.Point(0, 191);
             this.report_content.Name = "report_content";
             this.report_content.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.report_content.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.report_content.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.report_content.RowHeadersVisible = false;
             this.report_content.RowHeadersWidth = 62;
             this.report_content.RowTemplate.Height = 28;
@@ -204,15 +206,15 @@
             this.report_contentHolder.Size = new System.Drawing.Size(1405, 823);
             this.report_contentHolder.TabIndex = 6;
             // 
-            // topReport_txt
+            // reportSales_txt
             // 
-            this.topReport_txt.AutoSize = true;
-            this.topReport_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.topReport_txt.Location = new System.Drawing.Point(503, 83);
-            this.topReport_txt.Name = "topReport_txt";
-            this.topReport_txt.Size = new System.Drawing.Size(92, 32);
-            this.topReport_txt.TabIndex = 6;
-            this.topReport_txt.Text = "label2";
+            this.reportSales_txt.AutoSize = true;
+            this.reportSales_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportSales_txt.Location = new System.Drawing.Point(1078, 784);
+            this.reportSales_txt.Name = "reportSales_txt";
+            this.reportSales_txt.Size = new System.Drawing.Size(64, 22);
+            this.reportSales_txt.TabIndex = 8;
+            this.reportSales_txt.Text = "label2";
             // 
             // adminLabel
             // 
@@ -224,15 +226,15 @@
             this.adminLabel.TabIndex = 7;
             this.adminLabel.Text = "label3";
             // 
-            // reportSales_txt
+            // topReport_txt
             // 
-            this.reportSales_txt.AutoSize = true;
-            this.reportSales_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportSales_txt.Location = new System.Drawing.Point(1078, 784);
-            this.reportSales_txt.Name = "reportSales_txt";
-            this.reportSales_txt.Size = new System.Drawing.Size(64, 22);
-            this.reportSales_txt.TabIndex = 8;
-            this.reportSales_txt.Text = "label2";
+            this.topReport_txt.AutoSize = true;
+            this.topReport_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topReport_txt.Location = new System.Drawing.Point(503, 83);
+            this.topReport_txt.Name = "topReport_txt";
+            this.topReport_txt.Size = new System.Drawing.Size(92, 32);
+            this.topReport_txt.TabIndex = 6;
+            this.topReport_txt.Text = "label2";
             // 
             // reportControl
             // 

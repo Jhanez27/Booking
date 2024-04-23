@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Booking.Classes
 {
     public class User
     {
-        private List<bookingHistoryDetail> bookingHistoryDetails;
+        private List<BookingDetail> bookingHistoryDetails;
         public string Username {  get; set; }
         public string Password { get; set; }
 
@@ -51,11 +53,17 @@ namespace Booking.Classes
             bool done = query.insertBooking(pb);
             return done;
         }
-        public List<bookingHistoryDetail> searchBookings (string adMinName , string date , string boatName , string selectedTime)
+        public List<BookingDetail> searchBookings (string adMinName , string date , string boatName , string selectedTime)
         {
             Query query = new Query();
             bookingHistoryDetails = query.getBookings(adMinName,date, boatName, selectedTime);
             return bookingHistoryDetails;
+        }
+        public Boolean cancelBooking(int booking_id)
+        {
+            Query query = new Query();
+            bool cancelled = query.updateBooking(booking_id);
+                return cancelled;
         }
     }
 }

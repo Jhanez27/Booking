@@ -42,10 +42,10 @@
             this.exit_btn = new System.Windows.Forms.Button();
             this.minimize_btn = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pass_Visibility = new System.Windows.Forms.CheckBox();
             this.Login_Button = new Booking.usercontrol.CustomButton();
             this.pass = new Booking.usercontrol.CustomTextBox();
             this.username = new Booking.usercontrol.CustomTextBox();
-            this.pass_Visibility = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -201,10 +201,21 @@
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
+            // pass_Visibility
+            // 
+            this.pass_Visibility.AutoSize = true;
+            this.pass_Visibility.Location = new System.Drawing.Point(314, 628);
+            this.pass_Visibility.Name = "pass_Visibility";
+            this.pass_Visibility.Size = new System.Drawing.Size(75, 24);
+            this.pass_Visibility.TabIndex = 19;
+            this.pass_Visibility.Text = "Show";
+            this.pass_Visibility.UseVisualStyleBackColor = true;
+            this.pass_Visibility.CheckedChanged += new System.EventHandler(this.pass_Visibility_CheckedChanged);
+            // 
             // Login_Button
             // 
             this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Button.Angle = 35F;
+            this.Login_Button.Angle = 14F;
             this.Login_Button.BorderRadius = 20;
             this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
             this.Login_Button.Color1 = System.Drawing.Color.Magenta;
@@ -245,17 +256,6 @@
             this.username.Text = "Type your username";
             this.username.Enter += new System.EventHandler(this.username_Enter);
             this.username.Leave += new System.EventHandler(this.username_Leave);
-            // 
-            // pass_Visibility
-            // 
-            this.pass_Visibility.AutoSize = true;
-            this.pass_Visibility.Location = new System.Drawing.Point(314, 628);
-            this.pass_Visibility.Name = "pass_Visibility";
-            this.pass_Visibility.Size = new System.Drawing.Size(75, 24);
-            this.pass_Visibility.TabIndex = 19;
-            this.pass_Visibility.Text = "Show";
-            this.pass_Visibility.UseVisualStyleBackColor = true;
-            this.pass_Visibility.CheckedChanged += new System.EventHandler(this.pass_Visibility_CheckedChanged);
             // 
             // Home
             // 

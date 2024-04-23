@@ -20,7 +20,7 @@ namespace Booking.Classes
 
      public class Query
     {
-        private List<bookingHistoryDetail> bookinghistories = new List<bookingHistoryDetail>();
+        private List<BookingDetail> bookinghistories = new List<BookingDetail>();
         private List<Accommodation> accommodations = new List<Accommodation>();
         private List<Destination> destinations = new List<Destination>();
         private List<Trip> trips = new List<Trip>();
@@ -414,11 +414,11 @@ namespace Booking.Classes
             con.Close();
             return dailySales;
         }
-        public List<bookingHistoryDetail> getBookings(string adminName , string date , string vessel , string selectedTime) 
+        public List<BookingDetail> getBookings(string adminName , string date , string vessel , string selectedTime) 
         {
             bookinghistories.Clear();
             con.Open();
-            string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number" +
+            string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number, passenger.passenger_accomodation" +
                 " FROM booking" +
                 " INNER JOIN trip ON booking.trip_id = trip.trip_id" +
                 " INNER JOIN boat ON trip.boat_id = boat.boat_id" +
@@ -435,6 +435,7 @@ namespace Booking.Classes
             while (reader.Read())
             {
                 int booking_id_int = reader.GetInt32(reader.GetOrdinal("booking_id"));
+                int tripId = reader.GetInt32(reader.GetOrdinal("trip_id"));
                 string boatname = reader.GetString(reader.GetOrdinal("boat_name"));
                 DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
                 string formattedDate = dateTime.ToString("MMMM dd, yyyy");
@@ -445,12 +446,13 @@ namespace Booking.Classes
                 string passengerlname = reader.GetString(reader.GetOrdinal("passenger_lname"));
                 string ticketNumber = reader.GetString(reader.GetOrdinal("passenger_ticket_number"));
                 string stat = reader.GetString(reader.GetOrdinal("booking_status"));
+                string accom = reader.GetString(reader.GetOrdinal("passenger_accomodation"));
 
 
-
-                bookingHistoryDetail h = new bookingHistoryDetail
+                BookingDetail h = new BookingDetail
                 {
                     bookingId = booking_id_int,
+                    trip_id = tripId,
                     vesselName = boatname,
                     tripSchedule = formattedDate + " / " + departtime,
                     origin = boat_origin,
@@ -458,7 +460,7 @@ namespace Booking.Classes
                     passengerName = passengerfname + " " + passengerlname,
                     ticketNumber = ticketNumber,
                     bookingStatus = stat,
-
+                    accomodation = accom
                 };
 
                 bookinghistories.Add(h);
@@ -497,6 +499,44 @@ namespace Booking.Classes
             con.Close();
 
             return departTimes;
+        }
+        public Boolean updateBooking(int booking_id)
+        {
+            bool updated = false;
+            con.Open();
+            try
+            {
+                string updateQuery = "UPDATE booking SET booking_status = 'Cancelled' WHERE booking_id = @BookingId";
+                MySqlCommand command = new MySqlCommand(@updateQuery, con);
+                command.Parameters.AddWithValue("@BookingId", booking_id);
+                command.ExecuteNonQuery();
+                updated = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            con.Close();
+            return updated;
+        }
+        public void updateAccomodation(int tripId,  string accomodationName)
+        {
+           
+            try
+            {
+                con.Open();
+                string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable + 1 WHERE trip_id = @TripId and accomodation_name = @AccomodationName";
+                MySqlCommand command = new MySqlCommand(@updateQuery, con);
+                command.Parameters.AddWithValue("@TripId", tripId);
+                command.Parameters.AddWithValue("@AccomodationName", accomodationName);
+                command.ExecuteNonQuery();
+                MessageBox.Show("done!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            con.Close();
         }
     }
 }
