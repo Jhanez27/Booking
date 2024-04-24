@@ -74,7 +74,7 @@
             this.search_btn.OnHoverForeColor = System.Drawing.Color.Black;
             this.search_btn.OnHoverImage = null;
             this.search_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.search_btn.Radius = 5;
+            this.search_btn.Radius = 1;
             this.search_btn.Size = new System.Drawing.Size(137, 56);
             this.search_btn.TabIndex = 6;
             this.search_btn.Text = "  Search";

@@ -27,6 +27,7 @@ namespace Booking.Classes
         private List<Origin> origins = new List<Origin>();
         private List<BoatName> boats = new List<BoatName>();
         private List<departureTime> departTimes = new List<departureTime>();
+        private List<BookingDetail> todayhistories = new List<BookingDetail>();
         private Trip tripDetails;
         MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean searchAccount(string username, string password)
@@ -109,6 +110,23 @@ namespace Booking.Classes
             reader.Close();
             con.Close();
             return numberBookings;
+        }
+        public int getNumberOfCancelled(string username)
+        {
+            int numberCancelledBookings = 0;
+            string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            con.Open();
+            string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today AND booking_status = 'Cancelled'";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Today", todayDate);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                numberCancelledBookings++;
+            }
+            reader.Close();
+            con.Close();
+            return numberCancelledBookings;
         }
         public int getNumberOfTrips(string shippingLine)
         {
@@ -214,7 +232,18 @@ namespace Booking.Classes
         {
             trips.Clear();
             con.Open();
-            string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE DATE(trip.date_departure) = Date(@Schedule) AND availableSeat > 0 and origin = @Origin and destination = @Destination";
+            string query = "SELECT trip.*, boat.boat_name, boat.shipping_line " +
+                "FROM trip " +
+                "INNER JOIN boat ON trip.boat_id = boat.boat_id " +
+                "WHERE DATE(trip.date_departure) = DATE(@Schedule) " +
+                "AND trip.origin = @Origin " +
+                "AND trip.destination = @Destination " +
+                "AND trip.availableSeat > 0 " +
+                "AND (" +
+                "  DATE(trip.date_departure) > CURDATE() " +
+                "  OR (DATE(trip.date_departure) = CURDATE() AND TIME(trip.date_departure) > CURTIME())" +
+                ")";
+
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Schedule",departTime);
             command.Parameters.AddWithValue("@Origin", origin);
@@ -418,7 +447,7 @@ namespace Booking.Classes
         {
             bookinghistories.Clear();
             con.Open();
-            string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number, passenger.passenger_accomodation" +
+            string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number, passenger.passenger_accomodation, passenger.passenger_contactNum" +
                 " FROM booking" +
                 " INNER JOIN trip ON booking.trip_id = trip.trip_id" +
                 " INNER JOIN boat ON trip.boat_id = boat.boat_id" +
@@ -447,8 +476,8 @@ namespace Booking.Classes
                 string ticketNumber = reader.GetString(reader.GetOrdinal("passenger_ticket_number"));
                 string stat = reader.GetString(reader.GetOrdinal("booking_status"));
                 string accom = reader.GetString(reader.GetOrdinal("passenger_accomodation"));
-
-
+                string email = reader.GetString(reader.GetOrdinal("passenger_email"));
+                string contact = reader.GetString(reader.GetOrdinal("passenger_contactNum"));
                 BookingDetail h = new BookingDetail
                 {
                     bookingId = booking_id_int,
@@ -460,7 +489,9 @@ namespace Booking.Classes
                     passengerName = passengerfname + " " + passengerlname,
                     ticketNumber = ticketNumber,
                     bookingStatus = stat,
-                    accomodation = accom
+                    email = email,
+                    accomodation = accom,
+                    pNumber = contact
                 };
 
                 bookinghistories.Add(h);
@@ -521,22 +552,83 @@ namespace Booking.Classes
         }
         public void updateAccomodation(int tripId,  string accomodationName)
         {
-           
+            string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
+
+            MySqlConnection con = new MySqlConnection(connectionString);
+            con.Open();
             try
             {
-                con.Open();
                 string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable + 1 WHERE trip_id = @TripId and accomodation_name = @AccomodationName";
                 MySqlCommand command = new MySqlCommand(@updateQuery, con);
                 command.Parameters.AddWithValue("@TripId", tripId);
                 command.Parameters.AddWithValue("@AccomodationName", accomodationName);
                 command.ExecuteNonQuery();
-                MessageBox.Show("done!");
+                
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
             con.Close();
+        }
+        public List<BookingDetail> getTodayBookings(string admin)
+        {
+            todayhistories.Clear();
+            string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
+
+            MySqlConnection con = new MySqlConnection(connectionString);
+            con.Open();
+            string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number, passenger.passenger_accomodation, passenger.passenger_contactNum" +
+                " FROM booking" +
+                " INNER JOIN trip ON booking.trip_id = trip.trip_id" +
+                " INNER JOIN boat ON trip.boat_id = boat.boat_id" +
+                " INNER JOIN passenger ON booking.passenger_id = passenger.passenger_id" +
+                " WHERE booking.username = @adminName" +
+                " AND booking.booking_date = @Today";
+            MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@adminName", admin);
+            command.Parameters.AddWithValue("@Today", todayDate);
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int booking_id_int = reader.GetInt32(reader.GetOrdinal("booking_id"));
+                int tripId = reader.GetInt32(reader.GetOrdinal("trip_id"));
+                string boatname = reader.GetString(reader.GetOrdinal("boat_name"));
+                DateTime dateTime = reader.GetDateTime(reader.GetOrdinal("date_departure"));
+                string formattedDate = dateTime.ToString("MMMM dd, yyyy");
+                string departtime = dateTime.ToString("hh:mm tt");
+                string boat_destination = reader.GetString(reader.GetOrdinal("destination"));
+                string boat_origin = reader.GetString(reader.GetOrdinal("origin"));
+                string passengerfname = reader.GetString(reader.GetOrdinal("passenger_fname"));
+                string passengerlname = reader.GetString(reader.GetOrdinal("passenger_lname"));
+                string ticketNumber = reader.GetString(reader.GetOrdinal("passenger_ticket_number"));
+                string stat = reader.GetString(reader.GetOrdinal("booking_status"));
+                string accom = reader.GetString(reader.GetOrdinal("passenger_accomodation"));
+                string email = reader.GetString(reader.GetOrdinal("passenger_email"));
+                string contact = reader.GetString(reader.GetOrdinal("passenger_contactNum"));
+                BookingDetail h = new BookingDetail
+                {
+                    bookingId = booking_id_int,
+                    trip_id = tripId,
+                    vesselName = boatname,
+                    tripSchedule = formattedDate + " / " + departtime,
+                    origin = boat_origin,
+                    destination = boat_destination,
+                    passengerName = passengerfname + " " + passengerlname,
+                    ticketNumber = ticketNumber,
+                    bookingStatus = stat,
+                    email = email,
+                    accomodation = accom,
+                    pNumber = contact
+                };
+
+                todayhistories.Add(h);
+
+            }
+            reader.Close();
+            con.Close();
+            return todayhistories;
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Booking.usercontrol
         private List<BookingDetail> histories;
         private List<BookingDetail> cancelBooking;
         private List <departureTime> departurestime;
-
+        private List<BookingDetail> onloadhistories;
         public bool isChecked { get; private set; }
 
         public bookingHistory(User user)
@@ -37,8 +37,17 @@ namespace Booking.usercontrol
             {
                  boatName_comboBox.Items.Add(boat.boatName);
             }
-        }
 
+            toLoadTodaysHistories();
+        }
+        private void toLoadTodaysHistories()
+        {
+            onloadhistories = query.getTodayBookings(currentUser.Username);
+            populateTable(onloadhistories);
+            details_panel.Visible = true;
+            cancel_btn.Visible = false;
+            cancel_btn2.Visible = true;
+        }
         private void searchBooking_btn_Click(object sender, EventArgs e)
         {
             string vesselName = boatName_comboBox.SelectedItem.ToString();
@@ -50,16 +59,12 @@ namespace Booking.usercontrol
             
             histories = currentUser.searchBookings(currentUser.Username, datedepart, vesselName, queryTime);
             populateTable(histories);
-
+            cancel_btn.Visible = true;
+            cancel_btn2.Visible = false ;
         }
         private void populateTable(List<BookingDetail> details)
         {
-            if (details.Count == 0)
-            {
-                MessageBox.Show("No bookings on that Trip");
-                details_panel.Visible = false;
-                return;
-            }
+            
 
             bookingHistoryDataGridView.Rows.Clear();
             bookingHistoryDataGridView.Columns.Clear();
@@ -79,11 +84,19 @@ namespace Booking.usercontrol
             bookingHistoryDataGridView.Columns["accomodation"].Visible = false;
             bookingHistoryDataGridView.Columns.Add("tripId", "trip id");
             bookingHistoryDataGridView.Columns["tripId"].Visible = false;
+            bookingHistoryDataGridView.Columns.Add("Number", "Number");
+            bookingHistoryDataGridView.Columns["Number"].Visible = false;
+
+            if (details.Count == 0)
+            {
+                MessageBox.Show("No Bookings");
+                return;
+            }
             foreach (var bookingHistoryDetail in details)
             {
+
                 int rowIndex = bookingHistoryDataGridView.Rows.Add();
 
-            
                 if (bookingHistoryDetail.bookingStatus == "Paid")
                 {
                     DataGridViewCheckBoxCell checkboxCell = new DataGridViewCheckBoxCell();
@@ -108,6 +121,7 @@ namespace Booking.usercontrol
                 bookingHistoryDataGridView.Rows[rowIndex].Cells[9].Value = bookingHistoryDetail.email;
                 bookingHistoryDataGridView.Rows[rowIndex].Cells[10].Value = bookingHistoryDetail.accomodation;
                 bookingHistoryDataGridView.Rows[rowIndex].Cells[11].Value = bookingHistoryDetail.trip_id;
+                bookingHistoryDataGridView.Rows[rowIndex].Cells[12].Value = bookingHistoryDetail.pNumber;
             }
         }
 
@@ -122,9 +136,6 @@ namespace Booking.usercontrol
                 departureTime_comboBox.Items.Add(dtime.departime);
             }
         }
-
-
-        // Event handler for CellValueChanged
 
         private void BookingHistoryDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -153,8 +164,8 @@ namespace Booking.usercontrol
                         {
                             BookingDetail bookingDetail = new BookingDetail
                             {
-                                bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"),  // Ensure no null
-                                trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),  // Ensure no null
+                                bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"), 
+                                trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),  
                                 vesselName = row.Cells[2].Value?.ToString() ?? "Unknown",
                                 tripSchedule = row.Cells[3].Value?.ToString() ?? "Unknown",
                                 origin = row.Cells[4].Value?.ToString() ?? "Unknown",
@@ -164,14 +175,14 @@ namespace Booking.usercontrol
                                 bookingStatus = row.Cells[8].Value?.ToString() ?? "Unknown",
                                 email = row.Cells[9].Value?.ToString() ?? "Unknown",
                                 accomodation = row.Cells[10].Value?.ToString() ?? "Unknown",
-                               
+                                pNumber = row.Cells[12].Value?.ToString() ?? "Unknown",
                             };
 
                             cancelBooking.Add(bookingDetail);
                         }
                         catch (Exception ex)
                         {
-                            // Handle exception, log, or show a user-friendly message
+                            
                             MessageBox.Show($"Error: {ex.Message}");
                         }
 
@@ -194,16 +205,78 @@ namespace Booking.usercontrol
                 if(cancel)
                 {
                     query.updateAccomodation(tripId, cancelList.accomodation.ToString());
-                    ApplicationSystem notif = new ApplicationSystem();
-                    MessageBox.Show(cancelList.accomodation.ToString());
+                    ApplicationSystemEmail notif = new ApplicationSystemEmail();
                     notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(),cancelList.destination.ToString());
+                     
                 }
    
             }
+            MessageBox.Show("Notification regarding the cancellation has been sent");
             searchBooking_btn_Click(sender, e);
         }
 
+        private void cancel_btn2_Click(object sender, EventArgs e)
+        {
+            cancelBooking = new List<BookingDetail>();
+            foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
+            {
 
+                if (row.Cells[0] is DataGridViewCheckBoxCell checkboxCell)
+                {
+                    if ((bool)checkboxCell.Value == true)
+                    {
+                        try
+                        {
+                            BookingDetail bookingDetail = new BookingDetail
+                            {
+                                bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"),  // Ensure no null
+                                trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),  // Ensure no null
+                                vesselName = row.Cells[2].Value?.ToString() ?? "Unknown",
+                                tripSchedule = row.Cells[3].Value?.ToString() ?? "Unknown",
+                                origin = row.Cells[4].Value?.ToString() ?? "Unknown",
+                                destination = row.Cells[5].Value?.ToString() ?? "Unknown",
+                                passengerName = row.Cells[6].Value?.ToString() ?? "Unknown",
+                                ticketNumber = row.Cells[7].Value?.ToString() ?? "Unknown",
+                                bookingStatus = row.Cells[8].Value?.ToString() ?? "Unknown",
+                                email = row.Cells[9].Value?.ToString() ?? "Unknown",
+                                accomodation = row.Cells[10].Value?.ToString() ?? "Unknown",
+                                pNumber = row.Cells[12].Value?.ToString() ?? "Unknown",
+                            };
 
+                            cancelBooking.Add(bookingDetail);
+                        }
+                        catch (Exception ex)
+                        {
+
+                            MessageBox.Show($"Error: {ex.Message}");
+                        }
+
+                    }
+                }
+            }
+
+            if (cancelBooking.Count == 0)
+            {
+                MessageBox.Show("No bookings selected for cancellation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            foreach (BookingDetail cancelList in cancelBooking)
+            {
+                string bookingid = cancelList.bookingId.ToString();
+                int bookid = int.Parse(bookingid);
+                bool cancel = currentUser.cancelBooking(bookid);
+                string tripid = cancelList.trip_id.ToString();
+                int tripId = int.Parse(tripid);
+                if (cancel)
+                {
+                    query.updateAccomodation(tripId, cancelList.accomodation.ToString());
+                    ApplicationSystemEmail notif = new ApplicationSystemEmail();
+                    notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(), cancelList.destination.ToString());
+                    MessageBox.Show("Notification regarding the cancellation has been sent");
+                }
+
+            }
+            toLoadTodaysHistories();
+        }
     }
 }

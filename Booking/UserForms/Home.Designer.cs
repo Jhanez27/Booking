@@ -206,16 +206,16 @@
             this.pass_Visibility.AutoSize = true;
             this.pass_Visibility.Location = new System.Drawing.Point(314, 628);
             this.pass_Visibility.Name = "pass_Visibility";
-            this.pass_Visibility.Size = new System.Drawing.Size(75, 24);
+            this.pass_Visibility.Size = new System.Drawing.Size(148, 24);
             this.pass_Visibility.TabIndex = 19;
-            this.pass_Visibility.Text = "Show";
+            this.pass_Visibility.Text = "Show Password";
             this.pass_Visibility.UseVisualStyleBackColor = true;
             this.pass_Visibility.CheckedChanged += new System.EventHandler(this.pass_Visibility_CheckedChanged);
             // 
             // Login_Button
             // 
             this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Button.Angle = 14F;
+            this.Login_Button.Angle = 350F;
             this.Login_Button.BorderRadius = 20;
             this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
             this.Login_Button.Color1 = System.Drawing.Color.Magenta;

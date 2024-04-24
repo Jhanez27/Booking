@@ -20,12 +20,12 @@ namespace Booking.Classes
         public string bookingStatus {  get; set; }
         public string email {  get; set; }
         public string accomodation { get; set; }
-
+        public string pNumber { get; set; }
         public BookingDetail()
         {
 
         }
-        public BookingDetail(int bookingId,int tripId , string vesselName , string tripSched,string origin, string destination , string passName,string ticketnumber, string status, string email, string accomodation) {
+        public BookingDetail(int bookingId,int tripId , string vesselName , string tripSched,string origin, string destination , string passName,string ticketnumber, string status, string email, string accomodation, string pnumber) {
             this.bookingId = bookingId;
             this.trip_id  = tripId;
             this.vesselName = vesselName;
@@ -37,6 +37,7 @@ namespace Booking.Classes
             this.bookingStatus = status;
             this.email = email;
             this.accomodation  = accomodation;
+            this.pNumber = pnumber;
         }
     }
 }

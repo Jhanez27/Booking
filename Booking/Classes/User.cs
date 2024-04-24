@@ -33,7 +33,7 @@ namespace Booking.Classes
             bool searchemail = query.searchEmail(email);
             if(searchemail)
             {
-                ApplicationSystem s = new ApplicationSystem();
+                ApplicationSystemEmail s = new ApplicationSystemEmail();
                 s.sendEmailToUser(email ,code);
                 done = true;
             }

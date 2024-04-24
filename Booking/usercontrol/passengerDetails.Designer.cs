@@ -101,7 +101,7 @@
             this.destination_txt.BackColor = System.Drawing.Color.Gainsboro;
             this.destination_txt.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.destination_txt.ForeColor = System.Drawing.Color.Black;
-            this.destination_txt.Location = new System.Drawing.Point(931, 58);
+            this.destination_txt.Location = new System.Drawing.Point(933, 74);
             this.destination_txt.Name = "destination_txt";
             this.destination_txt.Size = new System.Drawing.Size(80, 25);
             this.destination_txt.TabIndex = 4;
@@ -113,7 +113,7 @@
             this.label3.BackColor = System.Drawing.Color.Gainsboro;
             this.label3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(889, 58);
+            this.label3.Location = new System.Drawing.Point(889, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 25);
             this.label3.TabIndex = 4;
@@ -125,7 +125,7 @@
             this.origin_txt.BackColor = System.Drawing.Color.Gainsboro;
             this.origin_txt.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.origin_txt.ForeColor = System.Drawing.Color.Black;
-            this.origin_txt.Location = new System.Drawing.Point(793, 58);
+            this.origin_txt.Location = new System.Drawing.Point(792, 74);
             this.origin_txt.Name = "origin_txt";
             this.origin_txt.Size = new System.Drawing.Size(80, 25);
             this.origin_txt.TabIndex = 3;
@@ -137,7 +137,7 @@
             this.departure_date.BackColor = System.Drawing.Color.Gainsboro;
             this.departure_date.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departure_date.ForeColor = System.Drawing.Color.Black;
-            this.departure_date.Location = new System.Drawing.Point(423, 58);
+            this.departure_date.Location = new System.Drawing.Point(429, 74);
             this.departure_date.Name = "departure_date";
             this.departure_date.Size = new System.Drawing.Size(80, 25);
             this.departure_date.TabIndex = 2;
@@ -149,7 +149,7 @@
             this.boat_name.BackColor = System.Drawing.Color.Gainsboro;
             this.boat_name.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boat_name.ForeColor = System.Drawing.Color.Black;
-            this.boat_name.Location = new System.Drawing.Point(224, 58);
+            this.boat_name.Location = new System.Drawing.Point(221, 74);
             this.boat_name.Name = "boat_name";
             this.boat_name.Size = new System.Drawing.Size(80, 25);
             this.boat_name.TabIndex = 1;
@@ -158,9 +158,9 @@
             // shipLogo
             // 
             this.shipLogo.BackColor = System.Drawing.Color.Gainsboro;
-            this.shipLogo.Location = new System.Drawing.Point(71, 31);
+            this.shipLogo.Location = new System.Drawing.Point(32, 31);
             this.shipLogo.Name = "shipLogo";
-            this.shipLogo.Size = new System.Drawing.Size(100, 98);
+            this.shipLogo.Size = new System.Drawing.Size(139, 98);
             this.shipLogo.TabIndex = 0;
             this.shipLogo.TabStop = false;
             // 

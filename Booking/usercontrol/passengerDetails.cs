@@ -38,7 +38,7 @@ namespace Booking.usercontrol
             logoMap.Add("Seacat", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\seacat.png");
             logoMap.Add("Supercat", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\supercat.png");
             logoMap.Add("Roble", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\rsi-logo-short.png");
-            logoMap.Add("Lite", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\lite1.png");
+            logoMap.Add("Lite Shipping", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\lite1.png");
             logoMap.Add("Lapu-Lapu", "C:\\Users\\juliansuringa\\source\\repos\\Booking\\Booking\\Resources\\list_lapulapu.png");
         }
 
@@ -67,6 +67,7 @@ namespace Booking.usercontrol
             passType_comboBox.Items.Add("Minor");
             passType_comboBox.Items.Add("Student");
             passType_comboBox.Items.Add("Senior Citizen");
+            passType_comboBox.Items.Add("Standard");
             //Gender ComboBox Items
             pass_genderComboBox.Items.Add("F");
             pass_genderComboBox.Items.Add("M");
@@ -104,6 +105,14 @@ namespace Booking.usercontrol
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
                     decimal discountedPrice = price - (price * 0.15m) + 100;
+                    ticket_amount.Text = discountedPrice.ToString();
+                }
+            }
+            if (passType_comboBox.SelectedIndex == 3)
+            {
+                if (decimal.TryParse(accom_price.Text, out decimal price))
+                {
+                    decimal discountedPrice = price  + 100;
                     ticket_amount.Text = discountedPrice.ToString();
                 }
             }

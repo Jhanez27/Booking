@@ -333,6 +333,16 @@ namespace Booking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap user_cancel_256x256 {
+            get {
+                object obj = ResourceManager.GetObject("user-cancel.256x256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap User_free_vector_icons_designed_by_Freepik {
             get {
                 object obj = ResourceManager.GetObject("User free vector icons designed by Freepik", resourceCulture);

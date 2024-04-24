@@ -126,7 +126,7 @@
             this.gunaGradiantButton1.AnimationSpeed = 0.03F;
             this.gunaGradiantButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.gunaGradiantButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.gunaGradiantButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradiantButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGradiantButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradiantButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradiantButton1.Image")));
             this.gunaGradiantButton1.ImageOffsetX = 40;
@@ -152,7 +152,7 @@
             this.logout_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.logout_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.logout_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.logout_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.logout_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout_btn.ForeColor = System.Drawing.Color.White;
             this.logout_btn.Image = ((System.Drawing.Image)(resources.GetObject("logout_btn.Image")));
             this.logout_btn.ImageOffsetX = 40;
@@ -177,7 +177,7 @@
             this.bookhistory_btn.AnimationSpeed = 0.03F;
             this.bookhistory_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.bookhistory_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.bookhistory_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookhistory_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bookhistory_btn.ForeColor = System.Drawing.Color.White;
             this.bookhistory_btn.Image = ((System.Drawing.Image)(resources.GetObject("bookhistory_btn.Image")));
             this.bookhistory_btn.ImageOffsetX = 40;
@@ -202,7 +202,7 @@
             this.book_btn.AnimationSpeed = 0.03F;
             this.book_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.book_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.book_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.book_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.book_btn.ForeColor = System.Drawing.Color.White;
             this.book_btn.Image = ((System.Drawing.Image)(resources.GetObject("book_btn.Image")));
             this.book_btn.ImageOffsetX = 40;
@@ -227,7 +227,7 @@
             this.home_btn.AnimationSpeed = 0.03F;
             this.home_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.home_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.home_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.home_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.home_btn.ForeColor = System.Drawing.Color.White;
             this.home_btn.Image = ((System.Drawing.Image)(resources.GetObject("home_btn.Image")));
             this.home_btn.ImageOffsetX = 40;

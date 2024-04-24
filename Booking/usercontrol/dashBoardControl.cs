@@ -25,7 +25,6 @@ namespace Booking.UserForms
         }
         private void display_mainDashBoard()
         {
-            admin.Text = currentUser.Username + "'s Dashboard";
             string oceanjet = "Oceanjet";
             string seacat = "Seacat";
             string supercat = "Supercat";
@@ -34,6 +33,7 @@ namespace Booking.UserForms
             string lapu = "Lapu-Lapu";
             daily_sale.Text = query.getDailySales(currentUser.Username).ToString();
            booking_number.Text = query.getNumberOfBookings(currentUser.Username).ToString();
+           numberCancelled.Text = query.getNumberOfCancelled(currentUser.Username).ToString();
             oceanjet_avail.Text = query.getNumberOfTrips(oceanjet).ToString();
             seacat_avail.Text = query.getNumberOfTrips(seacat).ToString();
             supercat_avail.Text = query.getNumberOfTrips(supercat).ToString();

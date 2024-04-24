@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Booking.Classes
 {
-    public class ApplicationSystem
+    public class ApplicationSystemEmail
     {
        
         public void sendEmailToUser(string accEmail , string code)
@@ -97,9 +97,9 @@ namespace Booking.Classes
                     {
                         message.From = new MailAddress("ticketeasebookingnotification@gmail.com");
                         message.To.Add(accEmail);
-                        message.Subject = "OTP";
+                        message.Subject = "Trip Cancellation";
                         message.Body = "This is to inform your that your trip for " +
-                                       schedule + " , bound to" +destination+ "has been cancelled. \n Please go to nearest shipping line ticketing office for refund or rescheduling of your trip. \n Thank you!";
+                                       schedule + " , bound to " +destination+ " has been cancelled. \nPlease go to nearest shipping line ticketing office for refund or rescheduling of your trip. \n Thank you!";
 
                         // Send mail
                         smtp.Send(message);
