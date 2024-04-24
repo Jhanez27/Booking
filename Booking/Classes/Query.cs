@@ -504,6 +504,7 @@ namespace Booking.Classes
         public List<departureTime> getDepartureTimes(string vesselName)
         {
             departTimes.Clear();
+            HashSet<string> departureTimes = new HashSet<string>();
             string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
 
             MySqlConnection con = new MySqlConnection(connectionString);
@@ -520,10 +521,14 @@ namespace Booking.Classes
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                departureTime depart_time = new departureTime();
                 string depart = reader["departure_time"].ToString();
-                depart_time.departime = depart;
-                departTimes.Add(depart_time);
+                if (!departureTimes.Contains(depart))
+                {
+                    departureTime dp = new departureTime();
+                    dp.departime = depart;
+                    departTimes.Add(dp);
+                    departureTimes.Add(depart);
+                }
             }
 
             reader.Close();

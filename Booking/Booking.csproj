@@ -168,6 +168,7 @@
     <Compile Include="Classes\PassengerBooking.cs" />
     <Compile Include="Classes\Query.cs" />
     <Compile Include="Classes\ApplicationSystemEmail.cs" />
+    <Compile Include="Classes\Ticket.cs" />
     <Compile Include="Classes\Trip.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -210,6 +211,12 @@
     </Compile>
     <Compile Include="usercontrol\reportControl.Designer.cs">
       <DependentUpon>reportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrol\ticketDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrol\ticketDetail.Designer.cs">
+      <DependentUpon>ticketDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="usercontrol\tripDetails.cs">
       <SubType>UserControl</SubType>
@@ -290,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\reportControl.resx">
       <DependentUpon>reportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrol\ticketDetail.resx">
+      <DependentUpon>ticketDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrol\tripDetails.resx">
       <DependentUpon>tripDetails.cs</DependentUpon>
@@ -392,6 +402,10 @@
     <None Include="Resources\customer-plus-major.256x242.png" />
     <None Include="Resources\calendar-clock.233x256.png" />
     <None Include="Resources\list_lapulapu.png" />
+    <None Include="Resources\icons8-print-48.png" />
+    <None Include="Resources\email.256x256.png" />
+    <None Include="Resources\icons8-print-481.png" />
+    <None Include="Resources\email.256x2561.png" />
     <Content Include="Resources\lite.png" />
     <None Include="Resources\lite1.png" />
     <Content Include="Resources\oceanjet.png" />

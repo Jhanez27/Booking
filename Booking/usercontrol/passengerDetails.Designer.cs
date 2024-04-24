@@ -59,7 +59,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.book_btn = new Guna.UI.WinForms.GunaButton();
             this.tripDetail_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -410,38 +410,38 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "First Name : ";
             // 
-            // gunaButton1
+            // book_btn
             // 
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BaseColor = System.Drawing.Color.SlateGray;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
-            this.gunaButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.ImageOffsetX = 1;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(644, 874);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.DimGray;
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 10;
-            this.gunaButton1.Size = new System.Drawing.Size(270, 52);
-            this.gunaButton1.TabIndex = 4;
-            this.gunaButton1.Text = " Book";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            this.book_btn.AnimationHoverSpeed = 0.07F;
+            this.book_btn.AnimationSpeed = 0.03F;
+            this.book_btn.BaseColor = System.Drawing.Color.SlateGray;
+            this.book_btn.BorderColor = System.Drawing.Color.Black;
+            this.book_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.book_btn.ForeColor = System.Drawing.Color.White;
+            this.book_btn.Image = ((System.Drawing.Image)(resources.GetObject("book_btn.Image")));
+            this.book_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_btn.ImageOffsetX = 1;
+            this.book_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.book_btn.Location = new System.Drawing.Point(644, 874);
+            this.book_btn.Name = "book_btn";
+            this.book_btn.OnHoverBaseColor = System.Drawing.Color.DimGray;
+            this.book_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.book_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.book_btn.OnHoverImage = null;
+            this.book_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.book_btn.Radius = 10;
+            this.book_btn.Size = new System.Drawing.Size(270, 52);
+            this.book_btn.TabIndex = 4;
+            this.book_btn.Text = " Book";
+            this.book_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.book_btn.Click += new System.EventHandler(this.bookbtn_Click);
             // 
             // passengerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(236)))), ((int)(((byte)(247)))));
-            this.Controls.Add(this.gunaButton1);
+            this.Controls.Add(this.book_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tripDetail_panel);
             this.Name = "passengerDetails";
@@ -481,7 +481,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox passType_comboBox;
         private System.Windows.Forms.Label label10;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaButton book_btn;
         private Guna.UI.WinForms.GunaLineTextBox pass_email;
         private Guna.UI.WinForms.GunaLineTextBox pass_contactNum;
         private Guna.UI.WinForms.GunaLineTextBox pass_Age;

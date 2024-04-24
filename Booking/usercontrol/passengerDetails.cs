@@ -17,6 +17,7 @@ namespace Booking.usercontrol
 {
     public partial class passengerDetails : UserControl
     {
+        private string ticketNumber;
         private Query query;
         private string tripId;
         private Classes.User currentUser;
@@ -118,44 +119,6 @@ namespace Booking.usercontrol
             }
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrWhiteSpace(pass_fname.Text) || string.IsNullOrWhiteSpace(pass_lname.Text)
-                || string.IsNullOrWhiteSpace(pass_Age.Text) || string.IsNullOrWhiteSpace(pass_contactNum.Text)
-                || string.IsNullOrWhiteSpace(pass_email.Text))
-            {
-                MessageBox.Show("All fields Required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string passNumber = pass_contactNum.Text.Trim();
-            if (!IsValidPhoneNumber(passNumber))
-            {
-                MessageBox.Show("Invalid Phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string ticketNumber = GenerateUniqueTicketNumber();
-            double price = Convert.ToDouble(ticket_amount.Text);
-            int age = Convert.ToInt32(pass_Age.Text);
-            Passenger p = new Passenger(pass_fname.Text,pass_lname.Text ,age , pass_genderComboBox.SelectedItem.ToString()
-                ,pass_contactNum.Text , pass_email.Text,ticketNumber, accom_comboBox.SelectedItem.ToString());
-            int passengerId = currentUser.addPassenger(p);
-            string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
-            PassengerBooking pb = new PassengerBooking(currentUser.Username, passengerId, Convert.ToInt16(tripId),Convert.ToDouble(ticket_amount.Text),dateToday , "Paid");
-            bool booked = currentUser.bookPassenger(pb);
-            if (booked)
-            {
-                query = new Query();
-                query.updateAccomodationSeat(tripId, accom_comboBox.SelectedItem.ToString());
-                MessageBox.Show("Book Successfull.\n An email containing the ticket will be sent to the Passenger");
-                UserHome parentForm = this.ParentForm as UserHome;
-                if (parentForm != null)
-                {
-                    bookingControl bc = new bookingControl(currentUser);
-                    parentForm.DashboardPanel.Controls.Clear();
-                    parentForm.DashboardPanel.Controls.Add(bc);
-                }
-            }
-        }
         public string GenerateUniqueTicketNumber()
         {
             string datePart = DateTime.Now.ToString("mmss");
@@ -173,6 +136,64 @@ namespace Booking.usercontrol
         {
             string regexPattern = @"^09\d{9}$"; // Regex pattern for Philippine mobile phone numbers
             return Regex.IsMatch(phoneNumber, regexPattern);
+        }
+
+        private void bookbtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(pass_fname.Text) || string.IsNullOrWhiteSpace(pass_lname.Text)
+                || string.IsNullOrWhiteSpace(pass_Age.Text) || string.IsNullOrWhiteSpace(pass_contactNum.Text)
+                || string.IsNullOrWhiteSpace(pass_email.Text))
+            {
+                MessageBox.Show("All fields Required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string passNumber = pass_contactNum.Text.Trim();
+            if (!IsValidPhoneNumber(passNumber))
+            {
+                MessageBox.Show("Invalid Phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ticketNumber = GenerateUniqueTicketNumber();
+            double price = Convert.ToDouble(ticket_amount.Text);
+            int age = Convert.ToInt32(pass_Age.Text);
+            Passenger p = new Passenger(pass_fname.Text, pass_lname.Text, age, pass_genderComboBox.SelectedItem.ToString()
+                , pass_contactNum.Text, pass_email.Text, ticketNumber, accom_comboBox.SelectedItem.ToString());
+            int passengerId = currentUser.addPassenger(p);
+            string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
+            PassengerBooking pb = new PassengerBooking(currentUser.Username, passengerId, Convert.ToInt16(tripId), Convert.ToDouble(ticket_amount.Text), dateToday, "Paid");
+            bool booked = currentUser.bookPassenger(pb);
+            if (booked)
+            {
+                query = new Query();
+                query.updateAccomodationSeat(tripId, accom_comboBox.SelectedItem.ToString());
+                viewTicket();
+            }
+        }
+        private void viewTicket()
+        {
+            string ticketNum = ticketNumber.ToString();
+            string shipline = trip.shippingLine;
+            string bookDate = DateTime.Now.ToString("MMMM dd, yyyy hh:mm");
+            string accomName = accom_comboBox.SelectedItem.ToString();
+            string discountT = passType_comboBox.SelectedItem.ToString();
+            string originName = trip.origin;
+            string destinationName = trip.destination;
+            string vessel = trip.boat_name;
+            string sched = trip.departureDate;
+            string passName = pass_fname.Text + " " + pass_lname.Text;
+            string passAge = pass_Age.Text;
+            string passSex = pass_genderComboBox.SelectedItem.ToString();
+            string ticketAmount = ticket_amount.Text;
+            double fare = Convert.ToDouble(ticketAmount);
+            Ticket ticket = new Ticket(ticketNum, shipline, bookDate, accomName, discountT, originName, destinationName, vessel, sched, passName, passAge, passSex, fare);
+            UserHome parentForm = this.ParentForm as UserHome;
+            if (parentForm != null)
+            {
+                ticketDetail ticketdetails = new ticketDetail(ticket);
+                parentForm.DashboardPanel.Controls.Clear();
+                parentForm.DashboardPanel.Controls.Add(ticketdetails);
+            }
+
         }
     }
 }
