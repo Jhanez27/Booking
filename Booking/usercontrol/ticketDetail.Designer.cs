@@ -218,7 +218,7 @@
             // 
             this.sex_lbl.AutoSize = true;
             this.sex_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.sex_lbl.Location = new System.Drawing.Point(652, 229);
+            this.sex_lbl.Location = new System.Drawing.Point(662, 229);
             this.sex_lbl.Name = "sex_lbl";
             this.sex_lbl.Size = new System.Drawing.Size(33, 20);
             this.sex_lbl.TabIndex = 15;
@@ -237,7 +237,7 @@
             // 
             this.age_lbl.AutoSize = true;
             this.age_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.age_lbl.Location = new System.Drawing.Point(605, 230);
+            this.age_lbl.Location = new System.Drawing.Point(590, 229);
             this.age_lbl.Name = "age_lbl";
             this.age_lbl.Size = new System.Drawing.Size(51, 20);
             this.age_lbl.TabIndex = 13;
