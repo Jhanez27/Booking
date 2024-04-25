@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -142,7 +143,18 @@ namespace Booking.usercontrol
             string regexPattern = @"^09\d{9}$"; // Regex pattern for Philippine mobile phone numbers
             return Regex.IsMatch(phoneNumber, regexPattern);
         }
-
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var mailAddress = new MailAddress(email); // Will throw an exception if invalid
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
         private void bookbtn_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(pass_fname.Text) || string.IsNullOrWhiteSpace(pass_lname.Text)
@@ -156,6 +168,11 @@ namespace Booking.usercontrol
             if (!IsValidPhoneNumber(passNumber))
             {
                 MessageBox.Show("Invalid Phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!IsValidEmail(pass_email.Text))
+            {
+                MessageBox.Show("Invalid Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             ticketNumber = GenerateUniqueTicketNumber();

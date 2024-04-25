@@ -216,7 +216,7 @@
             // 
             this.sex_lbl.AutoSize = true;
             this.sex_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.sex_lbl.Location = new System.Drawing.Point(695, 230);
+            this.sex_lbl.Location = new System.Drawing.Point(652, 229);
             this.sex_lbl.Name = "sex_lbl";
             this.sex_lbl.Size = new System.Drawing.Size(33, 20);
             this.sex_lbl.TabIndex = 15;
@@ -225,7 +225,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(676, 229);
+            this.label9.Location = new System.Drawing.Point(633, 229);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 20);
             this.label9.TabIndex = 14;
@@ -235,7 +235,7 @@
             // 
             this.age_lbl.AutoSize = true;
             this.age_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.age_lbl.Location = new System.Drawing.Point(631, 230);
+            this.age_lbl.Location = new System.Drawing.Point(576, 229);
             this.age_lbl.Name = "age_lbl";
             this.age_lbl.Size = new System.Drawing.Size(51, 20);
             this.age_lbl.TabIndex = 13;
@@ -464,11 +464,11 @@
             // 
             this.email_btn.Image = global::Booking.Properties.Resources.email1;
             this.email_btn.ImageSize = new System.Drawing.Size(64, 64);
-            this.email_btn.Location = new System.Drawing.Point(1218, 67);
+            this.email_btn.Location = new System.Drawing.Point(1207, 67);
             this.email_btn.Name = "email_btn";
             this.email_btn.OnHoverImage = null;
             this.email_btn.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.email_btn.Size = new System.Drawing.Size(82, 54);
+            this.email_btn.Size = new System.Drawing.Size(93, 66);
             this.email_btn.TabIndex = 5;
             this.email_btn.Click += new System.EventHandler(this.email_btn_Click);
             // 
