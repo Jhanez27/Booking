@@ -58,6 +58,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.accom_lbl = new System.Windows.Forms.Label();
             this.ticket_panel = new System.Windows.Forms.Panel();
+            this.barcode_box = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.bfare_lbl = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -67,11 +68,10 @@
             this.logo_pictureBox = new System.Windows.Forms.PictureBox();
             this.email_btn = new Guna.UI.WinForms.GunaImageButton();
             this.print_btn = new Guna.UI.WinForms.GunaImageButton();
-            this.barcode_box = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.ticket_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_box)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -227,7 +227,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(633, 229);
+            this.label9.Location = new System.Drawing.Point(643, 229);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(13, 20);
             this.label9.TabIndex = 14;
@@ -237,7 +237,7 @@
             // 
             this.age_lbl.AutoSize = true;
             this.age_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.age_lbl.Location = new System.Drawing.Point(576, 229);
+            this.age_lbl.Location = new System.Drawing.Point(605, 230);
             this.age_lbl.Name = "age_lbl";
             this.age_lbl.Size = new System.Drawing.Size(51, 20);
             this.age_lbl.TabIndex = 13;
@@ -401,6 +401,14 @@
             this.ticket_panel.Size = new System.Drawing.Size(1167, 654);
             this.ticket_panel.TabIndex = 3;
             // 
+            // barcode_box
+            // 
+            this.barcode_box.Location = new System.Drawing.Point(783, 96);
+            this.barcode_box.Name = "barcode_box";
+            this.barcode_box.Size = new System.Drawing.Size(318, 50);
+            this.barcode_box.TabIndex = 27;
+            this.barcode_box.TabStop = false;
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -487,14 +495,6 @@
             this.print_btn.TabIndex = 4;
             this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
-            // barcode_box
-            // 
-            this.barcode_box.Location = new System.Drawing.Point(783, 96);
-            this.barcode_box.Name = "barcode_box";
-            this.barcode_box.Size = new System.Drawing.Size(318, 50);
-            this.barcode_box.TabIndex = 27;
-            this.barcode_box.TabStop = false;
-            // 
             // ticketDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -510,8 +510,8 @@
             this.panel2.PerformLayout();
             this.ticket_panel.ResumeLayout(false);
             this.ticket_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barcode_box)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
