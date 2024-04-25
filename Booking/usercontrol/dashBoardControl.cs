@@ -31,6 +31,7 @@ namespace Booking.UserForms
             string roble = "Roble";
             string lite = "Lite Shipping";
             string lapu = "Lapu-Lapu";
+            admin_lbl.Text = currentUser.Username + " Dashboard";
             daily_sale.Text = query.getDailySales(currentUser.Username).ToString();
            booking_number.Text = query.getNumberOfBookings(currentUser.Username).ToString();
            numberCancelled.Text = query.getNumberOfCancelled(currentUser.Username).ToString();

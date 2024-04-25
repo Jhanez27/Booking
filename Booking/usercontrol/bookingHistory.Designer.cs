@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bookingHistory));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bookingHistory));
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.departureTime_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.searchBooking_btn = new Guna.UI.WinForms.GunaButton();
             this.boatName_comboBox = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,7 +46,6 @@
             this.details_panel = new System.Windows.Forms.Panel();
             this.cancel_btn2 = new Guna.UI.WinForms.GunaButton();
             this.cancel_btn = new Guna.UI.WinForms.GunaButton();
-            this.searchBooking_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingHistoryDataGridView)).BeginInit();
             this.details_panel.SuspendLayout();
@@ -83,6 +83,30 @@
             this.label3.Size = new System.Drawing.Size(131, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Departure Time : ";
+            // 
+            // searchBooking_btn
+            // 
+            this.searchBooking_btn.AnimationHoverSpeed = 0.07F;
+            this.searchBooking_btn.AnimationSpeed = 0.03F;
+            this.searchBooking_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.searchBooking_btn.BorderColor = System.Drawing.Color.Black;
+            this.searchBooking_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBooking_btn.ForeColor = System.Drawing.Color.White;
+            this.searchBooking_btn.Image = ((System.Drawing.Image)(resources.GetObject("searchBooking_btn.Image")));
+            this.searchBooking_btn.ImageOffsetX = 5;
+            this.searchBooking_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.searchBooking_btn.Location = new System.Drawing.Point(1123, 18);
+            this.searchBooking_btn.Name = "searchBooking_btn";
+            this.searchBooking_btn.OnHoverBaseColor = System.Drawing.Color.SlateGray;
+            this.searchBooking_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.searchBooking_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.searchBooking_btn.OnHoverImage = null;
+            this.searchBooking_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.searchBooking_btn.Radius = 1;
+            this.searchBooking_btn.Size = new System.Drawing.Size(241, 53);
+            this.searchBooking_btn.TabIndex = 4;
+            this.searchBooking_btn.Text = "Search Bookings";
+            this.searchBooking_btn.Click += new System.EventHandler(this.searchBooking_btn_Click);
             // 
             // boatName_comboBox
             // 
@@ -134,7 +158,7 @@
             this.bookingHistoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -143,7 +167,7 @@
             this.bookingHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -154,7 +178,7 @@
             this.bookingHistoryDataGridView.Name = "bookingHistoryDataGridView";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -166,7 +190,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.bookingHistoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bookingHistoryDataGridView.RowTemplate.Height = 28;
-            this.bookingHistoryDataGridView.Size = new System.Drawing.Size(1195, 709);
+            this.bookingHistoryDataGridView.Size = new System.Drawing.Size(1326, 709);
             this.bookingHistoryDataGridView.TabIndex = 0;
             this.bookingHistoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookingHistoryDataGridView_CellValueChanged);
             // 
@@ -175,9 +199,9 @@
             this.details_panel.Controls.Add(this.cancel_btn2);
             this.details_panel.Controls.Add(this.cancel_btn);
             this.details_panel.Controls.Add(this.bookingHistoryDataGridView);
-            this.details_panel.Location = new System.Drawing.Point(112, 139);
+            this.details_panel.Location = new System.Drawing.Point(51, 137);
             this.details_panel.Name = "details_panel";
-            this.details_panel.Size = new System.Drawing.Size(1268, 830);
+            this.details_panel.Size = new System.Drawing.Size(1379, 830);
             this.details_panel.TabIndex = 1;
             this.details_panel.Visible = false;
             // 
@@ -230,30 +254,6 @@
             this.cancel_btn.Text = "    Cancel";
             this.cancel_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
-            // 
-            // searchBooking_btn
-            // 
-            this.searchBooking_btn.AnimationHoverSpeed = 0.07F;
-            this.searchBooking_btn.AnimationSpeed = 0.03F;
-            this.searchBooking_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.searchBooking_btn.BorderColor = System.Drawing.Color.Black;
-            this.searchBooking_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBooking_btn.ForeColor = System.Drawing.Color.White;
-            this.searchBooking_btn.Image = ((System.Drawing.Image)(resources.GetObject("searchBooking_btn.Image")));
-            this.searchBooking_btn.ImageOffsetX = 5;
-            this.searchBooking_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.searchBooking_btn.Location = new System.Drawing.Point(1123, 18);
-            this.searchBooking_btn.Name = "searchBooking_btn";
-            this.searchBooking_btn.OnHoverBaseColor = System.Drawing.Color.SlateGray;
-            this.searchBooking_btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.searchBooking_btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.searchBooking_btn.OnHoverImage = null;
-            this.searchBooking_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.searchBooking_btn.Radius = 1;
-            this.searchBooking_btn.Size = new System.Drawing.Size(241, 53);
-            this.searchBooking_btn.TabIndex = 4;
-            this.searchBooking_btn.Text = "Search Bookings";
-            this.searchBooking_btn.Click += new System.EventHandler(this.searchBooking_btn_Click);
             // 
             // bookingHistory
             // 

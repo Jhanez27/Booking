@@ -68,7 +68,11 @@ namespace Booking.usercontrol
 
             bookingHistoryDataGridView.Rows.Clear();
             bookingHistoryDataGridView.Columns.Clear();
-     
+            bookingHistoryDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            bookingHistoryDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(22, 121, 171);
+            bookingHistoryDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            bookingHistoryDataGridView.EnableHeadersVisualStyles = false;
+
             bookingHistoryDataGridView.Columns.Add("Cancel", "Cancel");
             bookingHistoryDataGridView.Columns.Add("Booking ID", "Booking ID");
             bookingHistoryDataGridView.Columns.Add("Vessel Name", "Vessel Name");
