@@ -21,8 +21,9 @@ namespace Booking.Classes
         public string passAge {  get; set; }
         public string passSex { get; set; }
         public double fare { get; set;   }
-
-        public Ticket(string ticketNumber,string shipLine, string bookingDate, string accomodationName, string discountType, string originName, string destinationName, string vesselName, string tripSched, string passName, string passAge, string passSex, double fare)
+        public double basefare { get; set; }
+        public string discount { get; set; }
+        public Ticket(string ticketNumber,string shipLine, string bookingDate, string accomodationName, string discountType, string originName, string destinationName, string vesselName, string tripSched, string passName, string passAge, string passSex, double fare, double basefare, string discount)
         {
             this.ticketNumber = ticketNumber;
             this.shippingLine = shipLine;
@@ -37,6 +38,10 @@ namespace Booking.Classes
             this.passAge = passAge;
             this.passSex = passSex;
             this.fare = fare;
+            this.basefare = basefare;
+            this.discount = discount;
+            this.basefare = basefare;
+            this.discount = discount;
         }
     }
 }

@@ -23,12 +23,13 @@ namespace Booking.usercontrol
         private Classes.User currentUser;
         private Trip trip;
         private Dictionary<string, string> logoMap;
-        public passengerDetails(string tripId , Classes.User currentUser)
+        private string discount;
+        public passengerDetails(string tripId , Classes.User user)
         {
             InitializeComponent();
             InitializeLogoMap();
             this.tripId = tripId;
-            this.currentUser = currentUser;
+            this.currentUser = user;
             query = new Query();
             displayTripDetails();
         }
@@ -87,6 +88,7 @@ namespace Booking.usercontrol
         {
             if(passType_comboBox.SelectedIndex == 0)
             {
+                discount = "50 %";
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
                     decimal discountedPrice = price - (price * 0.5m) + 100; 
@@ -95,6 +97,7 @@ namespace Booking.usercontrol
             }
             if (passType_comboBox.SelectedIndex == 1)
             {
+                discount = "15 %";
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
                     decimal discountedPrice = price - (price * 0.15m) + 100;
@@ -103,6 +106,7 @@ namespace Booking.usercontrol
             }
             if (passType_comboBox.SelectedIndex == 2)
             {
+                discount = "15 %";
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
                     decimal discountedPrice = price - (price * 0.15m) + 100;
@@ -111,6 +115,7 @@ namespace Booking.usercontrol
             }
             if (passType_comboBox.SelectedIndex == 3)
             {
+                discount = "0 %";
                 if (decimal.TryParse(accom_price.Text, out decimal price))
                 {
                     decimal discountedPrice = price  + 100;
@@ -185,11 +190,15 @@ namespace Booking.usercontrol
             string passSex = pass_genderComboBox.SelectedItem.ToString();
             string ticketAmount = ticket_amount.Text;
             double fare = Convert.ToDouble(ticketAmount);
-            Ticket ticket = new Ticket(ticketNum, shipline, bookDate, accomName, discountT, originName, destinationName, vessel, sched, passName, passAge, passSex, fare);
+            string basefare = accom_price.Text;
+            double bfare = Convert.ToDouble(basefare);
+            string email = pass_email.Text.ToString();
+            string passdiscount = discount;
+            Ticket ticket = new Ticket(ticketNum, shipline, bookDate, accomName, discountT, originName, destinationName, vessel, sched, passName, passAge, passSex, fare, bfare , passdiscount);
             UserHome parentForm = this.ParentForm as UserHome;
             if (parentForm != null)
             {
-                ticketDetail ticketdetails = new ticketDetail(ticket);
+                ticketDetail ticketdetails = new ticketDetail(ticket ,email , currentUser);
                 parentForm.DashboardPanel.Controls.Clear();
                 parentForm.DashboardPanel.Controls.Add(ticketdetails);
             }

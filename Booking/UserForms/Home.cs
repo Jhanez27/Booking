@@ -21,6 +21,8 @@ namespace Booking
         {
             InitializeComponent();
             curentUser = new User();
+            this.Width = 610;
+            this.Height = 620;
         }
 
         private void username_Enter(object sender, EventArgs e)

@@ -116,7 +116,7 @@ namespace Booking.Classes
             int numberCancelledBookings = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
             con.Open();
-            string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today AND booking_status = 'Cancelled'";
+            string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today AND booking_status = 'Cancelled' AND date_cancelled = @Today";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Today", todayDate);
             MySqlDataReader reader = command.ExecuteReader();
@@ -539,12 +539,14 @@ namespace Booking.Classes
         public Boolean updateBooking(int booking_id)
         {
             bool updated = false;
+            string dateToday = DateTime.Now.ToString("yyyy:MM:dd");
             con.Open();
             try
             {
-                string updateQuery = "UPDATE booking SET booking_status = 'Cancelled' WHERE booking_id = @BookingId";
+                string updateQuery = "UPDATE booking SET booking_status = 'Cancelled' ,date_cancelled = @Today WHERE booking_id = @BookingId";
                 MySqlCommand command = new MySqlCommand(@updateQuery, con);
                 command.Parameters.AddWithValue("@BookingId", booking_id);
+                command.Parameters.AddWithValue("@Today", dateToday);
                 command.ExecuteNonQuery();
                 updated = true;
             }

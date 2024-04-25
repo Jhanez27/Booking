@@ -36,6 +36,8 @@
             this.origin_lbl = new System.Windows.Forms.Label();
             this.discountT_lbl = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.fare_lbl = new System.Windows.Forms.Label();
@@ -55,14 +57,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.accom_lbl = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.ticket_panel = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.bfare_lbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.discount_lbl = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.logo_pictureBox = new System.Windows.Forms.PictureBox();
             this.email_btn = new Guna.UI.WinForms.GunaImageButton();
             this.print_btn = new Guna.UI.WinForms.GunaImageButton();
-            this.logo_pictureBox = new System.Windows.Forms.PictureBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ticket_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,9 +116,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(41, 56);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(30, 20);
+            this.label13.Size = new System.Drawing.Size(23, 20);
             this.label13.TabIndex = 1;
-            this.label13.Text = "TO";
+            this.label13.Text = "to";
             // 
             // origin_lbl
             // 
@@ -149,6 +155,24 @@
             this.panel2.Size = new System.Drawing.Size(894, 140);
             this.panel2.TabIndex = 20;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(526, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(106, 20);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "Trip Schedule";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(260, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(103, 20);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Vessel Name";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -173,7 +197,7 @@
             // 
             this.fare_lbl.AutoSize = true;
             this.fare_lbl.ForeColor = System.Drawing.Color.Gray;
-            this.fare_lbl.Location = new System.Drawing.Point(962, 228);
+            this.fare_lbl.Location = new System.Drawing.Point(997, 368);
             this.fare_lbl.Name = "fare_lbl";
             this.fare_lbl.Size = new System.Drawing.Size(60, 20);
             this.fare_lbl.TabIndex = 17;
@@ -184,9 +208,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(901, 229);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 20);
+            this.label10.Size = new System.Drawing.Size(95, 20);
             this.label10.TabIndex = 16;
-            this.label10.Text = "Fare : ";
+            this.label10.Text = "Base Fare : ";
             // 
             // sex_lbl
             // 
@@ -337,48 +361,116 @@
             this.accom_lbl.TabIndex = 11;
             this.accom_lbl.Text = "label9";
             // 
-            // panel1
+            // ticket_panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.discountT_lbl);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.fare_lbl);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.sex_lbl);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.age_lbl);
-            this.panel1.Controls.Add(this.passName_lbl);
-            this.panel1.Controls.Add(this.accom_lbl);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.bookDate_lbl);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.ticketNum_lbl);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.logo_pictureBox);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(142, 186);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1167, 654);
-            this.panel1.TabIndex = 3;
+            this.ticket_panel.BackColor = System.Drawing.Color.White;
+            this.ticket_panel.Controls.Add(this.label20);
+            this.ticket_panel.Controls.Add(this.bfare_lbl);
+            this.ticket_panel.Controls.Add(this.label19);
+            this.ticket_panel.Controls.Add(this.discount_lbl);
+            this.ticket_panel.Controls.Add(this.label18);
+            this.ticket_panel.Controls.Add(this.label17);
+            this.ticket_panel.Controls.Add(this.label14);
+            this.ticket_panel.Controls.Add(this.discountT_lbl);
+            this.ticket_panel.Controls.Add(this.panel2);
+            this.ticket_panel.Controls.Add(this.label12);
+            this.ticket_panel.Controls.Add(this.label11);
+            this.ticket_panel.Controls.Add(this.fare_lbl);
+            this.ticket_panel.Controls.Add(this.label10);
+            this.ticket_panel.Controls.Add(this.sex_lbl);
+            this.ticket_panel.Controls.Add(this.label9);
+            this.ticket_panel.Controls.Add(this.age_lbl);
+            this.ticket_panel.Controls.Add(this.passName_lbl);
+            this.ticket_panel.Controls.Add(this.accom_lbl);
+            this.ticket_panel.Controls.Add(this.label8);
+            this.ticket_panel.Controls.Add(this.bookDate_lbl);
+            this.ticket_panel.Controls.Add(this.label7);
+            this.ticket_panel.Controls.Add(this.label6);
+            this.ticket_panel.Controls.Add(this.ticketNum_lbl);
+            this.ticket_panel.Controls.Add(this.label5);
+            this.ticket_panel.Controls.Add(this.label4);
+            this.ticket_panel.Controls.Add(this.label3);
+            this.ticket_panel.Controls.Add(this.label2);
+            this.ticket_panel.Controls.Add(this.logo_pictureBox);
+            this.ticket_panel.Controls.Add(this.label1);
+            this.ticket_panel.Location = new System.Drawing.Point(142, 186);
+            this.ticket_panel.Name = "ticket_panel";
+            this.ticket_panel.Size = new System.Drawing.Size(1167, 654);
+            this.ticket_panel.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(901, 333);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(175, 20);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "Processing fee : 100.00";
+            // 
+            // bfare_lbl
+            // 
+            this.bfare_lbl.AutoSize = true;
+            this.bfare_lbl.Location = new System.Drawing.Point(1002, 229);
+            this.bfare_lbl.Name = "bfare_lbl";
+            this.bfare_lbl.Size = new System.Drawing.Size(72, 20);
+            this.bfare_lbl.TabIndex = 8;
+            this.bfare_lbl.Text = "basefare";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(901, 368);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(93, 20);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "Total Fare : ";
+            // 
+            // discount_lbl
+            // 
+            this.discount_lbl.AutoSize = true;
+            this.discount_lbl.Location = new System.Drawing.Point(991, 266);
+            this.discount_lbl.Name = "discount_lbl";
+            this.discount_lbl.Size = new System.Drawing.Size(66, 20);
+            this.discount_lbl.TabIndex = 25;
+            this.discount_lbl.Text = "dscount";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(901, 266);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(84, 20);
+            this.label18.TabIndex = 24;
+            this.label18.Text = "Discount : ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(901, 299);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(118, 20);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "Terminal Fee: 0";
+            // 
+            // logo_pictureBox
+            // 
+            this.logo_pictureBox.Location = new System.Drawing.Point(49, 73);
+            this.logo_pictureBox.Name = "logo_pictureBox";
+            this.logo_pictureBox.Size = new System.Drawing.Size(165, 91);
+            this.logo_pictureBox.TabIndex = 1;
+            this.logo_pictureBox.TabStop = false;
             // 
             // email_btn
             // 
             this.email_btn.Image = global::Booking.Properties.Resources.email1;
             this.email_btn.ImageSize = new System.Drawing.Size(64, 64);
-            this.email_btn.Location = new System.Drawing.Point(1218, 72);
+            this.email_btn.Location = new System.Drawing.Point(1218, 67);
             this.email_btn.Name = "email_btn";
             this.email_btn.OnHoverImage = null;
             this.email_btn.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.email_btn.Size = new System.Drawing.Size(53, 37);
+            this.email_btn.Size = new System.Drawing.Size(82, 54);
             this.email_btn.TabIndex = 5;
+            this.email_btn.Click += new System.EventHandler(this.email_btn_Click);
             // 
             // print_btn
             // 
@@ -390,32 +482,7 @@
             this.print_btn.OnHoverImageOffset = new System.Drawing.Point(0, 0);
             this.print_btn.Size = new System.Drawing.Size(116, 78);
             this.print_btn.TabIndex = 4;
-            // 
-            // logo_pictureBox
-            // 
-            this.logo_pictureBox.Location = new System.Drawing.Point(49, 73);
-            this.logo_pictureBox.Name = "logo_pictureBox";
-            this.logo_pictureBox.Size = new System.Drawing.Size(165, 91);
-            this.logo_pictureBox.TabIndex = 1;
-            this.logo_pictureBox.TabStop = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(260, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(103, 20);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Vessel Name";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(526, 21);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 20);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Trip Schedule";
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
             // ticketDetail
             // 
@@ -424,14 +491,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(236)))), ((int)(((byte)(247)))));
             this.Controls.Add(this.email_btn);
             this.Controls.Add(this.print_btn);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ticket_panel);
             this.ForeColor = System.Drawing.Color.Gray;
             this.Name = "ticketDetail";
             this.Size = new System.Drawing.Size(1450, 962);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ticket_panel.ResumeLayout(false);
+            this.ticket_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_pictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -469,8 +536,14 @@
         private Guna.UI.WinForms.GunaImageButton email_btn;
         private Guna.UI.WinForms.GunaImageButton print_btn;
         private System.Windows.Forms.Label accom_lbl;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel ticket_panel;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label bfare_lbl;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label discount_lbl;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label20;
     }
 }

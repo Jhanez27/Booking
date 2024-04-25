@@ -57,7 +57,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(330, 286);
@@ -68,7 +68,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,7 +81,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,7 +94,7 @@
             // 
             // forgot
             // 
-            this.forgot.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.forgot.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.forgot.AutoSize = true;
             this.forgot.DisabledLinkColor = System.Drawing.Color.Black;
             this.forgot.ForeColor = System.Drawing.Color.Gray;
@@ -117,7 +117,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::Booking.Properties.Resources.User_free_vector_icons_designed_by_Freepik;
             this.pictureBox1.Location = new System.Drawing.Point(244, 442);
             this.pictureBox1.Name = "pictureBox1";
@@ -128,7 +128,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = global::Booking.Properties.Resources.pngegg;
             this.pictureBox2.Location = new System.Drawing.Point(244, 568);
             this.pictureBox2.Name = "pictureBox2";
@@ -139,6 +139,7 @@
             // 
             // gunaCirclePictureBox1
             // 
+            this.gunaCirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox1.Image = global::Booking.Properties.Resources.TicketEase;
             this.gunaCirclePictureBox1.Location = new System.Drawing.Point(338, 88);
@@ -156,21 +157,23 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.minimize_btn);
-            this.panel1.Location = new System.Drawing.Point(-4, -3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(882, 57);
+            this.panel1.Size = new System.Drawing.Size(878, 57);
             this.panel1.TabIndex = 18;
             // 
             // exit_btn
             // 
+            this.exit_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.exit_btn.BackColor = System.Drawing.Color.Gainsboro;
             this.exit_btn.FlatAppearance.BorderSize = 0;
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_btn.Location = new System.Drawing.Point(770, -2);
+            this.exit_btn.Location = new System.Drawing.Point(786, -2);
             this.exit_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(112, 58);
+            this.exit_btn.Size = new System.Drawing.Size(123, 58);
             this.exit_btn.TabIndex = 1;
             this.exit_btn.Text = "X";
             this.exit_btn.UseVisualStyleBackColor = false;
@@ -178,10 +181,11 @@
             // 
             // minimize_btn
             // 
+            this.minimize_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.minimize_btn.BackColor = System.Drawing.Color.Gainsboro;
             this.minimize_btn.FlatAppearance.BorderSize = 0;
             this.minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimize_btn.Location = new System.Drawing.Point(660, -2);
+            this.minimize_btn.Location = new System.Drawing.Point(666, -2);
             this.minimize_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.minimize_btn.Name = "minimize_btn";
             this.minimize_btn.Size = new System.Drawing.Size(112, 58);
@@ -192,17 +196,17 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = global::Booking.Properties.Resources._1523;
-            this.pictureBox3.Location = new System.Drawing.Point(-4, 768);
+            this.pictureBox3.Location = new System.Drawing.Point(0, 792);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(884, 205);
+            this.pictureBox3.Size = new System.Drawing.Size(1003, 178);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 15;
             this.pictureBox3.TabStop = false;
             // 
             // pass_Visibility
             // 
+            this.pass_Visibility.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass_Visibility.AutoSize = true;
             this.pass_Visibility.Location = new System.Drawing.Point(314, 628);
             this.pass_Visibility.Name = "pass_Visibility";
@@ -214,8 +218,8 @@
             // 
             // Login_Button
             // 
-            this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Login_Button.Angle = 350F;
+            this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Login_Button.Angle = 216F;
             this.Login_Button.BorderRadius = 20;
             this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
             this.Login_Button.Color1 = System.Drawing.Color.Magenta;
@@ -229,7 +233,7 @@
             // 
             // pass
             // 
-            this.pass.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pass.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.pass.BottomBorderColor = System.Drawing.Color.Black;
             this.pass.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
@@ -244,7 +248,7 @@
             // 
             // username
             // 
-            this.username.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.username.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.username.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.username.BottomBorderColor = System.Drawing.Color.Black;
             this.username.BottomBorderOnFocusColor = System.Drawing.Color.Blue;
@@ -280,7 +284,6 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

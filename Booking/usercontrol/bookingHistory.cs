@@ -211,7 +211,7 @@ namespace Booking.usercontrol
                 }
    
             }
-            MessageBox.Show("Notification regarding the cancellation has been sent");
+            MessageBox.Show("Notification regarding the cancellation has been sent.");
             searchBooking_btn_Click(sender, e);
         }
 
@@ -272,10 +272,11 @@ namespace Booking.usercontrol
                     query.updateAccomodation(tripId, cancelList.accomodation.ToString());
                     ApplicationSystemEmail notif = new ApplicationSystemEmail();
                     notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(), cancelList.destination.ToString());
-                    MessageBox.Show("Notification regarding the cancellation has been sent");
+                   
                 }
 
             }
+            MessageBox.Show("Notification regarding the cancellation has been sent.");
             toLoadTodaysHistories();
         }
     }
