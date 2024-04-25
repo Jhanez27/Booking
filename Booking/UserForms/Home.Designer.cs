@@ -154,7 +154,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.minimize_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -170,10 +169,10 @@
             this.exit_btn.BackColor = System.Drawing.Color.Gainsboro;
             this.exit_btn.FlatAppearance.BorderSize = 0;
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit_btn.Location = new System.Drawing.Point(786, -2);
+            this.exit_btn.Location = new System.Drawing.Point(787, 3);
             this.exit_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exit_btn.Name = "exit_btn";
-            this.exit_btn.Size = new System.Drawing.Size(123, 58);
+            this.exit_btn.Size = new System.Drawing.Size(123, 51);
             this.exit_btn.TabIndex = 1;
             this.exit_btn.Text = "X";
             this.exit_btn.UseVisualStyleBackColor = false;
@@ -185,10 +184,10 @@
             this.minimize_btn.BackColor = System.Drawing.Color.Gainsboro;
             this.minimize_btn.FlatAppearance.BorderSize = 0;
             this.minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimize_btn.Location = new System.Drawing.Point(666, -2);
+            this.minimize_btn.Location = new System.Drawing.Point(667, 5);
             this.minimize_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.minimize_btn.Name = "minimize_btn";
-            this.minimize_btn.Size = new System.Drawing.Size(112, 58);
+            this.minimize_btn.Size = new System.Drawing.Size(112, 47);
             this.minimize_btn.TabIndex = 0;
             this.minimize_btn.Text = "-----";
             this.minimize_btn.UseVisualStyleBackColor = false;
@@ -219,7 +218,7 @@
             // Login_Button
             // 
             this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Login_Button.Angle = 216F;
+            this.Login_Button.Angle = 60F;
             this.Login_Button.BorderRadius = 20;
             this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
             this.Login_Button.Color1 = System.Drawing.Color.Magenta;
