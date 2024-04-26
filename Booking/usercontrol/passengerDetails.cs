@@ -175,6 +175,21 @@ namespace Booking.usercontrol
                 MessageBox.Show("Invalid Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (pass_genderComboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select passenger gender.", "Validation Error");
+                return;
+            }
+            if (accom_comboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select passenger accomodation.", "Validation Error");
+                return;
+            }
+            if (passType_comboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select passenger type.", "Validation Error");
+                return;
+            }
             ticketNumber = GenerateUniqueTicketNumber();
             double price = Convert.ToDouble(ticket_amount.Text);
             int age = Convert.ToInt32(pass_Age.Text);

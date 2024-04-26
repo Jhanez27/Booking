@@ -19,7 +19,7 @@ namespace Booking.usercontrol
     {
         private User currentUser;
         private Query query;
-        MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
+       
         public reportControl(User user)
         {
             InitializeComponent();
@@ -40,7 +40,11 @@ namespace Booking.usercontrol
         public void fillwithData()
         {
             report_content.Columns.Clear();
-
+            string userName = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={userName};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             DateTime reportDate = report_datePicker.Value.Date;
             string datesearch = reportDate.ToString("yyyy-MM-dd");
             con.Open();

@@ -50,6 +50,16 @@ namespace Booking.usercontrol
 
         private void search_btn_Click(object sender, EventArgs e)
         {
+            if (origin_combo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select origin.", "Validation Error");
+                return;
+            }
+            if (destination_combo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select destination.", "Validation Error");
+                return;
+            }
             string originName = origin_combo.SelectedItem.ToString();
             string destinationName = destination_combo.SelectedItem.ToString();
             DateTime departDate = departure_datePicker.Value.Date;

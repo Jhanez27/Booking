@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Booking.usercontrol
 {
@@ -50,6 +51,16 @@ namespace Booking.usercontrol
         }
         private void searchBooking_btn_Click(object sender, EventArgs e)
         {
+            if (boatName_comboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select vessel name.", "Validation Error");
+                return;
+            }
+            if (departureTime_comboBox.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select departure time.", "Validation Error");
+                return;
+            }
             string vesselName = boatName_comboBox.SelectedItem.ToString();
             string datedepart = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd ");
             string selectedTime = departureTime_comboBox.SelectedItem.ToString();
@@ -68,6 +79,8 @@ namespace Booking.usercontrol
 
             bookingHistoryDataGridView.Rows.Clear();
             bookingHistoryDataGridView.Columns.Clear();
+           
+            bookingHistoryDataGridView.ScrollBars = ScrollBars.Vertical;
             bookingHistoryDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             bookingHistoryDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(22, 121, 171);
             bookingHistoryDataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -139,6 +152,7 @@ namespace Booking.usercontrol
             {
                 departureTime_comboBox.Items.Add(dtime.departime);
             }
+            departureTime_comboBox.SelectedIndex = 0;
         }
 
         private void BookingHistoryDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -221,6 +235,7 @@ namespace Booking.usercontrol
 
         private void cancel_btn2_Click(object sender, EventArgs e)
         {
+            
             cancelBooking = new List<BookingDetail>();
             foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
             {

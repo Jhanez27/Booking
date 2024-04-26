@@ -1,24 +1,13 @@
-﻿using Booking.usercontrol;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace Booking.Classes
 {
 
-     public class Query
+    public class Query
     {
         private List<BookingDetail> bookinghistories = new List<BookingDetail>();
         private List<Accommodation> accommodations = new List<Accommodation>();
@@ -29,9 +18,13 @@ namespace Booking.Classes
         private List<departureTime> departTimes = new List<departureTime>();
         private List<BookingDetail> todayhistories = new List<BookingDetail>();
         private Trip tripDetails;
-        MySqlConnection con = new MySqlConnection("SERVER = LOCALHOST;DATABASE = bookingsystem; UID = Jhanez28; PASSWORD = @Sur1nga123");
         public Boolean searchAccount(string username, string password)
         {
+            string userName = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string passWord = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={userName};PASSWORD={passWord}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             bool search = true;
             MySqlDataAdapter sd = new MySqlDataAdapter("select Username,Password from user where Username= '" + username + "' and Password= '" + password + "'", con);
@@ -47,6 +40,11 @@ namespace Booking.Classes
         }
         public Boolean searchEmail(string email)
         {
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             bool search = true;
             MySqlDataAdapter sd = new MySqlDataAdapter("select Email_Address from user where Email_Address= '" + email + "'", con);
@@ -61,11 +59,17 @@ namespace Booking.Classes
             con.Close();
             return search;
         }
-        public void updateEmail(string email, string newpass) {
+        public void updateEmail(string email, string newpass)
+        {
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             try
             {
-                MySqlDataAdapter ds = new MySqlDataAdapter("update user set Password='" + newpass + "' where Email_Address ='" +email+ "'", con);
+                MySqlDataAdapter ds = new MySqlDataAdapter("update user set Password='" + newpass + "' where Email_Address ='" + email + "'", con);
                 DataSet dw = new DataSet();
                 ds.Fill(dw);
                 MessageBox.Show("Change Successful, Continue to Login");
@@ -82,12 +86,18 @@ namespace Booking.Classes
         {
             float dailySales = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string userName = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={userName};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string query = "SELECT booking_amount FROM booking where username= '"+username+"' AND booking_date = @Today and booking_status = 'Paid'";
+            string query = "SELECT booking_amount FROM booking where username= '" + username + "' AND booking_date = @Today and booking_status = 'Paid'";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Today", todayDate);
             MySqlDataReader reader = command.ExecuteReader();
-            while(reader.Read()) {
+            while (reader.Read())
+            {
                 dailySales += reader.GetFloat(reader.GetOrdinal("booking_amount"));
             }
             reader.Close();
@@ -98,6 +108,11 @@ namespace Booking.Classes
         {
             int numberBookings = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string userName = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={userName};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today";
             MySqlCommand command = new MySqlCommand(query, con);
@@ -115,6 +130,11 @@ namespace Booking.Classes
         {
             int numberCancelledBookings = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string userName = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={userName};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today AND booking_status = 'Cancelled' AND date_cancelled = @Today";
             MySqlCommand command = new MySqlCommand(query, con);
@@ -132,6 +152,11 @@ namespace Booking.Classes
         {
             int numberTrips = 0;
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             try
             {
                 con.Open();
@@ -163,7 +188,11 @@ namespace Booking.Classes
         public List<Destination> addDestination()
         {
             HashSet<string> destinationNames = new HashSet<string>();
-
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT destination FROM trip";
             MySqlCommand command = new MySqlCommand(query, con);
@@ -190,6 +219,11 @@ namespace Booking.Classes
         public List<Origin> addOrigin()
         {
             HashSet<string> originNames = new HashSet<string>();
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT origin FROM trip";
             MySqlCommand command = new MySqlCommand(query, con);
@@ -215,9 +249,14 @@ namespace Booking.Classes
         }
         public List<BoatName> getBoatName()
         {
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT boat_name from boat";
-            MySqlCommand command = new MySqlCommand( query, con);
+            MySqlCommand command = new MySqlCommand(query, con);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -228,9 +267,14 @@ namespace Booking.Classes
             }
             return boats;
         }
-        public List<Trip> getTrips(string origin , string destination , DateTime departTime)
+        public List<Trip> getTrips(string origin, string destination, DateTime departTime)
         {
             trips.Clear();
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT trip.*, boat.boat_name, boat.shipping_line " +
                 "FROM trip " +
@@ -245,7 +289,7 @@ namespace Booking.Classes
                 ")";
 
             MySqlCommand command = new MySqlCommand(query, con);
-            command.Parameters.AddWithValue("@Schedule",departTime);
+            command.Parameters.AddWithValue("@Schedule", departTime);
             command.Parameters.AddWithValue("@Origin", origin);
             command.Parameters.AddWithValue("@Destination", destination);
             MySqlDataReader reader = command.ExecuteReader();
@@ -274,7 +318,7 @@ namespace Booking.Classes
                 };
 
                 // Add the Trip object to the trips list
-               
+
                 trips.Add(trip);
 
             }
@@ -286,29 +330,39 @@ namespace Booking.Classes
         }
         public List<Accommodation> getAccomodation(string tripId)
         {
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT accomodation_name FROM accomodation WHERE trip_id = @Trip AND seatAvailable > 0";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Trip", tripId);
             MySqlDataReader reader = command.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
                 Accommodation accommo = new Accommodation();
                 accommo.accomName = reader.GetString(reader.GetOrdinal("accomodation_name"));
                 accommodations.Add(accommo);
             }
             reader.Close();
-            con.Close() ;
+            con.Close();
             return accommodations;
         }
         public Trip getTripDetials(string tripId)
         {
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT trip.*,boat.boat_name, boat.shipping_line FROM trip INNER JOIN boat on trip.boat_id = boat.boat_id WHERE trip.trip_id = @TripId";
             MySqlCommand command = new MySqlCommand(query, con);
-            command.Parameters.AddWithValue("@TripId",tripId);
+            command.Parameters.AddWithValue("@TripId", tripId);
             MySqlDataReader reader = command.ExecuteReader();
-            while(reader.Read())
+            while (reader.Read())
             {
                 int trip_id_int = reader.GetInt32(reader.GetOrdinal("trip_id"));
                 string trip_Id = trip_id_int.ToString();
@@ -327,18 +381,23 @@ namespace Booking.Classes
                     boat_name = boatname,
                     destination = boat_destination,
                     origin = boat_origin,
-                    departureDate = formattedDate +  "   (" + departtime + ")"
+                    departureDate = formattedDate + "   (" + departtime + ")"
 
-                 };
+                };
 
-             }
-                 reader.Close();
-                con.Close();
-                return tripDetails;                    
+            }
+            reader.Close();
+            con.Close();
+            return tripDetails;
         }
-        public int getAccomPrice(string tripId , string accomName)
+        public int getAccomPrice(string tripId, string accomName)
         {
             int price = 0;
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT accomodation_price FROM accomodation WHERE trip_id = @Trip AND accomodation_name = @AccomodationName";
             MySqlCommand command = new MySqlCommand(query, con);
@@ -348,7 +407,7 @@ namespace Booking.Classes
             while (reader.Read())
             {
                 price = reader.GetInt32(reader.GetOrdinal("accomodation_price"));
-                
+
             }
             reader.Close();
             con.Close();
@@ -357,23 +416,28 @@ namespace Booking.Classes
         public int insertPassenger(Passenger p)
         {
             int passengerId = -1;
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             try
             {
-                    con.Open();
-                    string insertQuery = "INSERT INTO passenger (passenger_fname, passenger_lname , passenger_age, passenger_gender, passenger_contactNum,passenger_email,passenger_ticket_number,passenger_accomodation) " +
-                    "VALUES (@Fname, @Lname, @Age,  @Gender, @Number, @Email, @TicketNum, @Accom); SELECT LAST_INSERT_ID();";
-                    MySqlCommand command = new MySqlCommand(insertQuery, con);
+                con.Open();
+                string insertQuery = "INSERT INTO passenger (passenger_fname, passenger_lname , passenger_age, passenger_gender, passenger_contactNum,passenger_email,passenger_ticket_number,passenger_accomodation) " +
+                "VALUES (@Fname, @Lname, @Age,  @Gender, @Number, @Email, @TicketNum, @Accom); SELECT LAST_INSERT_ID();";
+                MySqlCommand command = new MySqlCommand(insertQuery, con);
 
-                    // Add parameters to the command
-                    command.Parameters.AddWithValue("@Fname", p.passenger_fname);
-                    command.Parameters.AddWithValue("@Lname", p.passenger_lname);
-                    command.Parameters.AddWithValue("@Age", p.passenger_age);
-                    command.Parameters.AddWithValue("@Gender", p.passenger_gender);
-                    command.Parameters.AddWithValue("@Number", p.passenger_number);
-                    command.Parameters.AddWithValue("@Email", p.passenger_email);
-                   command.Parameters.AddWithValue("@TicketNum", p.ticketNumber);
-                    command.Parameters.AddWithValue("@Accom", p.accomodation);
-                        passengerId = Convert.ToInt32(command.ExecuteScalar());
+                // Add parameters to the command
+                command.Parameters.AddWithValue("@Fname", p.passenger_fname);
+                command.Parameters.AddWithValue("@Lname", p.passenger_lname);
+                command.Parameters.AddWithValue("@Age", p.passenger_age);
+                command.Parameters.AddWithValue("@Gender", p.passenger_gender);
+                command.Parameters.AddWithValue("@Number", p.passenger_number);
+                command.Parameters.AddWithValue("@Email", p.passenger_email);
+                command.Parameters.AddWithValue("@TicketNum", p.ticketNumber);
+                command.Parameters.AddWithValue("@Accom", p.accomodation);
+                passengerId = Convert.ToInt32(command.ExecuteScalar());
             }
             catch (Exception ex)
             {
@@ -385,7 +449,11 @@ namespace Booking.Classes
         public Boolean insertBooking(PassengerBooking pb)
         {
             bool inserted = false;
-           
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             try
             {
                 con.Open();
@@ -411,8 +479,13 @@ namespace Booking.Classes
             con.Close();
             return inserted;
         }
-        public void updateAccomodationSeat(string tripId , string accomodationName)
+        public void updateAccomodationSeat(string tripId, string accomodationName)
         {
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             try
             {
@@ -421,18 +494,24 @@ namespace Booking.Classes
                 command.Parameters.AddWithValue("@TripId", tripId);
                 command.Parameters.AddWithValue("@AccomodationName", accomodationName);
                 command.ExecuteNonQuery();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
             con.Close();
 
         }
-        public float getReportSales(string username , string date)
+        public float getReportSales(string username, string date)
         {
             float dailySales = 0;
+            string user = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={user};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string query = "SELECT booking_amount FROM booking where username= '" + username + "' AND booking_date = '"+date+"' and booking_status = 'Paid'";
+            string query = "SELECT booking_amount FROM booking where username= '" + username + "' AND booking_date = '" + date + "' and booking_status = 'Paid'";
             MySqlCommand command = new MySqlCommand(query, con);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
@@ -443,9 +522,14 @@ namespace Booking.Classes
             con.Close();
             return dailySales;
         }
-        public List<BookingDetail> getBookings(string adminName , string date , string vessel , string selectedTime) 
+        public List<BookingDetail> getBookings(string adminName, string date, string vessel, string selectedTime)
         {
             bookinghistories.Clear();
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number, passenger.passenger_accomodation, passenger.passenger_contactNum" +
                 " FROM booking" +
@@ -457,9 +541,9 @@ namespace Booking.Classes
                 " AND boat.boat_name = @Vessel and TIME(trip.date_departure) = @Time";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@adminName", adminName);
-            command.Parameters.AddWithValue("@departureDate" , date);
-            command.Parameters.AddWithValue("@Vessel" ,  vessel);  
-            command.Parameters.AddWithValue("@Time" , selectedTime);
+            command.Parameters.AddWithValue("@departureDate", date);
+            command.Parameters.AddWithValue("@Vessel", vessel);
+            command.Parameters.AddWithValue("@Time", selectedTime);
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -505,8 +589,10 @@ namespace Booking.Classes
         {
             departTimes.Clear();
             HashSet<string> departureTimes = new HashSet<string>();
-            string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
-
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
 
@@ -540,6 +626,11 @@ namespace Booking.Classes
         {
             bool updated = false;
             string dateToday = DateTime.Now.ToString("yyyy:MM:dd");
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
+            MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             try
             {
@@ -557,9 +648,12 @@ namespace Booking.Classes
             con.Close();
             return updated;
         }
-        public void updateAccomodation(int tripId,  string accomodationName)
+        public void updateAccomodation(int tripId, string accomodationName)
         {
-            string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
 
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
@@ -570,7 +664,7 @@ namespace Booking.Classes
                 command.Parameters.AddWithValue("@TripId", tripId);
                 command.Parameters.AddWithValue("@AccomodationName", accomodationName);
                 command.ExecuteNonQuery();
-                
+
             }
             catch (Exception ex)
             {
@@ -582,8 +676,10 @@ namespace Booking.Classes
         {
             todayhistories.Clear();
             string todayDate = DateTime.Now.ToString("yyyy-MM-dd");
-            string connectionString = "SERVER=LOCALHOST;DATABASE=bookingsystem;UID=Jhanez28;PASSWORD=@Sur1nga123";
-
+            string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
+            string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
+            string server = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
             string query = "SELECT booking.*, boat.boat_name, trip.date_departure,trip.origin,trip.destination, passenger.passenger_fname, passenger.passenger_lname, passenger.passenger_email,passenger.passenger_ticket_number, passenger.passenger_accomodation, passenger.passenger_contactNum" +

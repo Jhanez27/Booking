@@ -38,6 +38,7 @@
             this.gunaTransfarantPictureBox5 = new Guna.UI.WinForms.GunaTransfarantPictureBox();
             this.booking_number = new Guna.UI.WinForms.GunaLabel();
             this.gunaShadowPanel4 = new Guna.UI.WinForms.GunaShadowPanel();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.lapu_available = new System.Windows.Forms.Label();
             this.gunaTransfarantPictureBox8 = new Guna.UI.WinForms.GunaTransfarantPictureBox();
             this.lite_available = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.gunaTransfarantPictureBox9 = new Guna.UI.WinForms.GunaTransfarantPictureBox();
             this.numberCancelled = new Guna.UI.WinForms.GunaLabel();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.admin_lbl = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaShadowPanel2.SuspendLayout();
@@ -67,6 +67,7 @@
             this.gunaShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox5)).BeginInit();
             this.gunaShadowPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox6)).BeginInit();
@@ -76,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.gunaShadowPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaElipsePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,7 +194,7 @@
             // gunaShadowPanel4
             // 
             this.gunaShadowPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(236)))), ((int)(((byte)(247)))));
-            this.gunaShadowPanel4.BaseColor = System.Drawing.Color.White;
+            this.gunaShadowPanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.gunaShadowPanel4.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaShadowPanel4.Controls.Add(this.lapu_available);
             this.gunaShadowPanel4.Controls.Add(this.gunaTransfarantPictureBox8);
@@ -210,7 +210,7 @@
             this.gunaShadowPanel4.Controls.Add(this.oceanjet_avail);
             this.gunaShadowPanel4.Controls.Add(this.gunaTransfarantPictureBox1);
             this.gunaShadowPanel4.ForeColor = System.Drawing.Color.DimGray;
-            this.gunaShadowPanel4.Location = new System.Drawing.Point(72, 686);
+            this.gunaShadowPanel4.Location = new System.Drawing.Point(72, 660);
             this.gunaShadowPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaShadowPanel4.Name = "gunaShadowPanel4";
             this.gunaShadowPanel4.ShadowColor = System.Drawing.Color.Silver;
@@ -220,12 +220,26 @@
             this.gunaShadowPanel4.Size = new System.Drawing.Size(1332, 305);
             this.gunaShadowPanel4.TabIndex = 27;
             // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.Image = global::Booking.Properties.Resources.TicketEase;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(834, 0);
+            this.gunaCirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(480, 275);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 19;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
             // lapu_available
             // 
             this.lapu_available.AutoSize = true;
-            this.lapu_available.BackColor = System.Drawing.Color.White;
+            this.lapu_available.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.lapu_available.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lapu_available.ForeColor = System.Drawing.Color.DimGray;
+            this.lapu_available.ForeColor = System.Drawing.Color.White;
             this.lapu_available.Location = new System.Drawing.Point(597, 103);
             this.lapu_available.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lapu_available.Name = "lapu_available";
@@ -238,10 +252,10 @@
             this.gunaTransfarantPictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.gunaTransfarantPictureBox8.BaseColor = System.Drawing.Color.Black;
             this.gunaTransfarantPictureBox8.Image = global::Booking.Properties.Resources.list_lapulapu;
-            this.gunaTransfarantPictureBox8.Location = new System.Drawing.Point(444, 103);
+            this.gunaTransfarantPictureBox8.Location = new System.Drawing.Point(444, 93);
             this.gunaTransfarantPictureBox8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaTransfarantPictureBox8.Name = "gunaTransfarantPictureBox8";
-            this.gunaTransfarantPictureBox8.Size = new System.Drawing.Size(120, 32);
+            this.gunaTransfarantPictureBox8.Size = new System.Drawing.Size(120, 42);
             this.gunaTransfarantPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaTransfarantPictureBox8.TabIndex = 10;
             this.gunaTransfarantPictureBox8.TabStop = false;
@@ -249,10 +263,10 @@
             // lite_available
             // 
             this.lite_available.AutoSize = true;
-            this.lite_available.BackColor = System.Drawing.Color.White;
+            this.lite_available.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.lite_available.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lite_available.ForeColor = System.Drawing.Color.DimGray;
-            this.lite_available.Location = new System.Drawing.Point(599, 35);
+            this.lite_available.ForeColor = System.Drawing.Color.White;
+            this.lite_available.Location = new System.Drawing.Point(599, 32);
             this.lite_available.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lite_available.Name = "lite_available";
             this.lite_available.Size = new System.Drawing.Size(98, 32);
@@ -264,10 +278,10 @@
             this.gunaTransfarantPictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.gunaTransfarantPictureBox7.BaseColor = System.Drawing.Color.Black;
             this.gunaTransfarantPictureBox7.Image = global::Booking.Properties.Resources.lite;
-            this.gunaTransfarantPictureBox7.Location = new System.Drawing.Point(444, 16);
+            this.gunaTransfarantPictureBox7.Location = new System.Drawing.Point(444, 17);
             this.gunaTransfarantPictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaTransfarantPictureBox7.Name = "gunaTransfarantPictureBox7";
-            this.gunaTransfarantPictureBox7.Size = new System.Drawing.Size(120, 77);
+            this.gunaTransfarantPictureBox7.Size = new System.Drawing.Size(120, 47);
             this.gunaTransfarantPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaTransfarantPictureBox7.TabIndex = 8;
             this.gunaTransfarantPictureBox7.TabStop = false;
@@ -275,9 +289,9 @@
             // roble_avail
             // 
             this.roble_avail.AutoSize = true;
-            this.roble_avail.BackColor = System.Drawing.Color.White;
+            this.roble_avail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.roble_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roble_avail.ForeColor = System.Drawing.Color.DimGray;
+            this.roble_avail.ForeColor = System.Drawing.Color.White;
             this.roble_avail.Location = new System.Drawing.Point(599, 169);
             this.roble_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.roble_avail.Name = "roble_avail";
@@ -290,7 +304,7 @@
             this.gunaTransfarantPictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.gunaTransfarantPictureBox6.BaseColor = System.Drawing.Color.Black;
             this.gunaTransfarantPictureBox6.Image = global::Booking.Properties.Resources.rsi_logo_short;
-            this.gunaTransfarantPictureBox6.Location = new System.Drawing.Point(437, 169);
+            this.gunaTransfarantPictureBox6.Location = new System.Drawing.Point(444, 169);
             this.gunaTransfarantPictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaTransfarantPictureBox6.Name = "gunaTransfarantPictureBox6";
             this.gunaTransfarantPictureBox6.Size = new System.Drawing.Size(120, 32);
@@ -301,9 +315,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(318, 239);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
@@ -316,10 +330,10 @@
             this.gunaTransfarantPictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.gunaTransfarantPictureBox3.BaseColor = System.Drawing.Color.Black;
             this.gunaTransfarantPictureBox3.Image = global::Booking.Properties.Resources.supercat;
-            this.gunaTransfarantPictureBox3.Location = new System.Drawing.Point(77, 35);
+            this.gunaTransfarantPictureBox3.Location = new System.Drawing.Point(77, 17);
             this.gunaTransfarantPictureBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaTransfarantPictureBox3.Name = "gunaTransfarantPictureBox3";
-            this.gunaTransfarantPictureBox3.Size = new System.Drawing.Size(128, 29);
+            this.gunaTransfarantPictureBox3.Size = new System.Drawing.Size(128, 47);
             this.gunaTransfarantPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaTransfarantPictureBox3.TabIndex = 1;
             this.gunaTransfarantPictureBox3.TabStop = false;
@@ -327,9 +341,9 @@
             // seacat_avail
             // 
             this.seacat_avail.AutoSize = true;
-            this.seacat_avail.BackColor = System.Drawing.Color.White;
+            this.seacat_avail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.seacat_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seacat_avail.ForeColor = System.Drawing.Color.DimGray;
+            this.seacat_avail.ForeColor = System.Drawing.Color.White;
             this.seacat_avail.Location = new System.Drawing.Point(225, 169);
             this.seacat_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.seacat_avail.Name = "seacat_avail";
@@ -340,10 +354,10 @@
             // supercat_avail
             // 
             this.supercat_avail.AutoSize = true;
-            this.supercat_avail.BackColor = System.Drawing.Color.White;
+            this.supercat_avail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.supercat_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supercat_avail.ForeColor = System.Drawing.Color.DimGray;
-            this.supercat_avail.Location = new System.Drawing.Point(225, 35);
+            this.supercat_avail.ForeColor = System.Drawing.Color.White;
+            this.supercat_avail.Location = new System.Drawing.Point(225, 32);
             this.supercat_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.supercat_avail.Name = "supercat_avail";
             this.supercat_avail.Size = new System.Drawing.Size(98, 32);
@@ -366,9 +380,9 @@
             // oceanjet_avail
             // 
             this.oceanjet_avail.AutoSize = true;
-            this.oceanjet_avail.BackColor = System.Drawing.Color.White;
+            this.oceanjet_avail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(176)))), ((int)(((byte)(170)))));
             this.oceanjet_avail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oceanjet_avail.ForeColor = System.Drawing.Color.DimGray;
+            this.oceanjet_avail.ForeColor = System.Drawing.Color.White;
             this.oceanjet_avail.Location = new System.Drawing.Point(225, 103);
             this.oceanjet_avail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.oceanjet_avail.Name = "oceanjet_avail";
@@ -381,10 +395,10 @@
             this.gunaTransfarantPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaTransfarantPictureBox1.BaseColor = System.Drawing.Color.Black;
             this.gunaTransfarantPictureBox1.Image = global::Booking.Properties.Resources.oceanjet;
-            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(77, 103);
+            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(77, 93);
             this.gunaTransfarantPictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gunaTransfarantPictureBox1.Name = "gunaTransfarantPictureBox1";
-            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(128, 32);
+            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(128, 42);
             this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaTransfarantPictureBox1.TabIndex = 1;
             this.gunaTransfarantPictureBox1.TabStop = false;
@@ -488,34 +502,21 @@
             this.numberCancelled.TabIndex = 1;
             this.numberCancelled.Text = "gunaLabel3";
             // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.Image = global::Booking.Properties.Resources.TicketEase;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(834, 0);
-            this.gunaCirclePictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(480, 277);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 19;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
-            // 
             // admin_lbl
             // 
             this.admin_lbl.AutoSize = true;
-            this.admin_lbl.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.admin_lbl.Font = new System.Drawing.Font("Segoe Print", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admin_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
+            this.admin_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.admin_lbl.ForeColor = System.Drawing.Color.White;
-            this.admin_lbl.Location = new System.Drawing.Point(116, 19);
+            this.admin_lbl.Location = new System.Drawing.Point(113, 30);
             this.admin_lbl.Name = "admin_lbl";
-            this.admin_lbl.Size = new System.Drawing.Size(121, 57);
+            this.admin_lbl.Size = new System.Drawing.Size(108, 37);
             this.admin_lbl.TabIndex = 9;
             this.admin_lbl.Text = "label5";
             // 
             // gunaElipsePanel1
             // 
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.DarkSeaGreen;
+            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(107)))), ((int)(((byte)(135)))));
             this.gunaElipsePanel1.Controls.Add(this.admin_lbl);
             this.gunaElipsePanel1.ForeColor = System.Drawing.Color.Black;
             this.gunaElipsePanel1.Location = new System.Drawing.Point(408, 20);
@@ -546,6 +547,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox5)).EndInit();
             this.gunaShadowPanel4.ResumeLayout(false);
             this.gunaShadowPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox6)).EndInit();
@@ -556,7 +558,6 @@
             this.gunaShadowPanel6.ResumeLayout(false);
             this.gunaShadowPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
             this.ResumeLayout(false);

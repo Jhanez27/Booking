@@ -174,7 +174,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bookingHistoryDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.bookingHistoryDataGridView.GridColor = System.Drawing.Color.Gray;
-            this.bookingHistoryDataGridView.Location = new System.Drawing.Point(27, 21);
+            this.bookingHistoryDataGridView.Location = new System.Drawing.Point(18, 13);
             this.bookingHistoryDataGridView.Name = "bookingHistoryDataGridView";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
@@ -190,7 +190,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.bookingHistoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bookingHistoryDataGridView.RowTemplate.Height = 28;
-            this.bookingHistoryDataGridView.Size = new System.Drawing.Size(1326, 709);
+            this.bookingHistoryDataGridView.Size = new System.Drawing.Size(1303, 709);
             this.bookingHistoryDataGridView.TabIndex = 0;
             this.bookingHistoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookingHistoryDataGridView_CellValueChanged);
             // 
@@ -201,7 +201,7 @@
             this.details_panel.Controls.Add(this.bookingHistoryDataGridView);
             this.details_panel.Location = new System.Drawing.Point(51, 137);
             this.details_panel.Name = "details_panel";
-            this.details_panel.Size = new System.Drawing.Size(1379, 830);
+            this.details_panel.Size = new System.Drawing.Size(1332, 830);
             this.details_panel.TabIndex = 1;
             this.details_panel.Visible = false;
             // 
