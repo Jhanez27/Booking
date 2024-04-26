@@ -336,7 +336,7 @@ namespace Booking.Classes
             string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string query = "SELECT accomodation_name FROM accomodation WHERE trip_id = @Trip AND seatAvailable > 0";
+            string query = "SELECT accomodation_name FROM accomodation WHERE acc_trip_id = @Trip AND seatAvailable > 0";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Trip", tripId);
             MySqlDataReader reader = command.ExecuteReader();
@@ -399,7 +399,7 @@ namespace Booking.Classes
             string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string query = "SELECT accomodation_price FROM accomodation WHERE trip_id = @Trip AND accomodation_name = @AccomodationName";
+            string query = "SELECT accomodation_price FROM accomodation WHERE acc_trip_id = @Trip AND accomodation_name = @AccomodationName";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Trip", tripId);
             command.Parameters.AddWithValue("@AccomodationName", accomName);
@@ -489,7 +489,7 @@ namespace Booking.Classes
             con.Open();
             try
             {
-                string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable - 1 WHERE trip_id = @TripId and accomodation_name = @AccomodationName";
+                string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable - 1 WHERE acc_trip_id = @TripId and accomodation_name = @AccomodationName";
                 MySqlCommand command = new MySqlCommand(@updateQuery, con);
                 command.Parameters.AddWithValue("@TripId", tripId);
                 command.Parameters.AddWithValue("@AccomodationName", accomodationName);
@@ -659,7 +659,7 @@ namespace Booking.Classes
             con.Open();
             try
             {
-                string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable + 1 WHERE trip_id = @TripId and accomodation_name = @AccomodationName";
+                string updateQuery = "UPDATE accomodation SET seatAvailable = seatAvailable + 1 WHERE acc_trip_id = @TripId and accomodation_name = @AccomodationName";
                 MySqlCommand command = new MySqlCommand(@updateQuery, con);
                 command.Parameters.AddWithValue("@TripId", tripId);
                 command.Parameters.AddWithValue("@AccomodationName", accomodationName);
