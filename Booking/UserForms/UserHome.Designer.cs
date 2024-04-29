@@ -35,7 +35,7 @@
             this.minimize_btn = new System.Windows.Forms.Button();
             this.dashboardMain_panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaGradiantButton1 = new Guna.UI.WinForms.GunaGradiantButton();
+            this.report_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.logout_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.bookhistory_btn = new Guna.UI.WinForms.GunaGradiantButton();
             this.book_btn = new Guna.UI.WinForms.GunaGradiantButton();
@@ -104,7 +104,7 @@
             // 
             this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.gunaPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.gunaPanel2.Controls.Add(this.gunaGradiantButton1);
+            this.gunaPanel2.Controls.Add(this.report_btn);
             this.gunaPanel2.Controls.Add(this.logout_btn);
             this.gunaPanel2.Controls.Add(this.bookhistory_btn);
             this.gunaPanel2.Controls.Add(this.book_btn);
@@ -120,30 +120,30 @@
             this.gunaPanel2.Size = new System.Drawing.Size(431, 940);
             this.gunaPanel2.TabIndex = 1;
             // 
-            // gunaGradiantButton1
+            // report_btn
             // 
-            this.gunaGradiantButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradiantButton1.AnimationSpeed = 0.03F;
-            this.gunaGradiantButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.gunaGradiantButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.gunaGradiantButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradiantButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradiantButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradiantButton1.Image")));
-            this.gunaGradiantButton1.ImageOffsetX = 40;
-            this.gunaGradiantButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradiantButton1.Location = new System.Drawing.Point(-2, 488);
-            this.gunaGradiantButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gunaGradiantButton1.Name = "gunaGradiantButton1";
-            this.gunaGradiantButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            this.gunaGradiantButton1.OnHoverBaseColor2 = System.Drawing.Color.White;
-            this.gunaGradiantButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradiantButton1.OnHoverImage = null;
-            this.gunaGradiantButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradiantButton1.Size = new System.Drawing.Size(431, 85);
-            this.gunaGradiantButton1.TabIndex = 9;
-            this.gunaGradiantButton1.Text = "Report";
-            this.gunaGradiantButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaGradiantButton1.Click += new System.EventHandler(this.gunaGradiantButton1_Click);
+            this.report_btn.AnimationHoverSpeed = 0.07F;
+            this.report_btn.AnimationSpeed = 0.03F;
+            this.report_btn.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.report_btn.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.report_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.report_btn.ForeColor = System.Drawing.Color.White;
+            this.report_btn.Image = ((System.Drawing.Image)(resources.GetObject("report_btn.Image")));
+            this.report_btn.ImageOffsetX = 40;
+            this.report_btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.report_btn.Location = new System.Drawing.Point(-2, 488);
+            this.report_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.report_btn.Name = "report_btn";
+            this.report_btn.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.report_btn.OnHoverBaseColor2 = System.Drawing.Color.White;
+            this.report_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.report_btn.OnHoverImage = null;
+            this.report_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.report_btn.Size = new System.Drawing.Size(431, 85);
+            this.report_btn.TabIndex = 9;
+            this.report_btn.Text = "Report";
+            this.report_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.report_btn.Click += new System.EventHandler(this.report_btn_Click);
             // 
             // logout_btn
             // 
@@ -369,6 +369,6 @@
         private System.Windows.Forms.Timer timer1;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         private Guna.UI.WinForms.GunaGradiantButton home_btn;
-        private Guna.UI.WinForms.GunaGradiantButton gunaGradiantButton1;
+        private Guna.UI.WinForms.GunaGradiantButton report_btn;
     }
 }

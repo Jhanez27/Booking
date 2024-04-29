@@ -65,20 +65,19 @@ namespace Booking.UserForms
             new Home().Show();
             this.Close();
         }
-
-        private void gunaGradiantButton1_Click(object sender, EventArgs e)
-        {
-            dashboardMain_panel.Controls.Clear();
-            reportControl rc = new reportControl(currentUser);
-            dashboardMain_panel.Controls.Add(rc);
-           
-        }
-
         private void bookhistory_btn_Click(object sender, EventArgs e)
         {
             dashboardMain_panel.Controls.Clear();
             bookingHistory bh = new bookingHistory(currentUser);
             dashboardMain_panel.Controls.Add(bh);
+        }
+
+        private void report_btn_Click(object sender, EventArgs e)
+        {
+            dashboardMain_panel.Controls.Clear();
+            reportControl rc = new reportControl(currentUser);
+            dashboardMain_panel.Controls.Add(rc);
+
         }
     }
 }

@@ -63,6 +63,7 @@ namespace Booking.Classes
             catch (Exception)
             {
                 MessageBox.Show("Invalid Email");
+                return;
             }
 
         }
@@ -163,6 +164,7 @@ namespace Booking.Classes
             catch (Exception)
             {
                 MessageBox.Show("Invalid Email");
+                return;
             }
 
         }
