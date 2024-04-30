@@ -59,7 +59,8 @@
 ## Events Documentation
 ![Events Documentation](https://github.com/Jhanez27/Booking/assets/113825787/566345e3-acfa-4e6d-b79f-1366fb47b69c)
 
- *To view the whole list of events, click [here](https://github.com/Jhanez27/Booking/files/15159129/event_documentation.docx)*
+ *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15164326/event_documentation.pdf)
+
 
  ## Use Case Diagram
  ![Use Case Diagram](https://github.com/Jhanez27/Booking/assets/113825787/6f8e70ec-1383-4847-8c0a-475ab952d173)
