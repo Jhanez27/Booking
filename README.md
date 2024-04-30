@@ -11,8 +11,7 @@
 - [Booking Page](#booking-page)
 - [Booking History](#booking-history)
 - [Report Page](#report-page)
-- [Class Diagram](#class-diagram)
-
+  
 [Database Used](#database-used)
 
 [Entity Relationship Diagram](#entity-relationship-diagram)
@@ -21,6 +20,7 @@
 
 [Use Case Diagram](#use-case-diagram)
 
+[Class Diagram](#class-diagram)
 
 ## Features of the System
 
