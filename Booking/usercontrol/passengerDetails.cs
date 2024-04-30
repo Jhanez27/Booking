@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Booking.usercontrol
 {
@@ -235,6 +236,17 @@ namespace Booking.usercontrol
                 parentForm.DashboardPanel.Controls.Add(ticketdetails);
             }
 
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            bookingControl bc = new bookingControl(currentUser);
+            UserHome parentForm = this.ParentForm as UserHome;
+            if (parentForm != null)
+            {
+                parentForm.DashboardPanel.Controls.Clear();
+                parentForm.DashboardPanel.Controls.Add(bc);
+            }
         }
     }
 }

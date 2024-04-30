@@ -60,6 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.book_btn = new Guna.UI.WinForms.GunaButton();
+            this.back_btn = new Guna.UI.WinForms.GunaButton();
             this.tripDetail_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shipLogo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -414,7 +415,7 @@
             // 
             this.book_btn.AnimationHoverSpeed = 0.07F;
             this.book_btn.AnimationSpeed = 0.03F;
-            this.book_btn.BaseColor = System.Drawing.Color.SlateGray;
+            this.book_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
             this.book_btn.BorderColor = System.Drawing.Color.Black;
             this.book_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.book_btn.ForeColor = System.Drawing.Color.White;
@@ -422,7 +423,7 @@
             this.book_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.book_btn.ImageOffsetX = 1;
             this.book_btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.book_btn.Location = new System.Drawing.Point(644, 874);
+            this.book_btn.Location = new System.Drawing.Point(784, 870);
             this.book_btn.Name = "book_btn";
             this.book_btn.OnHoverBaseColor = System.Drawing.Color.DimGray;
             this.book_btn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -436,11 +437,38 @@
             this.book_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.book_btn.Click += new System.EventHandler(this.bookbtn_Click);
             // 
+            // back_btn
+            // 
+            this.back_btn.AnimationHoverSpeed = 0.07F;
+            this.back_btn.AnimationSpeed = 0.03F;
+            this.back_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            this.back_btn.BorderColor = System.Drawing.Color.Black;
+            this.back_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back_btn.ForeColor = System.Drawing.Color.White;
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.back_btn.ImageOffsetX = 1;
+            this.back_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.back_btn.Location = new System.Drawing.Point(436, 870);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.OnHoverBaseColor = System.Drawing.Color.DimGray;
+            this.back_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.back_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.back_btn.OnHoverImage = null;
+            this.back_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.back_btn.Radius = 10;
+            this.back_btn.Size = new System.Drawing.Size(270, 52);
+            this.back_btn.TabIndex = 5;
+            this.back_btn.Text = " Back";
+            this.back_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // passengerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(236)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.back_btn);
             this.Controls.Add(this.book_btn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tripDetail_panel);
@@ -489,5 +517,6 @@
         private Guna.UI.WinForms.GunaLineTextBox pass_fname;
         private System.Windows.Forms.ComboBox pass_genderComboBox;
         private System.Windows.Forms.Label label13;
+        private Guna.UI.WinForms.GunaButton back_btn;
     }
 }
