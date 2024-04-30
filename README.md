@@ -56,6 +56,62 @@
 ## Entity Relationship Diagram
 ![Entity Relationship Diagram](https://github.com/Jhanez27/Booking/assets/113825787/d6465b9e-5718-46b3-9c72-11310c767d29)
 
+### booking
+*contains passenger booking information*
+- booking_id (primary key)
+- username (foreign key reference user Username)
+- passenger_id (foreign key reference passenger passenger_id
+- trip_id (foreign key reference trip trip_id)
+- booking_amount
+- booking_date
+- booking_status
+- date_cancelled
+
+### user
+*stores user/clerk private information*
+- Username (primary key)
+- Password
+- Email_Address
+- Contact_Number
+- Fname
+- Lname
+
+### passenger
+*Stores passenger information*
+ - passenger_id (primary key)
+ - passenger_fname
+ - passenger_lname
+ - passenger_age
+ - passenger_gender
+ - passenger_contactNum
+ - passenger_email
+ - passenger_ticket_number
+ - passenger_accomodation
+
+### boat
+*contains vessel information*
+ - boat_id (primary key)
+ - boat_name
+ - shipping_line
+
+### trip
+*this contains all trip information*
+ - trip_id (primary key)
+ - boat_id (foreign key reference boat boat_id)
+ - origin
+ - destination
+ - date_departure
+ - availableSeat
+ - trip_ETA
+
+### accomodation
+*stores all accomodation for each of the trips*
+ - acc_trip_id (foreign key reference trip trip_id)
+ - accomodation_id (primary key)
+ - accomodation_name
+ - accomodation_price
+ - seatAvailable
+
 ## Events Documentation
 ![Events Documentation](https://github.com/Jhanez27/Booking/assets/113825787/566345e3-acfa-4e6d-b79f-1366fb47b69c)
 
