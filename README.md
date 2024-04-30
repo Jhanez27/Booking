@@ -11,6 +11,7 @@
 - [Booking Page](#booking-page)
 - [Booking History](#booking-history)
 - [Report Page](#report-page)
+- [Class Diagram](#class-diagram)
 
 [Database Used](#database-used)
 
@@ -120,5 +121,8 @@
 
  ## Use Case Diagram
 ![Use Case Diagram](https://github.com/Jhanez27/Booking/assets/113825787/8fc3d7a3-517a-4740-9383-2a05aa7a2ec8)
+
+## Class Diagram
+
 
 
