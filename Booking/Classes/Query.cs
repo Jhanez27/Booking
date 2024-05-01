@@ -185,8 +185,9 @@ namespace Booking.Classes
 
             return numberTrips;
         }
-        public List<Destination> addDestination()
+        public List<Destination> addDestination(string origin)
         {
+            destinations.Clear();
             HashSet<string> destinationNames = new HashSet<string>();
             string username = Environment.GetEnvironmentVariable("MYSQL_USERNAME");
             string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
@@ -194,8 +195,9 @@ namespace Booking.Classes
             string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string query = "SELECT destination FROM trip";
+            string query = "SELECT destination FROM trip where origin = @Origin";
             MySqlCommand command = new MySqlCommand(query, con);
+            command.Parameters.AddWithValue("@Origin", origin);
             MySqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())

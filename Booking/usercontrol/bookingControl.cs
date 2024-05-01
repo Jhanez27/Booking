@@ -28,14 +28,6 @@ namespace Booking.usercontrol
 
         private void bookingControl_Load(object sender, EventArgs e)
         {
-            List<Destination> destinationList = query.addDestination();
-            destination_combo.Items.Clear();
-
-
-            foreach (Destination destination in destinationList)
-            {
-                destination_combo.Items.Add(destination.destinationName);
-            }
 
             List<Origin> originList = query.addOrigin();
             origin_combo.Items.Clear();
@@ -108,6 +100,18 @@ namespace Booking.usercontrol
                 }
             }
         
+        }
+
+        private void origin_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Destination> destinationList = query.addDestination(origin_combo.SelectedItem.ToString());
+            destination_combo.Items.Clear();
+
+            foreach (Destination destination in destinationList)
+            {
+                destination_combo.Items.Add(destination.destinationName);
+            }
+            destination_combo.SelectedIndex = 0;
         }
     }
 }

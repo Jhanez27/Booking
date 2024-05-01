@@ -122,6 +122,7 @@
             this.origin_combo.Name = "origin_combo";
             this.origin_combo.Size = new System.Drawing.Size(277, 28);
             this.origin_combo.TabIndex = 1;
+            this.origin_combo.SelectedIndexChanged += new System.EventHandler(this.origin_combo_SelectedIndexChanged);
             // 
             // gunaLabel1
             // 
