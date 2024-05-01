@@ -298,5 +298,18 @@ namespace Booking.usercontrol
             MessageBox.Show("Notification regarding the cancellation has been sent.");
             toLoadTodaysHistories();
         }
+
+        private void check_all_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isChecked = check_all.Checked;
+
+            foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
+            {
+                if (row.Cells[0] is DataGridViewCheckBoxCell checkboxCell) 
+                {
+                    checkboxCell.Value = isChecked;
+                }
+            }
+        }
     }
 }

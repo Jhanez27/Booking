@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bookingHistory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.departureTime_comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.details_panel = new System.Windows.Forms.Panel();
             this.cancel_btn2 = new Guna.UI.WinForms.GunaButton();
             this.cancel_btn = new Guna.UI.WinForms.GunaButton();
+            this.check_all = new System.Windows.Forms.CheckBox();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingHistoryDataGridView)).BeginInit();
             this.details_panel.SuspendLayout();
@@ -150,58 +151,59 @@
             this.bookingHistoryDataGridView.AllowUserToDeleteRows = false;
             this.bookingHistoryDataGridView.AllowUserToResizeColumns = false;
             this.bookingHistoryDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.bookingHistoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.bookingHistoryDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.bookingHistoryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.bookingHistoryDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.bookingHistoryDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.bookingHistoryDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bookingHistoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookingHistoryDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.bookingHistoryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.bookingHistoryDataGridView.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.bookingHistoryDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.bookingHistoryDataGridView.GridColor = System.Drawing.Color.Gray;
             this.bookingHistoryDataGridView.Location = new System.Drawing.Point(18, 13);
             this.bookingHistoryDataGridView.Name = "bookingHistoryDataGridView";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bookingHistoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(121)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bookingHistoryDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.bookingHistoryDataGridView.RowHeadersVisible = false;
             this.bookingHistoryDataGridView.RowHeadersWidth = 62;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
-            this.bookingHistoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.bookingHistoryDataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bookingHistoryDataGridView.RowTemplate.Height = 28;
-            this.bookingHistoryDataGridView.Size = new System.Drawing.Size(1303, 709);
+            this.bookingHistoryDataGridView.Size = new System.Drawing.Size(1327, 709);
             this.bookingHistoryDataGridView.TabIndex = 0;
             this.bookingHistoryDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BookingHistoryDataGridView_CellValueChanged);
             // 
             // details_panel
             // 
+            this.details_panel.Controls.Add(this.check_all);
             this.details_panel.Controls.Add(this.cancel_btn2);
             this.details_panel.Controls.Add(this.cancel_btn);
             this.details_panel.Controls.Add(this.bookingHistoryDataGridView);
             this.details_panel.Location = new System.Drawing.Point(51, 137);
             this.details_panel.Name = "details_panel";
-            this.details_panel.Size = new System.Drawing.Size(1332, 830);
+            this.details_panel.Size = new System.Drawing.Size(1364, 830);
             this.details_panel.TabIndex = 1;
             this.details_panel.Visible = false;
             // 
@@ -255,6 +257,17 @@
             this.cancel_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click);
             // 
+            // check_all
+            // 
+            this.check_all.AutoSize = true;
+            this.check_all.Location = new System.Drawing.Point(58, 762);
+            this.check_all.Name = "check_all";
+            this.check_all.Size = new System.Drawing.Size(101, 24);
+            this.check_all.TabIndex = 3;
+            this.check_all.Text = "Check All";
+            this.check_all.UseVisualStyleBackColor = true;
+            this.check_all.CheckedChanged += new System.EventHandler(this.check_all_CheckedChanged);
+            // 
             // bookingHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -269,6 +282,7 @@
             this.gunaElipsePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookingHistoryDataGridView)).EndInit();
             this.details_panel.ResumeLayout(false);
+            this.details_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +301,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaButton cancel_btn;
         private Guna.UI.WinForms.GunaButton cancel_btn2;
+        private System.Windows.Forms.CheckBox check_all;
     }
 }
