@@ -25,7 +25,11 @@ namespace Booking
         public static String to;
         public ResetPassword()
         {
+
             InitializeComponent();
+            this.Width = 610;
+            this.Height = 620;
+            
         }
         private void ResetPassword_Load(object sender, EventArgs e)
         {

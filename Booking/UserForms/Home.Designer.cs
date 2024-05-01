@@ -218,7 +218,7 @@
             // Login_Button
             // 
             this.Login_Button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Login_Button.Angle = 60F;
+            this.Login_Button.Angle = 294F;
             this.Login_Button.BorderRadius = 20;
             this.Login_Button.Color0 = System.Drawing.Color.DarkBlue;
             this.Login_Button.Color1 = System.Drawing.Color.Magenta;
