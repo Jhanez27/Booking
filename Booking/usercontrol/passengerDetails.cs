@@ -158,53 +158,61 @@ namespace Booking.usercontrol
         }
         private void bookbtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(pass_fname.Text) || string.IsNullOrWhiteSpace(pass_lname.Text)
-                || string.IsNullOrWhiteSpace(pass_Age.Text) || string.IsNullOrWhiteSpace(pass_contactNum.Text)
-                || string.IsNullOrWhiteSpace(pass_email.Text))
+            DialogResult dialogResult = MessageBox.Show("Please confirm that all the information you entered is correct.\n Do you want to proceed with the booking?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
             {
-                MessageBox.Show("All fields Required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string passNumber = pass_contactNum.Text.Trim();
-            if (!IsValidPhoneNumber(passNumber))
+            else
             {
-                MessageBox.Show("Invalid Phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (!IsValidEmail(pass_email.Text))
-            {
-                MessageBox.Show("Invalid Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            if (pass_genderComboBox.SelectedIndex < 0)
-            {
-                MessageBox.Show("Please select passenger gender.", "Validation Error");
-                return;
-            }
-            if (accom_comboBox.SelectedIndex < 0)
-            {
-                MessageBox.Show("Please select passenger accomodation.", "Validation Error");
-                return;
-            }
-            if (passType_comboBox.SelectedIndex < 0)
-            {
-                MessageBox.Show("Please select passenger type.", "Validation Error");
-                return;
-            }
-            ticketNumber = GenerateUniqueTicketNumber();
-            double price = Convert.ToDouble(ticket_amount.Text);
-            int age = Convert.ToInt32(pass_Age.Text);
-            Passenger p = new Passenger(pass_fname.Text, pass_lname.Text, age, pass_genderComboBox.SelectedItem.ToString()
-                , pass_contactNum.Text, pass_email.Text, ticketNumber, accom_comboBox.SelectedItem.ToString());
-            int passengerId = currentUser.addPassenger(p);
-            string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
-            PassengerBooking pb = new PassengerBooking(currentUser.Username, passengerId, Convert.ToInt16(tripId), Convert.ToDouble(ticket_amount.Text), dateToday, "Paid");
-            bool booked = currentUser.bookPassenger(pb);
-            if (booked)
-            {
-                query = new Query();
-                query.updateAccomodationSeat(tripId, accom_comboBox.SelectedItem.ToString());
-                viewTicket();
+                if (string.IsNullOrWhiteSpace(pass_fname.Text) || string.IsNullOrWhiteSpace(pass_lname.Text)
+                    || string.IsNullOrWhiteSpace(pass_Age.Text) || string.IsNullOrWhiteSpace(pass_contactNum.Text)
+                    || string.IsNullOrWhiteSpace(pass_email.Text))
+                {
+                    MessageBox.Show("All fields Required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string passNumber = pass_contactNum.Text.Trim();
+                if (!IsValidPhoneNumber(passNumber))
+                {
+                    MessageBox.Show("Invalid Phone number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (!IsValidEmail(pass_email.Text))
+                {
+                    MessageBox.Show("Invalid Email", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (pass_genderComboBox.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please select passenger gender.", "Validation Error");
+                    return;
+                }
+                if (accom_comboBox.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please select passenger accomodation.", "Validation Error");
+                    return;
+                }
+                if (passType_comboBox.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Please select passenger type.", "Validation Error");
+                    return;
+                }
+                ticketNumber = GenerateUniqueTicketNumber();
+                double price = Convert.ToDouble(ticket_amount.Text);
+                int age = Convert.ToInt32(pass_Age.Text);
+                Passenger p = new Passenger(pass_fname.Text, pass_lname.Text, age, pass_genderComboBox.SelectedItem.ToString()
+                    , pass_contactNum.Text, pass_email.Text, ticketNumber, accom_comboBox.SelectedItem.ToString());
+                int passengerId = currentUser.addPassenger(p);
+                string dateToday = DateTime.Now.ToString("yyyy-MM-dd");
+                PassengerBooking pb = new PassengerBooking(currentUser.Username, passengerId, Convert.ToInt16(tripId), Convert.ToDouble(ticket_amount.Text), dateToday, "Paid");
+                bool booked = currentUser.bookPassenger(pb);
+                if (booked)
+                {
+                    query = new Query();
+                    query.updateAccomodationSeat(tripId, accom_comboBox.SelectedItem.ToString());
+                    viewTicket();
+                }
             }
         }
         private void viewTicket()

@@ -170,133 +170,148 @@ namespace Booking.usercontrol
 
         private void cancel_btn_Click(object sender, EventArgs e)
         {
-            cancelBooking = new List<BookingDetail>();
-            foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel this booking(s) ?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
             {
-               
-                if (row.Cells[0] is DataGridViewCheckBoxCell checkboxCell)
-                {
-                    if ((bool)checkboxCell.Value == true)
-                    {
-                        try
-                        {
-                            BookingDetail bookingDetail = new BookingDetail
-                            {
-                                bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"), 
-                                trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),  
-                                vesselName = row.Cells[2].Value?.ToString() ?? "Unknown",
-                                tripSchedule = row.Cells[3].Value?.ToString() ?? "Unknown",
-                                origin = row.Cells[4].Value?.ToString() ?? "Unknown",
-                                destination = row.Cells[5].Value?.ToString() ?? "Unknown",
-                                passengerName = row.Cells[6].Value?.ToString() ?? "Unknown",
-                                ticketNumber = row.Cells[7].Value?.ToString() ?? "Unknown",
-                                bookingStatus = row.Cells[8].Value?.ToString() ?? "Unknown",
-                                email = row.Cells[9].Value?.ToString() ?? "Unknown",
-                                accomodation = row.Cells[10].Value?.ToString() ?? "Unknown",
-                                pNumber = row.Cells[12].Value?.ToString() ?? "Unknown",
-                            };
-
-                            cancelBooking.Add(bookingDetail);
-                        }
-                        catch (Exception ex)
-                        {
-                            
-                            MessageBox.Show($"Error: {ex.Message}");
-                        }
-
-                    }
-                }
-            }
-
-            if(cancelBooking.Count == 0)
-            {
-                MessageBox.Show("No bookings selected for cancellation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            foreach (BookingDetail cancelList in cancelBooking)
+            else
             {
-                string bookingid = cancelList.bookingId.ToString();
-                int bookid = int.Parse(bookingid);
-                bool cancel =  currentUser.cancelBooking(bookid);
-                string tripid = cancelList.trip_id.ToString();
-                int tripId = int.Parse(tripid);
-                if(cancel)
+                cancelBooking = new List<BookingDetail>();
+                foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
                 {
-                    query.updateAccomodation(tripId, cancelList.accomodation.ToString());
-                    ApplicationSystemEmail notif = new ApplicationSystemEmail();
-                    notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(),cancelList.destination.ToString());
-                     
+
+                    if (row.Cells[0] is DataGridViewCheckBoxCell checkboxCell)
+                    {
+                        if ((bool)checkboxCell.Value == true)
+                        {
+                            try
+                            {
+                                BookingDetail bookingDetail = new BookingDetail
+                                {
+                                    bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"),
+                                    trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),
+                                    vesselName = row.Cells[2].Value?.ToString() ?? "Unknown",
+                                    tripSchedule = row.Cells[3].Value?.ToString() ?? "Unknown",
+                                    origin = row.Cells[4].Value?.ToString() ?? "Unknown",
+                                    destination = row.Cells[5].Value?.ToString() ?? "Unknown",
+                                    passengerName = row.Cells[6].Value?.ToString() ?? "Unknown",
+                                    ticketNumber = row.Cells[7].Value?.ToString() ?? "Unknown",
+                                    bookingStatus = row.Cells[8].Value?.ToString() ?? "Unknown",
+                                    email = row.Cells[9].Value?.ToString() ?? "Unknown",
+                                    accomodation = row.Cells[10].Value?.ToString() ?? "Unknown",
+                                    pNumber = row.Cells[12].Value?.ToString() ?? "Unknown",
+                                };
+
+                                cancelBooking.Add(bookingDetail);
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show($"Error: {ex.Message}");
+                            }
+
+                        }
+                    }
                 }
-   
+
+                if (cancelBooking.Count == 0)
+                {
+                    MessageBox.Show("No bookings selected for cancellation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                foreach (BookingDetail cancelList in cancelBooking)
+                {
+                    string bookingid = cancelList.bookingId.ToString();
+                    int bookid = int.Parse(bookingid);
+                    bool cancel = currentUser.cancelBooking(bookid);
+                    string tripid = cancelList.trip_id.ToString();
+                    int tripId = int.Parse(tripid);
+                    if (cancel)
+                    {
+                        query.updateAccomodation(tripId, cancelList.accomodation.ToString());
+                        ApplicationSystemEmail notif = new ApplicationSystemEmail();
+                        notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(), cancelList.destination.ToString());
+
+                    }
+
+                }
+                MessageBox.Show("Notification regarding the cancellation has been sent.");
+                searchBooking_btn_Click(sender, e);
             }
-            MessageBox.Show("Notification regarding the cancellation has been sent.");
-            searchBooking_btn_Click(sender, e);
         }
 
         private void cancel_btn2_Click(object sender, EventArgs e)
         {
-            
-            cancelBooking = new List<BookingDetail>();
-            foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel this booking(s) ?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
             {
-
-                if (row.Cells[0] is DataGridViewCheckBoxCell checkboxCell)
-                {
-                    if ((bool)checkboxCell.Value == true)
-                    {
-                        try
-                        {
-                            BookingDetail bookingDetail = new BookingDetail
-                            {
-                                bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"),  // Ensure no null
-                                trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),  // Ensure no null
-                                vesselName = row.Cells[2].Value?.ToString() ?? "Unknown",
-                                tripSchedule = row.Cells[3].Value?.ToString() ?? "Unknown",
-                                origin = row.Cells[4].Value?.ToString() ?? "Unknown",
-                                destination = row.Cells[5].Value?.ToString() ?? "Unknown",
-                                passengerName = row.Cells[6].Value?.ToString() ?? "Unknown",
-                                ticketNumber = row.Cells[7].Value?.ToString() ?? "Unknown",
-                                bookingStatus = row.Cells[8].Value?.ToString() ?? "Unknown",
-                                email = row.Cells[9].Value?.ToString() ?? "Unknown",
-                                accomodation = row.Cells[10].Value?.ToString() ?? "Unknown",
-                                pNumber = row.Cells[12].Value?.ToString() ?? "Unknown",
-                            };
-
-                            cancelBooking.Add(bookingDetail);
-                        }
-                        catch (Exception ex)
-                        {
-
-                            MessageBox.Show($"Error: {ex.Message}");
-                        }
-
-                    }
-                }
-            }
-
-            if (cancelBooking.Count == 0)
-            {
-                MessageBox.Show("No bookings selected for cancellation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            foreach (BookingDetail cancelList in cancelBooking)
+            else
             {
-                string bookingid = cancelList.bookingId.ToString();
-                int bookid = int.Parse(bookingid);
-                bool cancel = currentUser.cancelBooking(bookid);
-                string tripid = cancelList.trip_id.ToString();
-                int tripId = int.Parse(tripid);
-                if (cancel)
+                cancelBooking = new List<BookingDetail>();
+                foreach (DataGridViewRow row in bookingHistoryDataGridView.Rows)
                 {
-                    query.updateAccomodation(tripId, cancelList.accomodation.ToString());
-                    ApplicationSystemEmail notif = new ApplicationSystemEmail();
-                    notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(), cancelList.destination.ToString());
-                   
+
+                    if (row.Cells[0] is DataGridViewCheckBoxCell checkboxCell)
+                    {
+                        if ((bool)checkboxCell.Value == true)
+                        {
+                            try
+                            {
+                                BookingDetail bookingDetail = new BookingDetail
+                                {
+                                    bookingId = int.Parse(row.Cells[1].Value?.ToString() ?? "0"),  // Ensure no null
+                                    trip_id = int.Parse(row.Cells[11].Value?.ToString() ?? "0"),  // Ensure no null
+                                    vesselName = row.Cells[2].Value?.ToString() ?? "Unknown",
+                                    tripSchedule = row.Cells[3].Value?.ToString() ?? "Unknown",
+                                    origin = row.Cells[4].Value?.ToString() ?? "Unknown",
+                                    destination = row.Cells[5].Value?.ToString() ?? "Unknown",
+                                    passengerName = row.Cells[6].Value?.ToString() ?? "Unknown",
+                                    ticketNumber = row.Cells[7].Value?.ToString() ?? "Unknown",
+                                    bookingStatus = row.Cells[8].Value?.ToString() ?? "Unknown",
+                                    email = row.Cells[9].Value?.ToString() ?? "Unknown",
+                                    accomodation = row.Cells[10].Value?.ToString() ?? "Unknown",
+                                    pNumber = row.Cells[12].Value?.ToString() ?? "Unknown",
+                                };
+
+                                cancelBooking.Add(bookingDetail);
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show($"Error: {ex.Message}");
+                            }
+
+                        }
+                    }
                 }
 
+                if (cancelBooking.Count == 0)
+                {
+                    MessageBox.Show("No bookings selected for cancellation.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                foreach (BookingDetail cancelList in cancelBooking)
+                {
+                    string bookingid = cancelList.bookingId.ToString();
+                    int bookid = int.Parse(bookingid);
+                    bool cancel = currentUser.cancelBooking(bookid);
+                    string tripid = cancelList.trip_id.ToString();
+                    int tripId = int.Parse(tripid);
+                    if (cancel)
+                    {
+                        query.updateAccomodation(tripId, cancelList.accomodation.ToString());
+                        ApplicationSystemEmail notif = new ApplicationSystemEmail();
+                        notif.sendEmailToCancel(cancelList.email.ToString(), cancelList.tripSchedule.ToString(), cancelList.destination.ToString());
+
+                    }
+
+                }
+                MessageBox.Show("Notification regarding the cancellation has been sent.");
+                toLoadTodaysHistories();
             }
-            MessageBox.Show("Notification regarding the cancellation has been sent.");
-            toLoadTodaysHistories();
         }
 
         private void check_all_CheckedChanged(object sender, EventArgs e)

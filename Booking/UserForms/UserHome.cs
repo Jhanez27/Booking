@@ -61,9 +61,17 @@ namespace Booking.UserForms
         }
         private void logout_btn_Click(object sender, EventArgs e)
         {
-            currentUser = null;
-            new Home().Show();
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to logout ?", "Confirmation", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                currentUser = null;
+                new Home().Show();
+                this.Close();
+            }
         }
         private void bookhistory_btn_Click(object sender, EventArgs e)
         {
