@@ -116,7 +116,7 @@
 ## Events Documentation
 ![Events Documentation](https://github.com/Jhanez27/Booking/assets/113825787/566345e3-acfa-4e6d-b79f-1366fb47b69c)
 
- *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15182363/event_documentation.pdf)
+ *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15182363/event_documentation.pdf)*
 
 
 
