@@ -33,7 +33,8 @@
  *This page is will show when the label link Forgot password is click, this page is when the user forgets his login credential , password in particular and want a reset.*
 
 ### Dashboard
-![Dashboard](https://github.com/Jhanez27/Booking/assets/113825787/4ba7eb2e-abea-4b88-9015-2f51a0e76261)
+![Dashboard](https://github.com/Jhanez27/Booking/assets/113825787/51a44e3b-8c3c-4e48-b626-0cd5fbf53686)
+
  *This page will appear after logging in. The displays here includes , time and date , total sales ,number of bookings , number of cancelled bookings , and the number of trips for each of the affiliate shipping lines (within the day).*
 
  ### Booking Page
@@ -41,7 +42,8 @@
   *This page is where the user/clerk books the trip of a passenger. He can search trip by selecting trip date , origin and destination and a list of available trips will be displayed.*
 
  ### Booking History
-  ![Booking History](https://github.com/Jhanez27/Booking/assets/113825787/ef1844d9-591c-4694-8556-5fbdda2e71e2)
+  ![Booking History](https://github.com/Jhanez27/Booking/assets/113825787/73e85233-b031-4dbd-906d-881bf908815e)
+
   *This page is where he can view previous bookings. Here is where he can cancel a booking and an email notifying the passenger regarding the cancellation will be sent.*
 
  ### Report Page
@@ -116,7 +118,8 @@
 ## Events Documentation
 ![Events Documentation](https://github.com/Jhanez27/Booking/assets/113825787/566345e3-acfa-4e6d-b79f-1366fb47b69c)
 
- *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15182363/event_documentation.pdf)*
+ *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15188948/event_documentation.pdf)*
+
 
 
 
