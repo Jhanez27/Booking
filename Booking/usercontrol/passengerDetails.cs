@@ -144,6 +144,11 @@ namespace Booking.usercontrol
             string regexPattern = @"^09\d{9}$"; // Regex pattern for Philippine mobile phone numbers
             return Regex.IsMatch(phoneNumber, regexPattern);
         }
+        private bool isValidAge(string age)
+        {
+            Regex numberPattern = new Regex(@"^\d+$");
+            return numberPattern.IsMatch(age);  
+        }
         public bool IsValidEmail(string email)
         {
             try
@@ -196,6 +201,11 @@ namespace Booking.usercontrol
                 if (passType_comboBox.SelectedIndex < 0)
                 {
                     MessageBox.Show("Please select passenger type.", "Validation Error");
+                    return;
+                }
+                if (!isValidAge(pass_Age.Text))
+                {
+                    MessageBox.Show("Invalid passenger age", "Validation Error");
                     return;
                 }
                 ticketNumber = GenerateUniqueTicketNumber();
