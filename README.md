@@ -54,7 +54,7 @@
   ![Database Used](https://github.com/Jhanez27/Booking/assets/113825787/091b28ce-9bc1-4648-bc24-84a9bd2c38e9)
  *For data storage,i used mysql database , with the following credentials:*
 
-*Username : Jhanez28 , Password : @Sur1nga123 , server : Localhost , database : bookingsystem*
+*Username : Jhanez28 , Password : @Sur1nga123 , server : LOCALHOST , database : bookingsystem*
 
 ## Entity Relationship Diagram
 ![Entity Relationship Diagram](https://github.com/Jhanez27/Booking/assets/113825787/d6465b9e-5718-46b3-9c72-11310c767d29)
