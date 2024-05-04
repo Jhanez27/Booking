@@ -137,7 +137,7 @@ namespace Booking.Classes
             string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={userName};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
-            string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today AND booking_status = 'Cancelled' AND date_cancelled = @Today";
+            string query = "SELECT * FROM booking where username= '" + username + "' AND booking_date = @Today AND booking_status = 'Refunded' AND date_cancelled = @Today";
             MySqlCommand command = new MySqlCommand(query, con);
             command.Parameters.AddWithValue("@Today", todayDate);
             MySqlDataReader reader = command.ExecuteReader();
