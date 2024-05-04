@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Booking.Classes
@@ -634,19 +635,53 @@ namespace Booking.Classes
             string connectionString = $"SERVER={server};DATABASE=bookingsystem;UID={username};PASSWORD={password}";
             MySqlConnection con = new MySqlConnection(connectionString);
             con.Open();
+
             try
             {
-                string updateQuery = "UPDATE booking SET booking_status = 'Cancelled' ,date_cancelled = @Today WHERE booking_id = @BookingId";
-                MySqlCommand command = new MySqlCommand(@updateQuery, con);
-                command.Parameters.AddWithValue("@BookingId", booking_id);
-                command.Parameters.AddWithValue("@Today", dateToday);
-                command.ExecuteNonQuery();
-                updated = true;
+               
+                string selectQuery = "SELECT booking_date, booking_status FROM booking WHERE booking_id = @BookingId";
+                MySqlCommand selectCommand = new MySqlCommand(selectQuery, con);
+                selectCommand.Parameters.AddWithValue("@BookingId", booking_id);
+                MySqlDataReader reader = selectCommand.ExecuteReader();
+
+                string bookingDate = "";
+                string bookingStatus = "";
+
+                if (reader.Read())
+                {
+                    DateTime bookingDateTime = Convert.ToDateTime(reader["booking_date"]);
+                    bookingStatus = reader["booking_status"].ToString();
+                    bookingDate = bookingDateTime.ToString("yyyy:MM:dd");
+                }
+
+                reader.Close();
+               
+                if (bookingStatus.ToLower() != "Cancelled")
+                {
+                    // Determine the booking status based on the comparison of booking date and current date
+                    string updateQuery;
+
+                    if (bookingDate == dateToday)
+                    {
+                        updateQuery = "UPDATE booking SET booking_status = 'Refunded', date_cancelled = @Today WHERE booking_id = @BookingId";
+                    }
+                    else
+                    {
+                        updateQuery = "UPDATE booking SET booking_status = 'Cancelled', date_cancelled = @Today WHERE booking_id = @BookingId";
+                    }
+
+                    MySqlCommand updateCommand = new MySqlCommand(updateQuery, con);
+                    updateCommand.Parameters.AddWithValue("@BookingId", booking_id);
+                    updateCommand.Parameters.AddWithValue("@Today", dateToday);
+                    updateCommand.ExecuteNonQuery();
+                    updated = true;
+                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
+
             con.Close();
             return updated;
         }
