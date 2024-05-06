@@ -124,7 +124,8 @@
 
 
  ## Use Case Diagram
-![Use Case Diagram](https://github.com/Jhanez27/Booking/assets/113825787/8fc3d7a3-517a-4740-9383-2a05aa7a2ec8)
+![Use Case Diagram](https://github.com/Jhanez27/Booking/assets/113825787/a60b7cdd-3a01-4691-930b-1ee06a1ef53c)
+
 
 ## Class Diagram
 <img width="640" alt="ClassDiagram1" src="https://github.com/Jhanez27/Booking/assets/113825787/3cc902a8-6ee3-4545-a7f2-0d248e87d1b3">
