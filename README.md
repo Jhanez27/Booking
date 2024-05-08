@@ -11,6 +11,7 @@
 - [Booking Page](#booking-page)
 - [Booking History](#booking-history)
 - [Report Page](#report-page)
+- [Presentation](#presentation)
   
 [Database Used](#database-used)
 
@@ -119,6 +120,9 @@
 ![Events Documentation](https://github.com/Jhanez27/Booking/assets/113825787/566345e3-acfa-4e6d-b79f-1366fb47b69c)
 
  *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15188948/event_documentation.pdf)*
+
+## Presentation
+ *To view the presentation , click [here](https://www.canva.com/design/DAGEdkwItA8/4nWH2nk05DISwXSEe4PqTQ/edit?utm_content=DAGEdkwItA8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
 
