@@ -121,11 +121,6 @@
 
  *To view the whole list of events, download document [here](https://github.com/Jhanez27/Booking/files/15188948/event_documentation.pdf)*
 
-## Presentation
- *To view the presentation , click [here](https://www.canva.com/design/DAGEdkwItA8/4nWH2nk05DISwXSEe4PqTQ/edit?utm_content=DAGEdkwItA8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
-
-
 
  ## Use Case Diagram
 ![Use Case Diagram](https://github.com/Jhanez27/Booking/assets/113825787/a60b7cdd-3a01-4691-930b-1ee06a1ef53c)
@@ -133,6 +128,12 @@
 
 ## Class Diagram
 <img width="640" alt="ClassDiagram1" src="https://github.com/Jhanez27/Booking/assets/113825787/3cc902a8-6ee3-4545-a7f2-0d248e87d1b3">
+
+
+## Presentation
+ *To view the presentation , click [here](https://www.canva.com/design/DAGEdkwItA8/4nWH2nk05DISwXSEe4PqTQ/edit?utm_content=DAGEdkwItA8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+
 
 
 
