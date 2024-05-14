@@ -11,7 +11,6 @@
 - [Booking Page](#booking-page)
 - [Booking History](#booking-history)
 - [Report Page](#report-page)
-- [Presentation](#presentation)
   
 [Database Used](#database-used)
 
@@ -22,6 +21,8 @@
 [Use Case Diagram](#use-case-diagram)
 
 [Class Diagram](#class-diagram)
+
+[Presentation](#presentation)
 
 ## Features of the System
 
